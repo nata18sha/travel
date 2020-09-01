@@ -1,0 +1,49 @@
+@import '../common/_fonts.scss';
+@import '../common/_variables.scss';
+@import '../common/_mixins.scss';
+
+.container_admin { 
+    margin: 100px auto;
+    // border: 1px solid #000;
+    width: 1110px;
+    @include flexbox(row, nowrap, space-between, flex-start);
+}
+//Navigation block
+.admin_nav {
+    border: 1px solid #000;
+    min-height: 400px;
+    width: 200px;
+}
+.custom_tab {
+    margin: 20px 0;
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #3b3b3b;
+}
+.custom_tab:hover {
+    color: $mainColor;
+    fill: $mainColor;
+    cursor: pointer;
+}
+.custom_tab a:hover {
+    color: $mainColor;
+    fill: $mainColor;
+    cursor: pointer;
+}
+.active_link {
+    color: $mainColor !important;
+    fill: $mainColor !important;
+}
+.custom_tab a {
+    text-decoration: none;
+    color: #3b3b3b;
+}
+
+
+
+
+.admin_body {
+    border: 1px solid #000;
+    width: 890px;
+    min-height: 400px;
+}

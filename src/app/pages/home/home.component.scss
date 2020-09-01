@@ -1,0 +1,420 @@
+@import '../../common/_fonts.scss';
+@import '../../common/_variables.scss';
+@import '../../common/_mixins.scss';
+
+
+//Main banner styles
+
+.banner__main {
+    height: 815px;
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fhome-banner.png?alt=media&token=1982b5c5-cf71-4ebf-96ec-2b720ee3bdbe);
+    @include background;
+    z-index: 1;
+    @include flexbox(column, nowrap, space-between, flex-start);
+}
+.banner__main_heading {
+    width: 1110px;
+    margin: 200px auto;
+    min-height: 200px;
+}
+.heading_small {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafafa;
+    margin-bottom: 30px;
+}
+.heading_big {
+    font-family: 'Didot';
+    font-size: 80px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.banner__main_pannel {
+    height: 120px;
+    width: 100%;
+    // background-color: #fff;
+    width: 100%;
+    @include flexbox(row, nowrap, center, flex-end);
+}
+.container_main {
+    width: 1110px;
+    margin: 0 auto;
+    // border: 1px solid #000;
+}
+.blanc {
+    height: inherit;
+    width: 100%;
+    background-color: #fff;
+}
+.check {
+    @include flexbox(row, nowrap, center, center);
+    height: 120px;
+    width: 1110px;
+}
+.check_item {
+    @include flexbox(row, nowrap, space-between, center);
+    width: 283px;
+    height: inherit;
+    background-color: #fff;
+    // border-right: 1px solid black;
+}
+.check-out {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: $subTextColor;
+    margin-bottom: 15px;
+}
+.text-link {
+    font-family: 'Sofia Pro Medium';
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    // text-decoration: none;
+}
+.text-link:hover {
+    color: $mainColor;
+    // text-decoration: underline ;
+    border-bottom: 1px solid $mainColor;
+    // text-underline-offset: 0.5em;
+    
+}
+.line {
+    height: 70px;
+    width: 1px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.space-link {
+    margin-left: 54px;
+}
+.find {
+    @include flexbox(row, nowrap, center, center);
+    width: 261px;
+    height: inherit;
+    background-color: $mainColor;
+    border-top-right-radius: 20px;
+    font-family: 'Sofia Pro';
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    fill: #fff;
+}
+.scroll {
+    height: inherit;
+    width: 100%;
+    @include flexbox(column, nowrap, center, center);
+    // background-color: #fff;
+}
+.scroll_text {
+    width: 36px;
+    height: 13px;
+    transform: rotate(-90deg);
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.scroll_line {
+    width: 1px;
+    height: 40px;
+    background-color: #ffffff;
+    margin-bottom: 45px;
+}
+
+//One article section
+
+.article {
+    width: 1110px;
+    min-height: 400px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    // overflow: visible;
+}
+.article_text {
+    @include flexbox(row, nowrap, space-between, center);
+    margin-bottom: 60px;
+    // border: 1px solid #000;
+    width: 733px;
+}
+.heading_text, .main_text_width {
+    width: 356px;
+    height: 125px;
+    // border: 1px solid #000;
+}
+.heading_text {
+    font-family: 'Didot';
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+   
+}
+
+.main_text {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: $textColor; 
+}
+.link {
+    color: $linkColor;
+    font-weight: bold;
+    cursor: pointer;
+}
+.article_picture {
+    // overflow: visible;
+    width: 733px;
+    // width: 100vw;
+    height: 475px;
+    // border: 1px solid #000;
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73);
+    @include background;
+    // border: 1px solid red;
+}
+#slider {
+    border-radius: 0% !important;
+    // overflow: visible;
+    // width: 100vw;
+    // border: 1px solid #000;
+    z-index: 1;
+    position: relative;
+}
+// ng-image-slider {
+//     overflow: visible;
+
+// }
+.slider_buttons {
+    // border: 1px solid green;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    z-index: 3;
+    width: 123px;
+    height: 60px;
+    background-color: #ffffff;
+    @include flexbox(row, nowrap, space-between, center);
+}
+.button_line {
+    width: 1px;
+    height: 40px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.button {
+    height: inherit;
+    width: inherit;
+    fill: #4a4a4a;
+    @include flexbox(row, nowrap, center, center);
+    cursor: pointer;
+}
+.button:hover {
+    fill: $mainColor;
+}
+
+//About Us section
+
+.section_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    font-weight: 600;
+    color: $subTextColor;
+    margin-bottom: 30px;
+}
+.about_header {
+    width: 733px;
+    height: 190px;
+    font-family: 'Didot';
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1.36;
+    margin-bottom: 60px;
+}
+.about_content {
+    @include flexbox(row, nowrap, space-between, center);
+}
+.about_text {
+    height: 95px;
+    margin-bottom: 60px;
+}
+.content_small {
+    width: 545px;
+}
+
+.about_image_box {
+    height: 750px;
+}
+.about_image_left {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fbdbda3300f785992398d2687d5fd50e497a60f18.png?alt=media&token=25c1a380-46c2-4947-8da7-1030398bbd81);
+    @include background;
+    width: 545px;
+    height: 750px;
+    @include flexbox(row, nowrap, flex-end, flex-end);
+}
+.about_image_right {
+    width: 545px;
+    height: 450px;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F8e0fa2c23f46bc2131a5013a19ab51893b9bcb91.png?alt=media&token=50ec7dd6-83fc-4197-8b62-d359d0beb8c4);
+    @include background;
+}
+.about {
+    margin-bottom: 150px;
+}
+.button_link {
+    width: 229px;
+    height: 60px;
+    background-color: #ffffff;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: $mainColor;
+    fill: $mainColor;
+    @include flexbox(row, nowrap, center, center);
+    cursor: pointer;
+}
+//Services section
+
+.services_images {
+    @include flexbox(row, wrap, space-between, center);
+    align-content: space-between;
+    height: 720px;
+    margin-bottom: 100px;
+}
+.services_big_image {
+    width: 733px;
+    height: 350px;
+    @include background;
+    padding: 20px 30px;
+    @include flexbox(column, nowrap, flex-end, flex-start);
+}
+.services_small_image {
+    width: 356px;
+    height: 350px;
+    @include background;
+    padding: 20px 30px;
+    @include flexbox(column, nowrap, flex-end, flex-start);
+}
+.image_one {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fa8e579b6e15fd70ded193b497ccc635f7715be60.png?alt=media&token=c98f20f3-677c-4b94-8854-0128a508faf7);
+}
+.image_two {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fd6bd1c5adcbd18149af0d833fb40a7c52bc055e0.png?alt=media&token=1c80e5d6-063e-4ca6-a62f-880f7330aa79);
+}
+.image_three {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F43ff3c7cf3fd30ed9a8a6ef7dee88fff4703f455.png?alt=media&token=2658f374-5273-4210-9938-82496ec5014d);
+}
+.image_four {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F46de4f321d72284f69a9dda54252d98d795f5cf9.png?alt=media&token=382e99f0-9302-4100-9b33-315294781a0a);
+}
+.image_five {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fb1ac065a8379e2a274328fb18f283a398264920e.png?alt=media&token=080432fa-fa78-4871-bfee-0e3690c7e232);
+}
+.service_location {
+    font-family: 'Didot';
+    font-size: 24px;
+    line-height: 1.25;
+    color: #ffffff;
+}
+.service_count {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 600;
+    color: #e4e4e4;
+}
+.count_large {
+    font-size: 24px;
+}
+.services_sometext {
+    width: 544px;
+    height: 105px;
+    font-family: 'Didot';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.46;
+    margin-bottom: 60px;
+}
+.services_numbers{
+    @include flexbox(row, nowrap, center, center);
+    margin-bottom: 100px;
+}
+.numbers_details {
+    width: 25%;
+}
+.section_num {
+    font-family: 'Didot';
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 0.93;
+}
+.large_image {
+    @include background;
+    height: 700px;
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F92b773fea3038d0626ddfc195998939ea457d12b.png?alt=media&token=4d80d55f-7f53-4978-944b-6b487381bcf2);
+}
+
+//Testimonials section
+
+.testimonials {
+    background-color: #f8f8f8;
+    padding: 100px 0;
+    
+}
+.test_content {
+    @include flexbox(row, nowrap, space-between, center);
+}
+.test_block {
+    width: 357px;
+    height: 318px;
+}
+.test_heading, .test_heading_special {
+    font-family: 'Didot';
+    font-size: 50px;
+    font-weight: bold;
+}
+.test_heading_special {
+    color: $mainColor;
+}
+.feedback {
+    @include flexbox(column, nowrap, space-between, flex-start);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14);
+    background-color: #ffffff; 
+    padding: 30px;
+}
+.feedback_header {
+    font-family: 'Didot';
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+.feedback_text {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.36;
+    color: #4a4a4a;
+}
+.feedback_user {
+    @include flexbox(row, nowrap, flex-start, center);
+}
+.feedback_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.feedback_one {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F47bdc311f113f39e6a99170a319cc5cf4d6217ee.png?alt=media&token=b2ba3e6f-72b0-4640-aca4-80670a395290);
+}
+.feedback_two {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F666e2e39921cc92a85ce3ad7b0580b9abdc6cf9b.png?alt=media&token=f5b7dead-ecae-48d4-9e12-08f64468cd86);
+}
+

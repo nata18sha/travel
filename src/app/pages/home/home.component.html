@@ -1,0 +1,201 @@
+<section>
+    <div class="banner__main">
+        <div class="banner__main_heading">
+            <p class="heading_small">Welcome to Travelsy</p>
+            <p class="heading_big">Mother Earth</p>
+            <p class="heading_big">Hosts Our Travels</p>
+        </div>
+        <div class="banner__main_pannel">
+            <div class="blanc"></div>
+            <div class="container_main check">
+                <div class="check_item">
+                    <div>
+                        <p class="check-out">CHECK OUT</p>
+                        <p class="text-link">Top Camping Sites</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="check_item">
+                    <div>
+                        <p class="check-out space-link">CHECK OUT</p>
+                        <p class="text-link space-link">Top National Parks</p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="check_item">
+                    <div>
+                        <p class="check-out space-link">CHECK OUT</p>
+                        <p class="text-link space-link">Top Weekend Gate-aways</p>
+                    </div>
+                </div>
+                <div class="find">
+                    <div>FIND A LOCATION
+                        <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
+                            [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll">
+                <div class="scroll_text">Scroll</div>
+                <div class="scroll_line"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container_main">
+        <div class="article">
+            <div class="article_text">
+                <div class="heading_text">Amun Temple Enclosure</div>
+                <div class="main_text main_text_width">Amun-Ra was the local god of Karnak (Luxor) and during the New
+                    Kingdom, when the
+                    princes of Thebes ruled Egypt, he became the preeminent state god, with a temple that reflected his
+                    status. At the height of its power, the temple owned 421,000 head of cattle…<span class="link">Visit
+                        Site </span> </div>
+            </div>
+            <div id="slider">
+                <ng-image-slider class="article_picture" [images]="imageObject" #nav
+                    [imageSize]="{width: '733px', height: '475px', space: 10 }" [imagePopup]="false" [showArrow]="false"
+                    ></ng-image-slider>
+                <div class="slider_buttons">
+                    <div class="button" (click)="prevImageClick()">
+                        <div>
+                            <svg-icon src="../../assets/icons/back.svg" [svgStyle]="{ 'height.px':20, 'width.px':17 }">
+                            </svg-icon>
+                        </div>
+                    </div>
+                    <div class="button_line"> </div>
+                    <div class="button" (click)="nextImageClick()">
+                        <div>
+                            <svg-icon src="../../assets/icons/next.svg" [svgStyle]="{ 'height.px':20, 'width.px':17 }">
+                            </svg-icon>
+                        </div>
+                    </div>
+                    <!-- <button (click)="prevImageClick()">Prev</button>
+                    <button (click)="nextImageClick()">Next</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about">
+    <div class="container_main">
+        <p class="section_name">ABOUT US</p>
+        <div class="about_header">A Guide To Rocky Mountain Vacations</div>
+        <div class="about_content">
+            <div class="content_small">
+                <div class="main_text about_text">Because the rock was laid down in layers, there is a variation in the
+                    hardness of
+                    the rock formed. When water runoff trickles across the rock, some areas erode rapidly whereas others
+                    hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable
+                    rock.</div>
+                <div class="about_image about_image_left">
+                    <div class="button_link"><span>Read More</span>
+                        <span>
+                            <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
+                                [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-left.px':10}"></svg-icon>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="content_small content_small_right">
+                <div class="main_text about_text"> In some places the water seeps down through cracks & eats out holes
+                    beneath the
+                    surface. When the side rock erodes away, an archway is left behind. Eventually the arch collapses,
+                    leaving one more pillars to join the rest. The ever changing vista of colours, spires, walls &
+                    archways is spectacular at any season, & the park is open all year round.</div>
+                <div class="about_image_box">
+                    <div class="about_image about_image_right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="services">
+    <div class="container_main">
+        <p class="section_name">SERVICES</p>
+        <div class="about_header">Camping Locations /Activities</div>
+        <div class="services_images">
+            <div class="services_big_image image_one">
+                <p class="service_location">Nairobi</p>
+                <p class="service_count"><span class="count_large">23</span> Locations</p>
+            </div>
+            <div class="services_small_image image_two">
+                <p class="service_location">Kisumu</p>
+                <p class="service_count"><span class="count_large">23</span> Locations</p>
+            </div>
+            <div class="services_small_image image_three">
+                <p class="service_location">Bungee Jumping</p>
+                <p class="service_count"><span class="count_large">23</span> Locations</p>
+            </div>
+            <div class="services_small_image image_four">
+                <p class="service_location">Coffee Tasting</p>
+                <p class="service_count"><span class="count_large">23</span> Locations</p>
+            </div>
+            <div class="services_small_image image_five">
+                <p class="service_location">Culture Walk</p>
+                <p class="service_count"><span class="count_large">23</span> Locations</p>
+            </div>
+        </div>
+        <div class="services_sometext">We create awesome experiencs by showcasing some of the best places and actvities
+            in the country</div>
+        <div class="services_numbers">
+            <div class="numbers_details">
+                <p class="section_name">Camping Locations</p>
+                <p class="section_num">68+</p>
+            </div>
+            <div class="numbers_details">
+                <p class="section_name">Hotels</p>
+                <p class="section_num">102+</p>
+            </div>
+            <div class="numbers_details">
+                <p class="section_name">Activities</p>
+                <p class="section_num">84+</p>
+            </div>
+            <div class="numbers_details">
+                <p class="section_name">Equipment Providers</p>
+                <p class="section_num">35+</p>
+            </div>
+        </div>
+    </div>
+    <div class="large_image"></div>
+</section>
+<section class="testimonials">
+    <div class="container_main">
+        <div class="test_content">
+            <div class="test_block">
+                <p class="section_name">TESTIMONIALS</p>
+                <p class="test_heading">What customers</p>
+                <p class="test_heading_special">say about us.</p>
+            </div>
+            <div class="test_block feedback">
+                <div>
+                    <div class="feedback_header">Best User Experience</div>
+                    <div class="feedback_text">Because the rock was laid down in layers, there is a variation in the
+                        hardness of the rock formed. When water runoff trickles across the rock, some areas erode
+                        rapidly
+                        whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or
+                        “hoodoos” of stable rock.</div>
+                </div>
+                <div class="feedback_user">
+                    <div class="feedback_image feedback_one"></div>
+                    <div class="feedback_name feedback_text">Derek Dunn</div>
+                </div>
+            </div>
+            <div class="test_block feedback">
+                <div>
+                    <div class="feedback_header">Friendly staff</div>
+                    <div class="feedback_text">Whether its a driving tour, a cruise or a bus, leaf viewing is a great
+                        way to
+                        spend a fall vacation. It’s also big tour business and the are many options. </div>
+                </div>
+                <div class="feedback_user">
+                    <div class="feedback_image feedback_two"></div>
+                    <div class="feedback_name feedback_text">Oliver Broad</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
