@@ -1,0 +1,33 @@
+<p>admin-reservation works!</p>
+<table class="table table-bordered ">
+    <thead class="thead_styles text-center">
+        <tr>
+            <th scope="col">#</th>
+            <!-- <th scope="col">ID</th> -->
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Days</th>
+            <th scope="col">Location</th>
+            <th scope="col">Total price</th>
+            <th scope="col">User</th>
+            <th scope="col">Status</th>
+            <th scope="col">Details</th>
+            <!-- <th scope="col">Delete</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let res of reservations; let i = index">
+            <td>{{i + 1}}</td>
+            <!-- <td>{{res.id}}</td> -->
+            <td>{{res.dateFrom.toDate() | date:'dd MMM yyyy' }}</td>
+            <td>{{res.dateTo.toDate() | date:'dd MMM yyyy'}}</td>
+            <td>{{res.days}}</td>
+            <td>{{res.locationTitle}}</td>
+            <td>{{res.totalPrice}}</td>
+            <td>{{res.contacts.fName}} {{res.contacts.lName}}</td>
+            <td>{{res.status}}</td>
+            <td> <button type="button" class="edit_button" (click)="editLocation(location, template)">details</button> </td>
+            <!-- <td><button type="button" class="delete_button" (click)="deleteLocation(location)">delete</button></td> -->
+        </tr>
+    </tbody>
+</table>

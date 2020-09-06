@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLocationComponent } from './admin/admin-location/admin-location.component';
 import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
-
+import { AdminReservationComponent } from './admin/admin-reservation/admin-reservation.component';
 
 
 const routes: Routes = [
@@ -30,6 +30,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/admin-location', pathMatch: 'full' },
     { path: 'admin-location', component: AdminLocationComponent},
     { path: 'admin-blog', component: AdminBlogComponent},
+    { path: 'admin-reservation', component: AdminReservationComponent},
   ]}
 ];
 

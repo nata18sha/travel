@@ -10,6 +10,8 @@ export class LoginComponent implements OnInit {
   changeStatus  = true;
   userEmail: string;
   userPassword: string;
+  firstName: string;
+  lastName: string;
 
   constructor( private authService: AuthService) { }
 
@@ -21,7 +23,20 @@ export class LoginComponent implements OnInit {
   }
   loginUser(): void {
     this.authService.login(this.userEmail, this.userPassword);
+    this.resetFields();
 
+  }
+  registerUser(): void {
+    this.authService.register(this.userEmail, this.userPassword, this.firstName, this.lastName);
+    this.changeStatus = !this.changeStatus;
+    this.resetFields();
+
+  }
+  private resetFields(): void {
+    this.userEmail = '';
+    this.userPassword = '';
+    this.firstName = '';
+    this.lastName = '';
   }
 
 }

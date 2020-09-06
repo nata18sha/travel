@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   isArticle = false;
   isLocation = false;
   adminStatus = false;
-  userStatus = false;
+  userStatus = true;
 
 
 

@@ -83,22 +83,26 @@
                 <div class="locations_items">
 
 
-                    <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index " >
-                        <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
-                            <div class="image_text" >{{location.title}}</div>
+                    <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index ">
+                        <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                            [routerLink]="[ '/location-details/'+location.id ]">
+                            <div class="image_shadow">
+                                <div class="image_text">{{location.title}}</div>
+                            </div>
                         </div>
                         <div class="item_content">
-                            <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                            <div class="item_price">From <span class="item_price_bold">${{location.price}}/person
+                                </span>
                             </div>
                             <div class="item_location">
                                 <svg-icon class="location_icon " src="../../assets/icons/location.svg"
                                     [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                    {{location.location}}
+                                {{location.location}}
                             </div>
                             <div class="item_rate">
                                 <svg-icon class="star_icon " src="../../assets/icons/star.svg"
                                     [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                    {{location.rate}}
+                                {{location.rate}}
                                 <span class="star_count"></span>
                             </div>
                         </div>
@@ -183,8 +187,8 @@
                 </div>
                 <div id="slider">
                     <ng-image-slider class="article_picture" [images]="imageObject" #nav
-                        [imageSize]="{width: '733px', height: '475px', space: 10}" [imagePopup]="false" [showArrow]="false"
-                        ></ng-image-slider>
+                        [imageSize]="{width: '733px', height: '475px', space: 10}" [imagePopup]="false"
+                        [showArrow]="false"></ng-image-slider>
                     <div class="slider_buttons">
                         <div class="button" (click)="prevImageClick()">
                             <div>
@@ -324,29 +328,32 @@
                     </div>
                 </div>
             </div> -->
-        
+
             <div class="location_item" *ngFor="let location of allLocations | slice:4:10; let i = index ">
-                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
-                    
-                    <div class="image_text" >{{location.title}}</div>
+                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                    [routerLink]="[ '/location-details/'+location.id ]">
+
+                    <div class="image_shadow">
+                        <div class="image_text">{{location.title}}</div>
+                    </div>
                 </div>
                 <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>
                     </div>
                     <div class="item_location">
                         <svg-icon class="location_icon " src="../../assets/icons/location.svg"
                             [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                            {{location.location}}
+                        {{location.location}}
                     </div>
                     <div class="item_rate">
                         <svg-icon class="star_icon " src="../../assets/icons/star.svg"
                             [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                            {{location.rate}}
+                        {{location.rate}}
                         <span class="star_count"></span>
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
 </section>
@@ -358,7 +365,7 @@
             <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
             </div>
             <svg-icon class="arrow_visit" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
-                                [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-left.px':10}"></svg-icon>
+                [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-left.px':10}"></svg-icon>
         </div>
     </div>
 </section>
@@ -422,28 +429,31 @@
                     </div>
                 </div>
             </div> -->
-        
+
             <div class="location_item" *ngFor="let location of allLocations | slice:10: sliceNumber; let i = index ">
-                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
-                    <div class="image_text" >{{location.title}}</div>
+                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                    [routerLink]="[ '/location-details/'+location.id ]">
+                    <div class="image_shadow">
+                        <div class="image_text">{{location.title}}</div>
+                    </div>
                 </div>
                 <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>
                     </div>
                     <div class="item_location">
                         <svg-icon class="location_icon " src="../../assets/icons/location.svg"
                             [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                            {{location.location}}
+                        {{location.location}}
                     </div>
                     <div class="item_rate">
                         <svg-icon class="star_icon " src="../../assets/icons/star.svg"
                             [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                            {{location.rate}}
+                        {{location.rate}}
                         <span class="star_count"></span>
                     </div>
                 </div>
             </div>
-        
+
         </div>
     </div>
 </section>
@@ -451,7 +461,7 @@
     <div class="button_block">
         <button type="button" class="load_more" (click)="loadMore()" *ngIf="showLoadButton">Load More</button>
     </div>
-    
+
 </section>
 <section class="testimonials">
     <div class="container_main">

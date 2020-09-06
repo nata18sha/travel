@@ -6,49 +6,50 @@
                 <p class="heading_big">{{location?.title}}</p>
 
             </div>
-        
-        <div class="banner__main_pannel">
-            <div class="blanc"></div>
-            <div class="container_main check">
-                <div class="check_item ">
-                    <div class="rate_block">
-                        <div class="item_location">
-                            <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                {{location?.location}}
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                </div>
-                <div class="check_item ">
-                    <div class="rate_block">
-                        <div class="item_rate">
-                            <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                {{location?.rate}} <span class="star_count"></span>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                </div>
-                <div class="check_item">
-                    <div class="rate_block">
-                        <p class=" opening_block"><span class="bold_text">Opening Hours:</span> {{location?.hours}}</p>
 
+            <div class="banner__main_pannel">
+                <div class="blanc"></div>
+                <div class="container_main check">
+                    <div class="check_item ">
+                        <div class="rate_block">
+                            <div class="item_location">
+                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
+                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                {{location?.location}}
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="check_item ">
+                        <div class="rate_block">
+                            <div class="item_rate">
+                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
+                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                {{location?.rate}} <span class="star_count"></span>
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="check_item">
+                        <div class="rate_block">
+                            <p class=" opening_block"><span class="bold_text">Opening Hours:</span> {{location?.hours}}
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="find">
+                        <div class="find_text">Price</div>
+                        <div class="find_big_text">$ {{location?.price}}/Person</div>
+                        <div class="find_text"></div>
                     </div>
                 </div>
-                <div class="find">
-                    <div class="find_text">Price</div>
-                    <div class="find_big_text">$ {{location?.price}}/Person</div>
-                    <div class="find_text"></div>
+                <div class="scroll">
+                    <div class="scroll_text">Scroll</div>
+                    <div class="scroll_line"></div>
                 </div>
-            </div>
-            <div class="scroll">
-                <div class="scroll_text">Scroll</div>
-                <div class="scroll_line"></div>
             </div>
         </div>
-    </div>
-        
+
     </div>
 </section>
 <section>
@@ -85,7 +86,7 @@
 
                 <div class="main_heading">Description</div>
                 <div class="main_text">{{location?.description}}</div>
-        
+
                 <div class="main_heading">Amenities</div>
                 <div class="main_text">
                     {{location?.amenities}}
@@ -129,19 +130,21 @@
 
             <div class="guest_block" *ngIf="isPersons">
                 <div class="main_heading">Guests Details</div>
-                <form>
+                <form #contactsForm="ngForm" novalidate>
                     <div class="subheading">Contact Person</div>
                     <div class="date_block">
 
                         <div class="date">
                             <label class="input_label_thin">First Name*</label>
                             <br>
-                            <input type="text" class="reserv_input " placeholder="Enter your first name">
+                            <input type="text" [(ngModel)]="firstName" name="firstName" class="reserv_input "
+                                placeholder="Enter your first name" required>
                         </div>
                         <div class="date">
                             <label class="input_label_thin">Last Name*</label>
                             <br>
-                            <input type="text" class="reserv_input " placeholder="Enter your last name">
+                            <input type="text" [(ngModel)]="lastName" name="lastName" class="reserv_input "
+                                placeholder="Enter your last name" required>
                         </div>
                     </div>
 
@@ -149,15 +152,17 @@
                         <div class="date">
                             <label class="input_label_thin">Email*</label>
                             <br>
-                            <input type="text" class="reserv_input  " placeholder="Enter your email">
+                            <input type="text" [(ngModel)]="email" name="email" class="reserv_input  "
+                                placeholder="Enter your email" required>
                         </div>
                         <div class="date">
                             <label class="input_label_thin">Phone Number*</label>
                             <br>
-                            <input type="text" class="reserv_input " placeholder="Enter your phone number">
+                            <input type="text" [(ngModel)]="phone" name="phone" class="reserv_input "
+                                placeholder="Enter your phone number" required>
                         </div>
                     </div>
-                    <button type="submit" class=" next_button" (click)="confirmGuests()">Continue</button>
+                    <button type="submit" class=" next_button" (click)="confirmGuests()" [disabled]="contactsForm.invalid">Continue</button>
                 </form>
             </div>
 
@@ -166,38 +171,38 @@
 
             <div class="payment_block" *ngIf="isPayment ">
                 <div class="subheading">Payment Details</div>
-                <form *ngIf="isPayment && !paymentDone">
+                <form *ngIf="isPayment && !paymentDone" #paymentForm="ngForm" novalidate>
 
                     <label class="input_label_thin">Cardholder Name</label>
                     <br>
-                    <input type="text" class="reserv_input card_input" placeholder="Enter name">
+                    <input type="text" [(ngModel)]="cardName" name="cardName" class="reserv_input card_input" placeholder="Enter name" required>
 
                     <label class="input_label_thin">Card Number</label>
                     <br>
-                    <input type="text" class="reserv_input card_input" placeholder="Enter card number">
+                    <input type="text" [(ngModel)]="cardNumber" name="cardNumber" class="reserv_input card_input" placeholder="Enter card number"   required>
 
 
                     <div class="card_details">
                         <div>
                             <label class="input_label_thin">Expiry Month</label>
                             <br>
-                            <input type="text" class="reserv_input card_input" placeholder="mm">
+                            <input type="text" [(ngModel)]="expMonth" name="expMonth" class="reserv_input card_input" placeholder="mm"  required>
                         </div>
                         <div>
                             <label class="input_label_thin">Expiry Year</label>
                             <br>
-                            <input type="text" class="reserv_input card_input" placeholder="yyyy">
+                            <input type="text" [(ngModel)]="expYear" name="expYear" class="reserv_input card_input" placeholder="yyyy" required>
                         </div>
                         <div>
                             <label class="input_label_thin">CVV (3 digits)</label>
                             <br>
-                            <input type="password" class="reserv_input card_input" placeholder="***" maxlength="3">
+                            <input type="password" [(ngModel)]="expCvv" name="expCvv" class="reserv_input card_input" placeholder="***" required>
                         </div>
 
                     </div>
 
 
-                    <button type="button" class=" next_button" (click)="confirmPayment()">Pay Now</button>
+                    <button type="button" class=" next_button" (click)="confirmPayment()" [disabled]="paymentForm.invalid">Pay Now</button>
                     <!-- <button type="button" class=" next_button pay_later">Pay Later</button> -->
                 </form>
                 <div class="main_text" *ngIf="paymentDone">Reservation Paid!</div>
@@ -214,28 +219,35 @@
         <!-- Aside pannel -->
         <div class="location_pannel">
             <div class="reservation_block" *ngIf="isDetails">
-                <div class="reservation_dates">
-                    <div class="date_block">
-                        <div class="date">
-                            <label class="input_label">Check-In Date</label>
-                            <br>
-                            <input type="text" class="reserv_input " placeholder="date">
+                <form #datesForm="ngForm" novalidate>
+                    <div class="reservation_dates">
+                        <div class="date_block">
+                            <div class="date">
+                                <label class="input_label">Check-In Date</label>
+                                <br>
+                                <input type="text" [(ngModel)]="inDate" name="inDate" class="reserv_input " required
+                                    bsDatepicker [minDate]="minDate"
+                                    [bsConfig]="{ dateInputFormat: 'DD MMM YYYY', containerClass: 'theme-default' }">
+                            </div>
+                            <div class="date">
+                                <label class="input_label">Check-Out Date</label>
+                                <br>
+                                <input type="text" [(ngModel)]="outDate" name="outDate" class="reserv_input " required
+                                    bsDatepicker [minDate]="minDate"
+                                    [bsConfig]="{ dateInputFormat: 'DD MMM YYYY', containerClass: 'theme-default' }">
+                            </div>
                         </div>
-                        <div class="date">
-                            <label class="input_label">Check-Out Date</label>
+                        <div class="days_stay main_text" *ngIf="daysStay">{{daysStay}} nights stay</div>
+                        <hr>
+                        <div class="reserv_persons">
+                            <label class="input_label">Persons</label>
                             <br>
-                            <input type="text" class="reserv_input " placeholder="date ">
+                            <input type="number" [(ngModel)]="persons" name="persons" class="reserv_input " required>
                         </div>
+                        <button type="submit" class="submit_button" (click)="makeReservation(loginToProceed)" [disabled]="datesForm.invalid">Make
+                            Reservation</button>
                     </div>
-                    <div class="days_stay main_text">5 nights stay</div>
-                    <hr>
-                    <div class="reserv_persons">
-                        <label class="input_label">Persons</label>
-                        <br>
-                        <input type="text" class="reserv_input " placeholder="1">
-                    </div>
-                    <button type="submit" class="submit_button" (click)="makeReservation()">Make Reservation</button>
-                </div>
+                </form>
             </div>
 
 
@@ -245,22 +257,22 @@
                     <div class="details_body">
                         <div class="space_between">
                             <div class="details_bold_text">Check-In Date:</div>
-                            <div class="text_thin">02 Jan 2019</div>
+                            <div class="text_thin">{{inDate | date:'dd MMM yyyy'}}</div>
                         </div>
                         <div class="space_between">
                             <div class="details_bold_text">Check-Out Date:</div>
-                            <div class="text_thin">04 Jan 2019</div>
+                            <div class="text_thin">{{outDate | date:'dd MMM yyyy'}}</div>
                         </div>
                         <div class="space_between">
                             <div class="details_bold_text">Length of stay:</div>
-                            <div class="text_thin">5 nights stay</div>
+                            <div class="text_thin">{{daysStay}} nights stay</div>
                         </div>
                         <div class="space_between">
                             <div class="details_bold_text">Guests:</div>
-                            <div class="text_thin">2 Persons</div>
+                            <div class="text_thin">{{persons}} Persons</div>
                         </div>
                         <button type="button" class="details_link" (click)="editReservation()"
-                            [disabled]='paymentDone'>Edit Booking</button>
+                            *ngIf="!paymentDone">Edit Booking</button>
                     </div>
                 </div>
 
@@ -268,22 +280,22 @@
                     <div class="details_header details_bold_text">Your Price Summary</div>
                     <div class="details_body">
                         <div class="space_between">
-                            <div class="details_bold_text">5 nights Stay:</div>
-                            <div class="text_thin">KES. 78,020</div>
+                            <div class="details_bold_text">{{daysStay}} nights Stay:</div>
+                            <div class="text_thin">USD {{daysStay*location?.price*persons}}</div>
                         </div>
                         <div class="space_between">
-                            <div class="details_bold_text">16% VAT</div>
-                            <div class="text_thin">KES. 6,892</div>
+                            <div class="details_bold_text">10% VAT</div>
+                            <div class="text_thin">USD {{(daysStay*location?.price*0.1).toFixed(2)}}</div>
                         </div>
                     </div>
                     <div class="details_header  ">
-                        <div class="space_between ">
+                        <!-- <div class="space_between ">
                             <div class="details_bold_text">Total in KES.</div>
                             <div class="text_thin">KES. 84,912</div>
-                        </div>
+                        </div> -->
                         <div class="space_between footer_margin">
-                            <div class="details_bold_text">Total in USD.</div>
-                            <div class="text_thin">USD. 849.12</div>
+                            <div class="details_bold_text">Total</div>
+                            <div class="text_thin">USD {{daysStay*location?.price*persons}}</div>
                         </div>
                     </div>
                 </div>
@@ -291,10 +303,14 @@
                 <div class="pannel_details">
                     <div class="details_header details_bold_text">Cost of cancelling</div>
                     <div class="details_body">
-                        <div class="green_text">FREE cancellation until 23:59 on 14 Dec</div>
+                        <!-- <div class="green_text">FREE cancellation until 23:59 on 14 Dec</div> -->
                         <div class="space_between">
-                            <div class="details_bold_text">From 00:00 on 15 Dec</div>
-                            <div class="text_thin">KES. 6,892</div>
+                            <div class="details_bold_text">Before {{inDate | date:'dd MMM yyyy'}}</div>
+                            <div class="text_thin">USD {{(daysStay*location?.price*0.1).toFixed(2)}}</div>
+                        </div>
+                        <div class="space_between">
+                            <div class="details_bold_text">After {{inDate | date:'dd MMM yyyy'}}</div>
+                            <div class="text_thin">USD {{daysStay*location?.price*0.5}}</div>
                         </div>
                     </div>
                 </div>
@@ -313,3 +329,15 @@
         </div>
     </div>
 </section>
+
+<ng-template #loginToProceed>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left"></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body modal_text">
+        Please <span routerLink="/login" (click)="modalRef.hide()">login</span> to proceed with reservation.
+    </div>
+</ng-template>

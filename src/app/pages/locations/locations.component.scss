@@ -248,19 +248,27 @@
     // border: 1px solid #000;
     margin-bottom: 30px;
     cursor: pointer;
+    transition: all ease-in 0.3s;
 }
 .location_item:hover {
     box-shadow: 0 0 23px -4px rgba(0, 0, 0, 0.1);
 }
-.item_image, .item_content {
+.item_content {
     padding: 20px 30px;
 }
 .item_image {
     @include background;
     // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F2fa522de79f247265ee6abc7cdd3291b33284c81.png?alt=media&token=a6fa89a1-5800-47d9-b55d-473948a2d27b);
-    width: inherit;
+    width: 100%;
     height: 340px;
+    
+}
+.image_shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.1);
     @include flexbox(row, nowrap, flex-start, flex-end);
+    padding: 20px 30px;
 }
 .image_text {
     font-family: 'Didot';

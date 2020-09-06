@@ -457,3 +457,18 @@ hr {
     color: #187c1d;
     margin-bottom: 15px;
 }
+
+.modal_text {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: $subTextColor;
+    text-align: center;
+    span {
+        color: $linkColor;
+        cursor: pointer;
+    }
+}
+button[disabled] {
+    background-color: #f17941;
+}

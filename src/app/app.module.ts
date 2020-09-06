@@ -5,6 +5,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { FormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+// import { QuillModule } from 'ngx-quill'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +31,7 @@ import { environment } from '../environments/environment';
 import { AdminComponent } from './admin/admin.component';
 import { AdminLocationComponent } from './admin/admin-location/admin-location.component';
 import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
+import { AdminReservationComponent } from './admin/admin-reservation/admin-reservation.component';
 
 
 @NgModule({
@@ -44,7 +48,8 @@ import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
     AdminLocationComponent,
     AdminBlogComponent,
     ArticleComponent,
-    LocationDetailsComponent
+    LocationDetailsComponent,
+    AdminReservationComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,9 @@ import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
     FormsModule,
     NgImageSliderModule,  
     ModalModule.forRoot(),
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    // QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
