@@ -181,12 +181,14 @@
     @include background;
     // border: 1px solid red;
 }
+
+
 #slider {
     border-radius: 0% !important;
     // overflow: visible;
     // width: 100vw;
     // border: 1px solid #000;
-    z-index: 1;
+    // z-index: 1;
     position: relative;
 }
 // ng-image-slider {
@@ -418,3 +420,6 @@
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F666e2e39921cc92a85ce3ad7b0580b9abdc6cf9b.png?alt=media&token=f5b7dead-ecae-48d4-9e12-08f64468cd86);
 }
 
+.ng-image-slider img{
+    border-radius: 0px!important;
+}

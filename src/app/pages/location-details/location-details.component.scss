@@ -1,0 +1,459 @@
+@import '../../common/_fonts.scss';
+@import '../../common/_variables.scss';
+@import '../../common/_mixins.scss';
+
+
+//Main banner styles
+
+.banner__main {
+    height: 815px;
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fe903201cac99d53821b689cee47184f4136d7d9a.png?alt=media&token=39e0086f-12f8-499d-af1f-ac52ef8b2ded);
+    @include background;
+    z-index: 1;
+    // @include flexbox(column, nowrap, space-between, flex-start);
+}
+
+.main_shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.1);
+
+    @include flexbox(column, nowrap, space-between, flex-start);
+}
+.banner__main_heading {
+    width: 1110px;
+    margin: 200px auto;
+    min-height: 200px;
+}
+.heading_small {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafafa;
+    margin-bottom: 30px;
+}
+.heading_big {
+    width: 655px;
+    font-family: 'Didot';
+    font-size: 80px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+.banner__main_pannel {
+    height: 120px;
+    width: 100%;
+    // background-color: #fff;
+    width: 100%;
+    @include flexbox(row, nowrap, center, flex-end);
+}
+.container_main {
+    width: 1110px;
+    margin: 0 auto;
+    @include flexbox(row, nowrap, space-between, flex-start);
+    // border: 1px solid #000;
+}
+.bottom_margin_main {
+    margin-bottom: 100px;
+}
+.blanc {
+    height: inherit;
+    width: 100%;
+    background-color: #fff;
+}
+.check {
+    @include flexbox(row, nowrap, center, center);
+    height: 120px;
+    width: 1110px;
+}
+.check_item {
+    @include flexbox(row, nowrap, space-between, center);
+    width: 251px;
+    height: inherit;
+    background-color: #fff;
+    // padding-right: 20px;
+    // border-right: 1px solid black;
+}
+.check-out {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: $subTextColor;
+    margin-bottom: 15px;
+}
+.text-link {
+    font-family: 'Sofia Pro Medium';
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    // text-decoration: none;
+}
+.text-link:hover {
+    color: $mainColor;
+    // text-decoration: underline ;
+    border-bottom: 1px solid $mainColor;
+    // text-underline-offset: 0.5em;
+    
+}
+.line {
+    height: 70px;
+    width: 1px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.space-link {
+    margin-left: 54px;
+}
+.find {
+    @include flexbox(column, nowrap, center, flex-start);
+    width: 357px;
+    height: inherit;
+    background-color: $mainColor;
+    border-top-right-radius: 20px;
+    color: #ffffff;
+    fill: #fff;
+    padding: 20px;
+}
+.find_big_text {
+    font-family: 'Sofia Pro';
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.find_text {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.scroll {
+    height: inherit;
+    width: 100%;
+    @include flexbox(column, nowrap, center, center);
+    // background-color: #fff;
+}
+.scroll_text {
+    width: 36px;
+    height: 13px;
+    transform: rotate(-90deg);
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.scroll_line {
+    width: 1px;
+    height: 40px;
+    background-color: #ffffff;
+    margin-bottom: 45px;
+}
+
+
+.item_location {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    color: #9b9b9b;
+    // margin-bottom: 20px;
+    position: relative;
+    // margin-left: 20px;
+}
+.location_icon {
+    fill: #9b9b9b;
+    // background-color: khaki;
+    position: absolute;
+    left: -20px;
+    top: -3px;
+}
+.rate_block {
+    @include flexbox(row, nowrap, center, flex-start);
+    // background: khaki;
+    width: 100%;
+}
+.item_rate {
+    font-family: 'Sofia Pro Bold';
+    font-size: 13px;
+    font-weight: 600;
+    color: #30797c;
+    position: relative;
+    margin-left: 20px;
+    text-align: center;
+}
+.star_icon {
+    fill: #30797c;
+    // background-color: khaki;
+    position: absolute;
+    left: -20px;
+    top: -1px;
+
+}
+.star_count {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    color: #9b9b9b; 
+}
+.opening_block {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    font-weight: 500;
+    color: $textColor;
+    // margin-left: 20px;
+}
+.bold_text {
+    font-family: 'Sofia Pro Medium';
+    // font-weight: bold;
+}
+
+//Main block styles
+
+.location_main {
+    width: 544px;
+    min-height: 400px;
+    // border: 1px solid green;
+    
+}
+.navigation {
+    @include flexbox(row, nowrap, flex-start, flex-start); 
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nav_tab {
+    border-bottom: 2px solid #9b9b9b;
+    height: 25px;
+    padding: 0 10px;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: #9b9b9b;
+    position: relative;
+}
+.tick_icon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #187c1d;
+    display: none;
+}
+.nav_tab_done {
+    font-family: 'Sofia Pro Medium';
+    border-bottom: 2px solid #187c1d; 
+    color: #187c1d; 
+    .tick_icon {
+      display: block;
+    }
+}
+
+.nav_tab_active {
+    color: $linkColor;
+    font-family: 'Sofia Pro Medium';
+    border-bottom: 2px solid $linkColor;
+  
+}
+.nav_line {
+    width: 1px;
+    height: 25px;
+    background-color: #d8d8d8;
+    margin: 0 10px;
+}
+.main_heading {
+    font-family: 'Didot';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 2.29;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.main_text {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    line-height: 1.54;
+    color: $textColor;
+    margin-bottom: 20px;
+}
+#slider {
+    border-radius: 0% !important;
+    // overflow: visible;
+    // width: 100vw;
+    // border: 1px solid #000;
+    // z-index: 1;
+    position: relative;
+}
+.slider_buttons {
+    // border: 1px solid green;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    // z-index: 3;
+    width: 123px;
+    height: 60px;
+    background-color: #ffffff;
+    @include flexbox(row, nowrap, space-between, center);
+}
+.button_line {
+    width: 1px;
+    height: 40px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.button {
+    height: inherit;
+    width: inherit;
+    fill: #4a4a4a;
+    @include flexbox(row, nowrap, center, center);
+    cursor: pointer;
+}
+.button:hover {
+    fill: $mainColor;
+}
+.location_photos {
+    margin-bottom: 40px;
+}
+.subheading {
+    font-family: 'Sofia Pro Medium';
+    font-size: 20px;
+    line-height: 2.5;
+    letter-spacing: normal;
+    color: $textColor;
+    
+}
+.next_button {
+    width: 168px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    border: none;
+    color: #fff;
+}
+.card_details {
+    @include flexbox(row, nowrap, space-between, flex-start);
+}
+.pay_later {
+    color: $mainColor;
+    background-color: #fff;
+    margin-left: 20px;
+    border: 1px solid $mainColor;
+}
+
+
+
+
+//Pannel styles-------------------------------------
+.location_pannel {
+    width: 356px;
+    min-height: 200px;
+    // border-radius: 3px;
+    // border: 1px solid khaki;
+    // background-color: #f8f8f8;
+}
+.reservation_block {
+    width: 356px;
+    min-height: 290px;
+    // border-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.date_block {
+    @include flexbox(row, nowrap, space-between, flex-start);
+}
+.date {
+    width: 48%;
+    // border: 1px solid #000;
+}
+.reserv_input {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 40px;
+    border: solid 1px #e4e4e4;
+    padding: 13px;
+    line-height: 1.43;
+    color: #a8a8a8;
+    outline-color: rgba(255, 82, 0, 0.5);
+}
+.card_input {
+    font-family: 'Sofia Pro';
+}
+.input_label {
+    font-family: 'Sofia Pro Medium';
+    font-size: 13px;
+    color: #000000;
+   
+}
+.input_label_thin {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #3b3b3b;
+}
+hr {
+    border: 1px dashed #e4e4e4;
+    margin-bottom: 20px;
+}
+.submit_button {
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    color: #fff;
+    border: none;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.pannel_details {
+    border: solid 1px #e4e4e4;
+    margin-bottom: 20px;
+ 
+}
+.details_header, .details_body {
+    padding: 20px;
+}
+.details_bold_text {
+    font-family: 'Sofia Pro Medium';
+    font-size: 13px;
+    color: #000000;
+}
+.details_header {
+    background-color: #f8f8f8;
+}
+.space_between {
+    @include flexbox(row, nowrap, space-between, flex-start);
+    margin-bottom: 15px;
+}
+.text_thin {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    color: #000000;
+}
+.details_link {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    color: $linkColor;
+    text-decoration: underline;
+    background-color: transparent;
+    border: none;
+
+}
+.details_link:hover {
+    color: $mainColor;
+    cursor: default;
+}
+.footer_margin {
+    margin-bottom: 0;
+}
+.green_text {
+    font-family: 'Sofia Pro Medium';
+    font-size: 13px;
+    color: #187c1d;
+    margin-bottom: 15px;
+}

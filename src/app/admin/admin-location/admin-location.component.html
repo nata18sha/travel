@@ -1,1 +1,151 @@
-<p>admin-location works!</p>
+
+<button type="button" (click)="openToAdd(template)">Add location</button>
+
+
+<table class="table table-bordered ">
+    <thead class="thead_styles text-center">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Things To Do</th>
+            <th scope="col">Location</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Hours</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let location of adminLocations; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{location.category}}</td>
+            <td>{{location.title}}</td>
+            <td>{{location.description | slice: 0:50}}...</td>
+            <td>{{location.thingsToDo | slice: 0:50}}...</td>
+            <td>{{location.location}}</td>
+            <td>{{location.rate}}</td>
+            <td>{{location.hours}}</td>
+            <td>{{location.price}}</td>
+            <td> <button type="button" class="edit_button" (click)="editLocation(location, template)">edit</button> </td>
+            <td><button type="button" class="delete_button" (click)="deleteLocation(location)">delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+<ng-template #template >
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Add location</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #locationForm="ngForm" novalidate>
+            <label for="category" class="input_name">Category</label>
+            <br>
+            <input [(ngModel)]="category" name="category" type="text" id="category" class="input_field" placeholder="" required>
+            <br>
+            <label for="location" class="input_name">Location</label>
+            <br>
+            <input [(ngModel)]="location" name="location" type="text" id="location" class="input_field" placeholder="" required>
+            <br>
+            <label for="rate" class="input_name">Rate (5.0 max)</label>
+            <br>
+            <input [(ngModel)]="rate" name="rate" type="number" id="rate" class="input_field" placeholder="" max="5" required>
+            <br>
+            <label for="hours" class="input_name">Working hours</label>
+            <br>
+            <input [(ngModel)]="hours" name="hours" type="text" id="hours" class="input_field" placeholder="" required>
+            <br>
+            <label for="title" class="input_name">Title</label>
+            <br>
+            <input [(ngModel)]="title" name="title" type="text" id="title" class="input_field" placeholder="" required>
+            <br>
+            <label for="description" class="input_name">Description</label>
+            <br>
+            <textarea [(ngModel)]="description" name="description" type="text" id="description" class="input_field textarea_input" placeholder="" required></textarea>
+            <br>
+            <label  for="amenities" class="input_name">Amenities</label>
+            <br>
+            <input [(ngModel)]="amenities" name="amenities" type="text" id="amenities" class="input_field" placeholder="" required>
+            <br>
+            <label for="toDo" class="input_name">Things to do</label>
+            <br>
+            <textarea [(ngModel)]="thingsToDo" name="thingsToDo" type="text" id="toDo" class="input_field textarea_input" placeholder="" required></textarea>
+            <br>
+            <label for="price" class="input_name">Price</label>
+            <br>
+            <input [(ngModel)]="price" name="price" type="number" id="price" class="input_field" placeholder="" required>
+            <br>
+            <p class="input_name">Main image</p>
+            <div class="custom_file">
+                <input type="file" class="choose_image" id="mainImage" (change)="uploadFile($event)" required>
+                <label class="file_label" for="mainImage">Choose file...</label>
+            </div>
+
+            <div class=" progress progress_bar" >
+                <div [style.width]="(uploadProgress | async) + '%'" class="progress-bar progress-bar-striped bg_main"
+                  role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+            <div class="locationImage " *ngIf="imageStatus">
+                <img [src]="mainImage" alt="image">
+                <span (click)=" deleteMainImage()">
+                    <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                        <path fill-rule="evenodd"
+                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                    </svg>
+                </span>
+            </div>
+
+
+            <p class="input_name">Other images</p>
+            <div class="custom_file">
+                <input type="file" class="choose_image" id="image" (change)="uploadImages($event)" required>
+                <label class="file_label" for="image">Choose file...</label>
+            </div>
+
+            <div class=" progress progress_bar" >
+                <div [style.width]="(uploadProgressMore | async) + '%'" class="progress-bar progress-bar-striped bg_main"
+                  role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+            <div class="images_row" *ngIf="moreImageStatus">
+                <div class="locationImage " *ngFor="let image of images; let i = index" >
+                    <img [src]="images[i]" alt="image">
+                    <span (click)="deleteImage(i)">
+                        <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                            <path fill-rule="evenodd"
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class=" next_button close_button" (click)="modalRef.hide()">Close</button>
+        <button type="submit" class=" next_button" (click)="addLocation(locationForm)" *ngIf="!editStatus" [disabled]="locationForm.invalid">Add</button>
+        <button type="submit" class=" next_button" (click)="updateLocation(locationForm)" *ngIf="editStatus" [disabled]="locationForm.invalid">Update</button>
+    </div>
+</ng-template>

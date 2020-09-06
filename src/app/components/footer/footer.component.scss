@@ -5,6 +5,9 @@
 .footer_copyright, .footer_partners, .footer_info {
    border-top: 1px solid #e4e4e4; 
 }
+.footer_info {
+    min-height: 560px;
+}
 .footer_copyright {
     height: 115px;
     font-family: 'Sofia Pro';
@@ -65,13 +68,13 @@
     color: #000000;
     margin-bottom: 20px;
 }
-.text {
+.text_class {
     font-family: 'Sofia Pro';
     font-size: 13px;
     color: $textColor;
     margin-bottom: 15px;
 }
-.text span {
+.text_class span {
     color: $linkColor;
 }
 .contact {
@@ -88,12 +91,8 @@
 .mailing button {
     width: 94px;
     height: 40px;
-    border: solid 1px $mainColor;
+    border: none;
     background-color: $mainColor;
-
-
-    
-    // font-family: 'Sofia Pro';
     font-size: 13px;
     color: #fff;
 }
@@ -109,5 +108,14 @@
     border: solid 1px #979797;
     border-radius: 50%;
     fill: $textColor;
+    // background-color: rgb(65, 165, 98);
 
+}
+.icon {
+    margin-top: -3px;
+}
+.email_text {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    color: #9b9b9b;
 }

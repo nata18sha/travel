@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { FormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
     HttpClientModule, 
     AngularSvgIconModule.forRoot(),
     FormsModule,
-    NgImageSliderModule
+    NgImageSliderModule,  
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

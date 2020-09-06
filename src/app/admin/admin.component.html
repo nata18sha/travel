@@ -2,7 +2,7 @@
     <div class="admin_nav">
         <div class="custom_tab"><a [routerLink]="['admin-location']" routerLinkActive="active_link">Locations</a></div>
         <div class="custom_tab"><a [routerLink]="['admin-blog']" routerLinkActive="active_link">Blogs</a></div>
-        <div class="custom_tab"><a routerLink="/home" routerLinkActive="active_link">Log Out</a></div>
+        <div class="custom_tab"><a (click)="logout()">Log Out</a></div>
     </div>
     <div class="admin_body">
         <router-outlet></router-outlet>

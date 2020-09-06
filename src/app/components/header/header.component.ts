@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 @Component({
@@ -13,9 +14,14 @@ export class HeaderComponent implements OnInit {
 
   name = 'Get Current Url Route Demo';
   currentRoute: string;
+  isArticle = false;
+  isLocation = false;
+  adminStatus = false;
+  userStatus = false;
 
 
-  constructor(private actRoute: ActivatedRoute, private router: Router,) {
+
+  constructor(private actRoute: ActivatedRoute, private router: Router,private authService: AuthService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
@@ -32,15 +38,31 @@ export class HeaderComponent implements OnInit {
         else {
           this.header_variable = false;
         }
+        if (this.currentRoute === '/article') {
+          this.isArticle = true;
+        }
+        else {
+          this.isArticle = false;
+        }
+        if (this.currentRoute === '/location-details') {
+          this.isLocation = true;
+        }
+        else {
+          this.isLocation = false;
+        }
+
       }
     });
 
   }
 
   ngOnInit(): void {
-
+    this.checkLogin();
+    this.updateCheckLogin();
   }
 
+
+    //Check scroll position
   @HostListener("document:scroll")
   scrollfunction() {
     if (this.currentRoute === '/user' ||
@@ -57,7 +79,31 @@ export class HeaderComponent implements OnInit {
         this.header_variable = false;
       }
     }
+  }
+  //-----------------------------
 
+  private checkLogin(): void {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    if (admin != null && admin.role === 'admin' && admin.access) {
+      this.adminStatus = true;
+  
+    }
+    else if (user != null && user.role === 'user') {
+      this.userStatus = true;
+
+    }
+    else {
+      this.adminStatus = false;
+      this.userStatus = false;
+    }
+  }
+  private updateCheckLogin(): void {
+    this.authService.userStatusChanges.subscribe(
+      () => {
+        this.checkLogin();
+      }
+    );
   }
 
 

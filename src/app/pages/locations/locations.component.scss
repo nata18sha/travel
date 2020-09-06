@@ -247,6 +247,7 @@
     border-radius: 3px;
     // border: 1px solid #000;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 .location_item:hover {
     box-shadow: 0 0 23px -4px rgba(0, 0, 0, 0.1);
@@ -256,7 +257,7 @@
 }
 .item_image {
     @include background;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F2fa522de79f247265ee6abc7cdd3291b33284c81.png?alt=media&token=a6fa89a1-5800-47d9-b55d-473948a2d27b);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F2fa522de79f247265ee6abc7cdd3291b33284c81.png?alt=media&token=a6fa89a1-5800-47d9-b55d-473948a2d27b);
     width: inherit;
     height: 340px;
     @include flexbox(row, nowrap, flex-start, flex-end);
@@ -374,7 +375,7 @@
 }
 #slider {
     border-radius: 0% !important;
-    z-index: 1;
+    // z-index: 1;
     position: relative;
 }
 
@@ -520,4 +521,10 @@
 }
 .feedback_two {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F666e2e39921cc92a85ce3ad7b0580b9abdc6cf9b.png?alt=media&token=f5b7dead-ecae-48d4-9e12-08f64468cd86);
+}
+
+.main_shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.1);
 }

@@ -1,1 +1,315 @@
-<p>location-details works!</p>
+<section>
+    <div class="banner__main" [style.backgroundImage]="'url('+location?.mainImage+')'">
+        <div class="main_shadow">
+            <div class="banner__main_heading">
+                <p class="heading_small">{{location?.category}}</p>
+                <p class="heading_big">{{location?.title}}</p>
+
+            </div>
+        
+        <div class="banner__main_pannel">
+            <div class="blanc"></div>
+            <div class="container_main check">
+                <div class="check_item ">
+                    <div class="rate_block">
+                        <div class="item_location">
+                            <svg-icon class="location_icon " src="../../assets/icons/location.svg"
+                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                {{location?.location}}
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="check_item ">
+                    <div class="rate_block">
+                        <div class="item_rate">
+                            <svg-icon class="star_icon " src="../../assets/icons/star.svg"
+                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                {{location?.rate}} <span class="star_count"></span>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="check_item">
+                    <div class="rate_block">
+                        <p class=" opening_block"><span class="bold_text">Opening Hours:</span> {{location?.hours}}</p>
+
+                    </div>
+                </div>
+                <div class="find">
+                    <div class="find_text">Price</div>
+                    <div class="find_big_text">$ {{location?.price}}/Person</div>
+                    <div class="find_text"></div>
+                </div>
+            </div>
+            <div class="scroll">
+                <div class="scroll_text">Scroll</div>
+                <div class="scroll_line"></div>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+</section>
+<section>
+    <div class="container_main bottom_margin_main">
+        <!-- Main block -->
+        <div class="location_main">
+            <div class="navigation">
+                <div class="nav_tab " [class.nav_tab_active]="isDetails" [class.nav_tab_done]="locationDone">
+                    <div>1. About Location</div>
+                    <div class="tick_icon">
+                        <svg-icon class="" src="../../assets/icons/tick.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13 }"></svg-icon>
+                    </div>
+                </div>
+                <div class="nav_line"></div>
+                <div class="nav_tab " [class.nav_tab_active]="isPersons" [class.nav_tab_done]="guestDone">
+                    <div>2. Guests Details</div>
+                    <div class="tick_icon">
+                        <svg-icon class="" src="../../assets/icons/tick.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13 }"></svg-icon>
+                    </div>
+                </div>
+                <div class="nav_line"></div>
+                <div class="nav_tab" [class.nav_tab_active]="isPayment && !paymentDone"
+                    [class.nav_tab_done]="paymentDone">
+                    <div>3. Payment</div>
+                    <div class="tick_icon">
+                        <svg-icon class="" src="../../assets/icons/tick.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13 }"></svg-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="details_block" *ngIf="isDetails">
+
+                <div class="main_heading">Description</div>
+                <div class="main_text">{{location?.description}}</div>
+        
+                <div class="main_heading">Amenities</div>
+                <div class="main_text">
+                    {{location?.amenities}}
+                </div>
+                <div class="main_heading">Photos</div>
+
+                <div class="location_photos" id="slider">
+                    <ng-image-slider class="article_picture" [images]="imageObject" #nav
+                        [imageSize]="{width: '544px', height: '444px', space: 0 }" [imagePopup]="true"
+                        [showArrow]="false">
+                    </ng-image-slider>
+                    <div class="slider_buttons">
+                        <div class="button" (click)="prevImageClick()">
+                            <div>
+                                <svg-icon src="../../assets/icons/back.svg"
+                                    [svgStyle]="{ 'height.px':20, 'width.px':17 }">
+                                </svg-icon>
+                            </div>
+                        </div>
+                        <div class="button_line"> </div>
+                        <div class="button" (click)="nextImageClick()">
+                            <div>
+                                <svg-icon src="../../assets/icons/next.svg"
+                                    [svgStyle]="{ 'height.px':20, 'width.px':17 }">
+                                </svg-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_heading">What You Will Do</div>
+                <div class="main_text">{{location?.thingsToDo}}</div>
+                <!-- <div class="main_heading">What will be provided</div>
+                <div class="main_text">
+                    <p>Snacks </p>
+                    <p>Trail mix/ Energy bars,</p>
+                    <p>Vegetable Hummus Wrap/ Egg Salsa Avocado Wrap, </p>
+                    <p> Fruit parfait.</p>
+                </div> -->
+            </div>
+
+
+            <div class="guest_block" *ngIf="isPersons">
+                <div class="main_heading">Guests Details</div>
+                <form>
+                    <div class="subheading">Contact Person</div>
+                    <div class="date_block">
+
+                        <div class="date">
+                            <label class="input_label_thin">First Name*</label>
+                            <br>
+                            <input type="text" class="reserv_input " placeholder="Enter your first name">
+                        </div>
+                        <div class="date">
+                            <label class="input_label_thin">Last Name*</label>
+                            <br>
+                            <input type="text" class="reserv_input " placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <div class="date_block">
+                        <div class="date">
+                            <label class="input_label_thin">Email*</label>
+                            <br>
+                            <input type="text" class="reserv_input  " placeholder="Enter your email">
+                        </div>
+                        <div class="date">
+                            <label class="input_label_thin">Phone Number*</label>
+                            <br>
+                            <input type="text" class="reserv_input " placeholder="Enter your phone number">
+                        </div>
+                    </div>
+                    <button type="submit" class=" next_button" (click)="confirmGuests()">Continue</button>
+                </form>
+            </div>
+
+
+
+
+            <div class="payment_block" *ngIf="isPayment ">
+                <div class="subheading">Payment Details</div>
+                <form *ngIf="isPayment && !paymentDone">
+
+                    <label class="input_label_thin">Cardholder Name</label>
+                    <br>
+                    <input type="text" class="reserv_input card_input" placeholder="Enter name">
+
+                    <label class="input_label_thin">Card Number</label>
+                    <br>
+                    <input type="text" class="reserv_input card_input" placeholder="Enter card number">
+
+
+                    <div class="card_details">
+                        <div>
+                            <label class="input_label_thin">Expiry Month</label>
+                            <br>
+                            <input type="text" class="reserv_input card_input" placeholder="mm">
+                        </div>
+                        <div>
+                            <label class="input_label_thin">Expiry Year</label>
+                            <br>
+                            <input type="text" class="reserv_input card_input" placeholder="yyyy">
+                        </div>
+                        <div>
+                            <label class="input_label_thin">CVV (3 digits)</label>
+                            <br>
+                            <input type="password" class="reserv_input card_input" placeholder="***" maxlength="3">
+                        </div>
+
+                    </div>
+
+
+                    <button type="button" class=" next_button" (click)="confirmPayment()">Pay Now</button>
+                    <!-- <button type="button" class=" next_button pay_later">Pay Later</button> -->
+                </form>
+                <div class="main_text" *ngIf="paymentDone">Reservation Paid!</div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <!-- Aside pannel -->
+        <div class="location_pannel">
+            <div class="reservation_block" *ngIf="isDetails">
+                <div class="reservation_dates">
+                    <div class="date_block">
+                        <div class="date">
+                            <label class="input_label">Check-In Date</label>
+                            <br>
+                            <input type="text" class="reserv_input " placeholder="date">
+                        </div>
+                        <div class="date">
+                            <label class="input_label">Check-Out Date</label>
+                            <br>
+                            <input type="text" class="reserv_input " placeholder="date ">
+                        </div>
+                    </div>
+                    <div class="days_stay main_text">5 nights stay</div>
+                    <hr>
+                    <div class="reserv_persons">
+                        <label class="input_label">Persons</label>
+                        <br>
+                        <input type="text" class="reserv_input " placeholder="1">
+                    </div>
+                    <button type="submit" class="submit_button" (click)="makeReservation()">Make Reservation</button>
+                </div>
+            </div>
+
+
+            <div class="details_pannel" *ngIf="isPannelDetails">
+                <div class="pannel_details">
+                    <div class="details_header details_bold_text">Booking Details</div>
+                    <div class="details_body">
+                        <div class="space_between">
+                            <div class="details_bold_text">Check-In Date:</div>
+                            <div class="text_thin">02 Jan 2019</div>
+                        </div>
+                        <div class="space_between">
+                            <div class="details_bold_text">Check-Out Date:</div>
+                            <div class="text_thin">04 Jan 2019</div>
+                        </div>
+                        <div class="space_between">
+                            <div class="details_bold_text">Length of stay:</div>
+                            <div class="text_thin">5 nights stay</div>
+                        </div>
+                        <div class="space_between">
+                            <div class="details_bold_text">Guests:</div>
+                            <div class="text_thin">2 Persons</div>
+                        </div>
+                        <button type="button" class="details_link" (click)="editReservation()"
+                            [disabled]='paymentDone'>Edit Booking</button>
+                    </div>
+                </div>
+
+                <div class="pannel_details">
+                    <div class="details_header details_bold_text">Your Price Summary</div>
+                    <div class="details_body">
+                        <div class="space_between">
+                            <div class="details_bold_text">5 nights Stay:</div>
+                            <div class="text_thin">KES. 78,020</div>
+                        </div>
+                        <div class="space_between">
+                            <div class="details_bold_text">16% VAT</div>
+                            <div class="text_thin">KES. 6,892</div>
+                        </div>
+                    </div>
+                    <div class="details_header  ">
+                        <div class="space_between ">
+                            <div class="details_bold_text">Total in KES.</div>
+                            <div class="text_thin">KES. 84,912</div>
+                        </div>
+                        <div class="space_between footer_margin">
+                            <div class="details_bold_text">Total in USD.</div>
+                            <div class="text_thin">USD. 849.12</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pannel_details">
+                    <div class="details_header details_bold_text">Cost of cancelling</div>
+                    <div class="details_body">
+                        <div class="green_text">FREE cancellation until 23:59 on 14 Dec</div>
+                        <div class="space_between">
+                            <div class="details_bold_text">From 00:00 on 15 Dec</div>
+                            <div class="text_thin">KES. 6,892</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pannel_details">
+                    <div class="details_header details_bold_text">Your booking includes</div>
+                    <div class="details_body">
+                        <div class="green_text">Free tent</div>
+                        <div class="green_text">Water station</div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

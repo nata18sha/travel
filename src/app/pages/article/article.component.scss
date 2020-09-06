@@ -1,0 +1,208 @@
+@import '../../common/_fonts.scss';
+@import '../../common/_variables.scss';
+@import '../../common/_mixins.scss';
+
+
+.banner__main {
+    height: 815px;
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0c2c426f1191c5525a59ad418f223a476816a036.png?alt=media&token=095d47b2-3839-471f-9eef-186e0688ea61);
+    @include background;
+    z-index: 1;
+    @include flexbox(column, nowrap, space-between, flex-start);
+}
+.banner__main_heading {
+    width: 1110px;
+    margin: 200px auto;
+    min-height: 200px;
+}
+.heading_small {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafafa;
+    margin-bottom: 30px;
+}
+.heading_big {
+    height: 285px;
+    width: 733px;
+    font-family: 'Didot';
+    font-size: 80px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    color: #ffffff;
+    margin-bottom: 70px;
+  
+}
+//Main article styles
+
+.article_container {
+    width: 920px;
+    min-height: 400px;
+    // border: 1px solid #000;
+    margin: 0 auto;
+    margin-top: -100px;
+    // margin-bottom: 100px;
+    background-color: #fff;
+    padding: 95px;
+}
+.article_text {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.57;
+    color: $textColor;
+    margin-bottom: 20px;
+}
+.article_text_bold {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    line-height: 1.57;
+    color: $textColor;
+    margin-bottom: 20px;
+}
+.article_quote {
+    @include flexbox(row, nowrap, space-between, flex-start);
+    margin-bottom: 20px;
+}
+.qoute_line {
+    width: 168px;
+    height: 3px;
+    background-color: $textColor;
+    margin-right: 20px;
+}
+.quote_text {
+    font-family: 'Sofia Pro Medium';
+    font-size: 18px;
+    color: $textColor;
+    width: 545px;
+}
+.article_images {
+    @include flexbox(row, nowrap, space-between, flex-start);
+    margin-bottom: 20px;
+}
+.one_image {
+    width: 356px;
+    height: 280px;
+    @include background;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F78a9a0dd9310e9c86da5086590cf71c8a379391b.png?alt=media&token=67241f91-1909-4bd9-8389-b3d131a5cb8a);
+}
+hr {
+    border: 1px solid #d8d8d8;
+    margin-bottom: 45px;
+}
+.article_tags {
+    @include flexbox(row, nowrap, space-between, flex-start);
+}
+.icons { 
+    @include flexbox(row, nowrap, center, center);
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: solid 1px #979797;
+    border-radius: 50%;
+    fill: $textColor;
+    margin-top: -20px;
+}
+.share_fb {
+    margin-left: 10px;
+}
+
+.share {
+    @include flexbox(row, nowrap, center, center);
+   
+}
+
+//Comments
+.comment_data {
+    @include flexbox(row, nowrap, flex-start, flex-start);
+    margin-bottom: 15px;
+}
+.user_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F47bdc311f113f39e6a99170a319cc5cf4d6217ee.png?alt=media&token=b2ba3e6f-72b0-4640-aca4-80670a395290);
+    @include background;
+}
+
+.user_name {
+    padding: 15px 0;
+}
+.comment_date {
+    color: #9b9b9b;
+}
+
+.comment_container {
+    width: 100%;
+    min-height: 400px;
+    background-color: #f8f8f8;  
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+.leave_comment_container {
+    width: 920px;
+    min-height: 200px;
+    // border: 1px solid #000;
+    margin: 0 auto;
+    padding: 70px 95px;
+}
+.comment_area {
+    width: 100%;
+    height: 170px;
+    border-radius: 3px;
+    border: solid 1px #9b9b9b;
+    resize: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.43;
+    color: #a8a8a8;
+}
+.post_button {
+    width: 168px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    line-height: 1.93;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+//Next post
+.next_block {
+    margin-bottom: 100px;
+    padding: 10px 0;
+    @include flexbox(column, nowrap, flex-start, center);
+}
+.next_line {
+    width: 74px;
+    height: 5px;
+    background-color: $mainColor;
+    margin-bottom: 50px;
+}
+.next_post {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #9b9b9b;
+
+}
+.next_title {
+    font-family: 'Didot';
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.58;
+    color: #000000;
+    margin-bottom: 30px;
+}
+.next_button {
+    fill: #fff;
+}

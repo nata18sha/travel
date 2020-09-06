@@ -81,7 +81,29 @@
             <div class="popular__content_locations">
                 <div class="locations_header_big">Popular Locations</div>
                 <div class="locations_items">
-                    <div class="location_item">
+
+
+                    <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index " >
+                        <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
+                            <div class="image_text" >{{location.title}}</div>
+                        </div>
+                        <div class="item_content">
+                            <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                            </div>
+                            <div class="item_location">
+                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
+                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                    {{location.location}}
+                            </div>
+                            <div class="item_rate">
+                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
+                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                                    {{location.rate}}
+                                <span class="star_count"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="location_item">
                         <div class="item_image">
                             <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
                         </div>
@@ -137,26 +159,7 @@
                                 4.8 <span class="star_count">(89)</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="location_item">
-                        <div class="item_image">
-                            <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                        </div>
-                        <div class="item_content">
-                            <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                            </div>
-                            <div class="item_location">
-                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                Mombasa road, Nextgen Mall
-                            </div>
-                            <div class="item_rate">
-                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                4.8 <span class="star_count">(89)</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -207,7 +210,7 @@
 <section class="more_items">
     <div class="container_main">
         <div class="locations_items">
-            <div class="location_item">
+            <!-- <div class="location_item">
                 <div class="item_image">
                     <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
                 </div>
@@ -320,7 +323,30 @@
                         4.8 <span class="star_count">(89)</span>
                     </div>
                 </div>
+            </div> -->
+        
+            <div class="location_item" *ngFor="let location of allLocations | slice:4:10; let i = index ">
+                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
+                    
+                    <div class="image_text" >{{location.title}}</div>
+                </div>
+                <div class="item_content">
+                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                    </div>
+                    <div class="item_location">
+                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{location.location}}
+                    </div>
+                    <div class="item_rate">
+                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{location.rate}}
+                        <span class="star_count"></span>
+                    </div>
+                </div>
             </div>
+        
         </div>
     </div>
 </section>
@@ -339,7 +365,7 @@
 <section class="more_items">
     <div class="container_main">
         <div class="locations_items">
-            <div class="location_item">
+            <!-- <div class="location_item">
                 <div class="item_image">
                     <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
                 </div>
@@ -395,13 +421,35 @@
                         4.8 <span class="star_count">(89)</span>
                     </div>
                 </div>
+            </div> -->
+        
+            <div class="location_item" *ngFor="let location of allLocations | slice:10: sliceNumber; let i = index ">
+                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'" [routerLink]="[ '/location-details/'+location.id ]">
+                    <div class="image_text" >{{location.title}}</div>
+                </div>
+                <div class="item_content">
+                    <div class="item_price">From <span class="item_price_bold">${{location.price}}/person </span>   
+                    </div>
+                    <div class="item_location">
+                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{location.location}}
+                    </div>
+                    <div class="item_rate">
+                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{location.rate}}
+                        <span class="star_count"></span>
+                    </div>
+                </div>
             </div>
+        
         </div>
     </div>
 </section>
 <section class="more_button">
     <div class="button_block">
-        <button type="button" class="load_more">Load More</button>
+        <button type="button" class="load_more" (click)="loadMore()" *ngIf="showLoadButton">Load More</button>
     </div>
     
 </section>

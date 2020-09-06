@@ -3,19 +3,19 @@
     <nav>
         <ul>
             <li ><a routerLink="/home" routerLinkActive="active-link">Home </a></li>
-            <li ><a routerLink="/locations" routerLinkActive="active-link">Camping Locations</a></li>
-            <li><a routerLink="/blogs" routerLinkActive="active-link">Blogs</a></li>
+            <li ><a routerLink="/locations" routerLinkActive="active-link" [class.active-link]="isLocation">Camping Locations</a></li>
+            <li><a routerLink="/blogs" routerLinkActive="active-link" [class.active-link]="isArticle">Blogs</a></li>
         </ul>
     </nav>
     <div class="login-block">
-        <div class="reservations">
+        <!-- <div class="reservations">
             <div style="height: 34px;">
-                <svg-icon class="icon" src="../../assets/icons/bookmark.svg" [svgStyle]="{ 'height.px':14,'margin-right.px':10 }"></svg-icon>
+                <svg-icon class="icon" src="../../assets/icons/bookmark.svg" [svgStyle]="{ 'height.px':14,'margin-right.px':10}"></svg-icon>
             </div>
             <div>Reservations</div>
-        </div>
+        </div> -->
         <div class="login" routerLink="/login"><span>Sign In/Sign Up</span></div>
-        <div class="login" routerLink="/admin"><span>Admin</span></div>
-        <div class="login" routerLink="/user"><span>User</span></div>
+        <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus"><span>Admin</span></div>
+        <div class="login" routerLink="/user" *ngIf="userStatus"><span>User</span></div>
     </div>
 </header>

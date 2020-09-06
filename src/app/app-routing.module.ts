@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from './shared/guards/auth.guard';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LocationsComponent } from './pages/locations/locations.component';
@@ -15,18 +15,19 @@ import { AdminLocationComponent } from './admin/admin-location/admin-location.co
 import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'locations', component: LocationsComponent},
-  { path: 'locations-details', component: LocationDetailsComponent},
+  { path: 'location-details/:id', component: LocationDetailsComponent},
   { path: 'blogs', component: BlogsComponent},
   { path: 'article', component: ArticleComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'user', component: UserComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'admin', component: AdminComponent, children: [
-    { path: '', redirectTo: 'admin-location', pathMatch: 'full' },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
+    { path: '', redirectTo: '/admin-location', pathMatch: 'full' },
     { path: 'admin-location', component: AdminLocationComponent},
     { path: 'admin-blog', component: AdminBlogComponent},
   ]}

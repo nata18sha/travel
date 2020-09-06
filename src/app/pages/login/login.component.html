@@ -4,16 +4,16 @@
         <form>
             <label for="email" class="input_name">Email</label>
             <br>
-            <input type="text" id="email" class="input_field" placeholder="Enter Email">
+            <input type="text" id="email" class="input_field" [(ngModel)]="userEmail" name="userEmail" placeholder="Enter Email">
             <br>
             <label for="password" class="input_name">Password</label>
             <br>
-            <input type="password" id="password" class="input_field" placeholder="Enter Password">
-            <div class="checkbox">
+            <input type="password" id="password" class="input_field" [(ngModel)]="userPassword" name="userPassword" placeholder="Enter Password">
+            <!-- <div class=" checkbox">
                 <input type="checkbox" id="checkbox">
                 <label for="checkbox" class="checkbox_text">Remember me</label>
-            </div>
-            <button type="submit" class="submit_button">Sign In</button>
+            </div> -->
+            <button type="submit" class="submit_button" (click)="loginUser()">Sign In</button>
         </form>
         <div class="change">Don’t have an Account? <span class="change_link" (click)="changeLogin()">Sign Up</span>
         </div>
@@ -23,14 +23,14 @@
         <form>
             <div class="user_name">
                 <div class="name">
-                    <label for="name" class="input_name">First Name</label>
+                    <label for="firstName" class="input_name">First Name</label>
                     <br>
-                    <input type="text" id="name" class="input_field" placeholder="Enter first name">
+                    <input type="text" id="firstName" class="input_field" placeholder="Enter first name">
                 </div>
                 <div class="name">
-                    <label for="name" class="input_name">Last Name</label>
+                    <label for="lastName" class="input_name">Last Name</label>
                     <br>
-                    <input type="text" id="name" class="input_field" placeholder="Enter last name ">
+                    <input type="text" id="lastName" class="input_field" placeholder="Enter last name ">
                 </div>
             </div>
             <label for="email" class="input_name">Email</label>
