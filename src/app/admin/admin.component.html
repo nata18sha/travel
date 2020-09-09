@@ -1,9 +1,22 @@
 <div class="container_admin">
     <div class="admin_nav">
-        <div class="custom_tab"><a [routerLink]="['admin-location']" routerLinkActive="active_link">Locations</a></div>
-        <div class="custom_tab"><a [routerLink]="['admin-blog']" routerLinkActive="active_link">Blogs</a></div>
-        <div class="custom_tab"><a [routerLink]="['admin-reservation']" routerLinkActive="active_link">Reservations</a></div>
-        <div class="custom_tab"><a (click)="logout()">Log Out</a></div>
+        <div class="custom_tab"><a [routerLink]="['admin-location']" routerLinkActive="active_link">
+                <svg-icon class="icon_big" src="../../../assets/icons/user.svg"
+                    [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon>Locations
+            </a></div>
+        <div class="custom_tab"><a [routerLink]="['admin-blog']" routerLinkActive="active_link">
+                <svg-icon class="icon_big" src="../../../assets/icons/blog.svg"
+                    [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon>Blogs
+            </a></div>
+        <div class="custom_tab"><a [routerLink]="['admin-reservation']" routerLinkActive="active_link">
+                <svg-icon class="icon_big" src="../../../assets/icons/reservation.svg"
+                    [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon>Reservations
+            </a>
+        </div>
+        <div class="custom_tab"><a (click)="logout()">
+                <svg-icon class="icon_big" src="../../../assets/icons/logout.svg"
+                    [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon>Log Out
+            </a></div>
     </div>
     <div class="admin_body">
         <router-outlet></router-outlet>

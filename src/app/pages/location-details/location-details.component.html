@@ -4,7 +4,6 @@
             <div class="banner__main_heading">
                 <p class="heading_small">{{location?.category}}</p>
                 <p class="heading_big">{{location?.title}}</p>
-
             </div>
 
             <div class="banner__main_pannel">
@@ -233,7 +232,7 @@
                                 <label class="input_label">Check-Out Date</label>
                                 <br>
                                 <input type="text" [(ngModel)]="outDate" name="outDate" class="reserv_input " required
-                                    bsDatepicker [minDate]="minDate"
+                                    bsDatepicker [minDate]="minDateTo"  (click)="checkMinDate()"
                                     [bsConfig]="{ dateInputFormat: 'DD MMM YYYY', containerClass: 'theme-default' }">
                             </div>
                         </div>

@@ -6,6 +6,15 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
+.add_location_btn {
+    width: 168px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
 .thead_styles {
     background-color: #ff5200;
     color: #fff;
@@ -73,6 +82,11 @@ td {
     background-color: #fff;
     color: $mainColor;
     border: 1px solid $mainColor;
+    transition: all ease-out 0.3s;
+}
+.close_button:hover {
+    background-color: $mainColor;
+    color: #fff;
 }
 .custom_file {
     position: relative;
@@ -150,14 +164,8 @@ input .choose_image {
         margin-right: 20px;
     }
     span {
-    // background: #fff;
     position: absolute;
-    // top: 20;
-    // right: 20;
     color: $mainColor;
-    // width: 30px;
-    // height: 30px;
-    // border-radius: 50%;
     transition: all ease-in-out 0.4s;
     }
     span:hover{
@@ -188,3 +196,22 @@ input .choose_image {
 button[disabled] {
     background-color: #f17941;
 }
+
+//Order pipe
+thead th {
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 15px;
+  
+    span {
+      visibility: hidden;
+    }
+  
+    &.active {
+      color: #fff;
+  
+      span {
+        visibility: visible;
+      }
+    }
+  }

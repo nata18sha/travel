@@ -1,0 +1,229 @@
+@import '../../common/_fonts.scss';
+@import '../../common/_variables.scss';
+@import '../../common/_mixins.scss';
+
+
+.user_main_block {
+    border-radius: 3px;
+    border: solid 1px #e4e4e4;
+    background-color: #ffffff;
+}
+.user_header {
+    width: 100%;
+    height: 77px;
+    border-bottom: solid 1px #e4e4e4;
+    padding: 20px 30px;
+    @include flexbox(row, nowrap, flex-start, flex-start);
+}
+.main_icon {
+    width: 36px;
+    height: 36px;
+    // opacity: 0.4;
+    background-color: #fcb493;;
+    border-radius: 50%;
+    @include flexbox(row, nowrap, center, center);
+    margin-right: 20px;
+}
+.icon_big {
+    width: 16px;
+    height: 16px;
+    fill: $mainColor;
+    margin-top: -10px;
+    color: $mainColor;
+}
+
+.head_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    font-weight: 600;
+    color: $mainColor;
+    height: 100%;
+    @include flexbox(row, nowrap, flex-start, center);
+    // border: 1px solid #000;
+}
+.user_block{
+    padding: 20px 30px;
+}
+.add_line {
+    border-bottom: solid 1px #e4e4e4;
+}
+.user_image {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fdavid-marcu-78a265wpio4-unsplash.jpeg?alt=media&token=b38c52cc-fe60-4bf0-a04d-650041e787ad);
+    border-radius: 3px;
+    height: 300px;
+    width: 100%;
+    @include background;
+    @include flexbox(row, nowrap, flex-start, flex-end);
+    padding: 20px;
+}
+.profile_block {
+    @include flexbox(row, nowrap, flex-start, center);
+}
+.profile_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include background;
+    margin-right: 20px;
+}
+.user_main_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 16px;
+    color: #ffffff;
+  
+}
+.info_heading {
+    font-family: 'Sofia Pro Medium';
+    font-size: 16px;
+    color: #3b3b3b;
+    margin-bottom: 30px;
+}
+//form
+.input_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-bottom: 10px;
+}
+.input_field {
+    width: 100%;
+    height: 46px;
+    border: solid 1px #e4e4e4;
+    padding: 13px;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.43;
+    color: #3b3b3b;
+    margin-bottom: 30px;
+    outline-color: rgba(255, 82, 0, 0.5);
+    
+}
+.checkbox {
+    position: relative;
+    margin-bottom: 30px;
+}
+.checkbox_text {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-left: 5px;
+    position: absolute;
+    top: 2px;
+
+}
+.submit_button {
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    color: #fff;
+    border: none;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.change {
+    text-align: center;
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+.change_link {
+    color: $linkColor;
+    cursor: pointer;
+}
+.user_box {
+    @include flexbox(row, nowrap, space-between, flex-start);
+}
+.name {
+    width: 48%;
+    // border: 1px solid #000;
+}
+.custom_file {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    // height: calc(1.5em + .75rem + 2px);
+    margin-bottom: 46px;
+   
+}
+input .choose_image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 46px;
+    margin: 0;
+    opacity: 0;
+    // overflow: visible;
+    margin-bottom: 30px;
+   
+}
+.choose_image:focus {
+    outline: none;
+    
+}
+.file_label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 46px;
+    font-weight: 400;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    overflow: visible;
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.43;
+    color: #3b3b3b;
+    padding: 13px;
+    
+}
+.file_label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: 44px;
+    content: "Browse";
+    background-color: $mainColor;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.43;
+    color: #fff;
+    padding: 13px;
+}
+.progress_bar {
+    height: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    // border: 1px solid #000;
+}
+.bg_main {
+    background-color: $mainColor;
+}
+button[disabled] {
+    background-color: #f17941;
+}
+.next_button {
+    width: 168px;
+    height: 50px; 
+    border-radius: 3px;
+    background-color: $mainColor;
+    border: none;
+    color: #fff;
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    padding: 12px 30px;
+}

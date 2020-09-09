@@ -1,33 +1,115 @@
-<p>admin-reservation works!</p>
+<div class="search_block">
+    <p class="input_name">Search reservation details:</p>
+    <input type="text" [(ngModel)]="searchName" name="searchName" class="input_field" placeholder="search here...">
+</div>
 <table class="table table-bordered ">
     <thead class="thead_styles text-center">
         <tr>
-            <th scope="col">#</th>
-            <!-- <th scope="col">ID</th> -->
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">Days</th>
-            <th scope="col">Location</th>
-            <th scope="col">Total price</th>
-            <th scope="col">User</th>
-            <th scope="col">Status</th>
-            <th scope="col">Details</th>
-            <!-- <th scope="col">Delete</th> -->
+            <th scope="col">
+                <p>#</p> <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'dateFrom'" (click)="setOrder('dateFrom')"
+                class="mdl-data-table__cell--non-numeric">
+                <p>Start Date</p>
+                <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'dateTo'" (click)="setOrder('dateTo')"
+                class="mdl-data-table__cell--non-numeric">
+                <p>Start Date</p>
+                <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'location.title'" (click)="setOrder('location.title')"
+                class="mdl-data-table__cell--non-numeric">
+                <p>Start Date</p>
+                <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+
+            <th [class.active]="order === 'totalPrice'" (click)="setOrder('totalPrice')"
+                class="mdl-data-table__cell--non-numeric">
+                <p>Total price</p>
+                <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th [class.active]="order === 'contacts.fName'" (click)="setOrder('contacts.fName')"
+                class="mdl-data-table__cell--non-numeric">
+                <p>User</p>
+                <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col">
+                <p>Status</p> <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
+            <th scope="col">
+                <p>Details</p> <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let res of reservations; let i = index">
+        <tr
+            *ngFor="let res of reservations | searchReservation: searchName| orderBy: order:reverse:'case-insensitive'; let i = index">
             <td>{{i + 1}}</td>
-            <!-- <td>{{res.id}}</td> -->
             <td>{{res.dateFrom.toDate() | date:'dd MMM yyyy' }}</td>
             <td>{{res.dateTo.toDate() | date:'dd MMM yyyy'}}</td>
-            <td>{{res.days}}</td>
-            <td>{{res.locationTitle}}</td>
-            <td>{{res.totalPrice}}</td>
+            <td>{{res.location.title}}</td>
+            <td class="text-center">{{res.totalPrice}} $</td>
             <td>{{res.contacts.fName}} {{res.contacts.lName}}</td>
             <td>{{res.status}}</td>
-            <td> <button type="button" class="edit_button" (click)="editLocation(location, template)">details</button> </td>
-            <!-- <td><button type="button" class="delete_button" (click)="deleteLocation(location)">delete</button></td> -->
+            <td> <button type="button" class="edit_button" (click)="openResDetails(template, res)">details</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Reservation details</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div class="reserv_block">
+            <div class="info_text"> <span>Reservation ID:</span> {{currentReserv.id}}</div>
+            <div class="info_text"> <span>Dates:</span> {{currentReserv.dateFrom.toDate() | date:'dd MMM yyyy'}} -
+                {{currentReserv.dateTo.toDate()   | date:'dd MMM yyyy'}}</div>
+            <div class="info_text"> <span>Status:</span> {{currentReserv.status}}</div>
+            <div class="info_text"> <span>Total payment:</span> {{currentReserv.totalPrice}} USD</div>
+            <div class="info_text"> <span>Contact person:</span> {{currentReserv.contacts.fName}}
+                {{currentReserv.contacts.lName}}</div>
+            <div class="info_text"> <span>Email:</span> {{currentReserv.contacts.email}}</div>
+            <div class="info_text"> <span>Phone number:</span> {{currentReserv.contacts.phone}}</div>
+        </div>
+
+        <div class="reserv_block reserv_block_right">
+            <div class="location_item">
+                <div class="item_image" [style.backgroundImage]="'url('+currentReserv.location.mainImage+')'"
+                    [routerLink]="[ '/location-details/'+currentReserv.location.dataID ]" (click)="modalRef.hide()">
+                    <div class="image_shadow">
+                        <div class="image_text">{{currentReserv.location.title}}</div>
+                    </div>
+                </div>
+                <div class="item_content">
+                    <div class="item_price">From <span class="item_price_bold">${{currentReserv.location.price}}/person
+                        </span>
+                    </div>
+                    <div class="item_location">
+                        <svg-icon class="location_icon " src="../../../assets/icons/location.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                        {{currentReserv.location.location}}
+                    </div>
+                    <div class="item_rate">
+                        <svg-icon class="star_icon " src="../../../assets/icons/star.svg"
+                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                        {{currentReserv.location.rate}}
+                        <span class="star_count"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class=" next_button close_button" (click)="modalRef.hide()">Close</button>
+
+    </div>
+</ng-template>

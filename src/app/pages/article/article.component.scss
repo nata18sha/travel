@@ -12,7 +12,7 @@
     @include flexbox(column, nowrap, space-between, flex-start);
 }
 .banner__main_heading {
-    width: 1110px;
+    width: 920px;
     margin: 200px auto;
     min-height: 200px;
 }
@@ -205,4 +205,8 @@ hr {
 }
 .next_button {
     fill: #fff;
+}
+img {
+    width: 720px;
+    height: auto;
 }

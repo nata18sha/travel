@@ -1,0 +1,59 @@
+<div class="user_main_block">
+    <div class="user_header">
+        <div class="main_icon">
+            <svg-icon class="icon_big" src="../../../assets/icons/user.svg"
+                [svgStyle]="{ 'height.px':16, 'width.px':16 }"></svg-icon>
+        </div>
+        <div class="head_name">Profile</div>
+    </div>
+    <div class="user_block add_line">
+        <div class="user_image">
+            <div class="profile_block">
+                <div class="profile_image" [style.backgroundImage]="'url('+loggedUser.image+')'"></div>
+                <span class="user_main_name">{{loggedUser.userFirstName}} {{loggedUser.userLastName}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="user_block">
+        <p class="info_heading">Profile information</p>
+        <form>
+            <div class="user_box">
+                <div class="name">
+                    <label for="firstName" class="input_name">First Name*</label>
+                    <br>
+                    <input type="text" id="firstName" class="input_field" [(ngModel)]="firstName" name="firstName">
+                </div>
+                <div class="name">
+                    <label for="lastName" class="input_name">Last Name*</label>
+                    <br>
+                    <input type="text" id="lastName" class="input_field" [(ngModel)]="lastName" name="lastName">
+                </div>
+            </div>
+            <div class="user_box">
+                <div class="name">
+                    <label for="email" class="input_name">Email*</label>
+                    <br>
+                    <input type="text" id="email" class="input_field" [(ngModel)]="email" name="email">
+                </div>
+                <div class="name">
+                    <label for="phone" class="input_name">Phone Number</label>
+                    <br>
+                    <input type="text" id="phone" class="input_field" [(ngModel)]="phone" name="phone">
+                </div>
+            
+            </div>
+            <p class="input_name">Profile image</p>
+                <div class="custom_file">
+                    <input type="file" class="choose_image" id="image" (change)="uploadFile($event)" >
+                    <label class="file_label" for="image">Choose file...</label>
+                </div>
+                <div class=" progress progress_bar" >
+                    <div [style.width]="(uploadProgress | async) + '%'" class="progress-bar progress-bar-striped bg_main"
+                      role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+
+                  <button type="submit" class=" next_button" (click)="updateUser()">Save changes</button>
+         
+        </form>
+    </div>
+</div>

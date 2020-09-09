@@ -3,14 +3,14 @@
 @import '../common/_mixins.scss';
 
 .container_admin { 
-    margin: 100px auto;
+    margin: 200px auto;
     // border: 1px solid #000;
     width: 1110px;
     @include flexbox(row, nowrap, space-between, flex-start);
 }
 //Navigation block
 .admin_nav {
-    border: 1px solid #000;
+    // border: 1px solid #000;
     min-height: 400px;
     width: 200px;
 }
@@ -43,7 +43,16 @@
 
 
 .admin_body {
-    border: 1px solid #000;
+    // border: 1px solid #000;
     width: 890px;
     min-height: 400px;
+}
+
+.icon_big {
+    width: 16px;
+    height: 16px;
+    fill: inherit;
+    margin-top: -10px;
+    margin-right: 20px;
+    stroke-width: 3px;
 }

@@ -19,7 +19,8 @@ export class HeaderComponent implements OnInit {
   adminStatus = false;
   userStatus = true;
 
-
+  userImage: string = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73';
+  loggedUser: any;
 
   constructor(private actRoute: ActivatedRoute, private router: Router,private authService: AuthService) {
     this.router.events.subscribe((event: Event) => {
@@ -59,6 +60,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.checkLogin();
     this.updateCheckLogin();
+    // this.getUserData();
   }
 
 
@@ -91,6 +93,7 @@ export class HeaderComponent implements OnInit {
     }
     else if (user != null && user.role === 'user') {
       this.userStatus = true;
+      // this.userImage = this.loggedUser.image;
 
     }
     else {
@@ -102,9 +105,16 @@ export class HeaderComponent implements OnInit {
     this.authService.userStatusChanges.subscribe(
       () => {
         this.checkLogin();
+        // this.getUserData();
+
+      
       }
     );
   }
-
+  // private getUserData(): void {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   this.userImage = user.image;
+  //   console.log(user);
+  // }
 
 }

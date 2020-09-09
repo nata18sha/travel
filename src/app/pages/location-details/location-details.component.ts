@@ -31,11 +31,13 @@ export class LocationDetailsComponent implements OnInit {
   paymentDone = false;
 
   minDate = new Date();
+  minDateTo: Date;
+ 
 
   reservID = '1';
   locationID: string;
   locationTitle: string;
-  userID: string;
+  loggedUser: object;
   inDate: any;
   outDate: any;
   daysStay: number;
@@ -168,9 +170,8 @@ export class LocationDetailsComponent implements OnInit {
 
     const newReserv = new Reservation(
       this.reservID,
-      this.locationID,
-      this.location.title,
-      this.userID,
+      this.location,
+      this.loggedUser,
       this.inDate,
       this.outDate,
       this.daysStay,
@@ -190,12 +191,17 @@ export class LocationDetailsComponent implements OnInit {
   }
   private getUserData(): void {
     const user = JSON.parse(localStorage.getItem('user'));
-    this.userID = user.id;
+    this.loggedUser = user;
     // console.log(user.id)
   }
   // private setDetails():void {
   //   this.total = this.daysStay*this.location.price*this.persons;
   //   this.vat = +(this.total * 0.1).toFixed(2);
   // }
+
+  checkMinDate():void {
+    this.minDateTo = this.inDate;
+    
+  }
 
 }

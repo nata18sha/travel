@@ -11,24 +11,24 @@
                 <div class="check_item">
                     <div>
                         <p class="check-out">CHECK OUT</p>
-                        <p class="text-link">Top Camping Sites</p>
+                        <p class="text-link" routerLink="/locations">Our Camping Sites</p>
                     </div>
                     <div class="line"></div>
                 </div>
                 <div class="check_item">
                     <div>
                         <p class="check-out space-link">CHECK OUT</p>
-                        <p class="text-link space-link">Top National Parks</p>
+                        <p class="text-link space-link" routerLink="/blogs">Our Latest Articles</p>
                     </div>
                     <div class="line"></div>
                 </div>
                 <div class="check_item">
                     <div>
                         <p class="check-out space-link">CHECK OUT</p>
-                        <p class="text-link space-link">Top Weekend Gate-aways</p>
+                        <p class="text-link space-link" routerLink="/about">Our Amazing Team</p>
                     </div>
                 </div>
-                <div class="find">
+                <div class="find" routerLink="/locations">
                     <div>FIND A LOCATION
                         <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
                             [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
@@ -50,8 +50,7 @@
                 <div class="main_text main_text_width">Amun-Ra was the local god of Karnak (Luxor) and during the New
                     Kingdom, when the
                     princes of Thebes ruled Egypt, he became the preeminent state god, with a temple that reflected his
-                    status. At the height of its power, the temple owned 421,000 head of cattle…<span class="link">Visit
-                        Site </span> </div>
+                    status. At the height of its power, the temple owned 421,000 head of cattles. </div>
             </div>
             <div id="slider">
                 <ng-image-slider class="article_picture" [images]="imageObject" #nav 
@@ -71,8 +70,7 @@
                             </svg-icon>
                         </div>
                     </div>
-                    <!-- <button (click)="prevImageClick()">Prev</button>
-                    <button (click)="nextImageClick()">Next</button> -->
+             
                 </div>
             </div>
         </div>
@@ -90,7 +88,7 @@
                     hold firm. This variation in erosion speed causes the formation of pinnacles, or “hoodoos” of stable
                     rock.</div>
                 <div class="about_image about_image_left">
-                    <div class="button_link"><span>Read More</span>
+                    <div class="button_link" routerLink="/about"><span>Read More</span>
                         <span>
                             <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
                                 [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-left.px':10}"></svg-icon>

@@ -28,6 +28,7 @@ export class LocationsComponent implements OnInit {
   ];
 
   allLocations:Array<ILocation> = [];
+
   sliceNumber = 13;
   showLoadButton = true;
 

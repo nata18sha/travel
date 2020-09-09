@@ -1,0 +1,326 @@
+@import '../../common/_fonts.scss';
+@import '../../common/_variables.scss';
+@import '../../common/_mixins.scss';
+
+
+//Main banner styles
+
+.banner__main {
+    height: 815px;
+    width: 100%;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F98447a2944a2784fca36d17674c1eca512df0477.png?alt=media&token=8ba4f531-39c2-4d4d-b4a8-efc600548ab2);
+    @include background;
+    z-index: 1;
+    // @include flexbox(column, nowrap, space-between, flex-start);
+}
+.main_shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.1);
+
+    @include flexbox(column, nowrap, space-between, flex-start);
+}
+.banner__main_heading {
+    width: 1110px;
+    margin: 100px auto;
+    margin-top: 260px;
+    min-height: 200px;
+    text-align: center;
+}
+.heading_small {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafafa;
+    margin-bottom: 30px;
+}
+.heading_big {
+    font-family: 'Didot';
+    font-size: 80px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    color: #ffffff;
+    
+}
+.banner__main_pannel {
+    height: 120px;
+    width: 100%;
+    // background-color: #fff;
+    width: 100%;
+    @include flexbox(row, nowrap, center, flex-end);
+}
+.container_main {
+    width: 1110px;
+    margin: 0 auto;
+    // @include flexbox(row, nowrap, space-between, flex-start);
+    // border: 1px solid #000;
+}
+.container_small {
+    width: 920px;
+    margin: 0 auto;
+}
+.bottom_margin_main {
+    margin-bottom: 100px;
+}
+.blanc {
+    height: inherit;
+    width: 100%;
+    background-color: #fff;
+}
+.check {
+    @include flexbox(row, nowrap, center, center);
+    height: 120px;
+    width: 1110px;
+}
+.check_item {
+    @include flexbox(row, nowrap, space-between, center);
+    width: 251px;
+    height: inherit;
+    background-color: #fff;
+    // padding-right: 20px;
+    // border-right: 1px solid black;
+}
+.check-out {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    font-weight: 500;
+    color: $subTextColor;
+    margin-bottom: 15px;
+}
+.text-link {
+    font-family: 'Sofia Pro Medium';
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.line {
+    height: 70px;
+    width: 1px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.space-link {
+    margin-left: 54px;
+
+}
+.find {
+    width: 357px;
+    height: inherit;
+    background-color: #ffffff;
+    border-top-right-radius: 20px;
+
+}
+.find_big_text {
+    font-family: 'Sofia Pro';
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.find_text {
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.scroll {
+    height: inherit;
+    width: 100%;
+    @include flexbox(column, nowrap, center, center);
+    // background-color: #fff;
+}
+.scroll_text {
+    width: 36px;
+    height: 13px;
+    transform: rotate(-90deg);
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.scroll_line {
+    width: 1px;
+    height: 40px;
+    background-color: #ffffff;
+    margin-bottom: 45px;
+}
+
+//One article section
+
+.article {
+    width: 1110px;
+    min-height: 400px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    // overflow: visible;
+}
+.article_text {
+    @include flexbox(row, nowrap, space-between, center);
+    margin-bottom: 60px;
+    // border: 1px solid #000;
+    width: 733px;
+    min-height: 250px;
+}
+.heading_text, .main_text_width {
+    width: 356px;
+    height: 125px;
+    // border: 1px solid #000;
+}
+.heading_text {
+    font-family: 'Didot';
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+   
+}
+
+.main_text {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: $textColor; 
+}
+.link {
+    color: $linkColor;
+    font-weight: bold;
+    cursor: pointer;
+}
+.article_picture {
+    // overflow: visible;
+    width: 733px;
+    // width: 100vw;
+    height: 475px;
+    // border: 1px solid #000;
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73);
+    @include background;
+    // border: 1px solid red;
+}
+
+
+#slider {
+    border-radius: 0% !important;
+    // overflow: visible;
+    // width: 100vw;
+    // border: 1px solid #000;
+    // z-index: 1;
+    position: relative;
+}
+// ng-image-slider {
+//     overflow: visible;
+
+// }
+.slider_buttons {
+    // border: 1px solid green;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    // z-index: 3;
+    width: 123px;
+    height: 60px;
+    background-color: #ffffff;
+    @include flexbox(row, nowrap, space-between, center);
+}
+.button_line {
+    width: 1px;
+    height: 40px;
+    transform: rotate(20deg);
+    background-color: #d8d8d8;
+}
+.button {
+    height: inherit;
+    width: inherit;
+    fill: #4a4a4a;
+    @include flexbox(row, nowrap, center, center);
+    cursor: pointer;
+}
+.button:hover {
+    fill: $mainColor;
+}
+
+//Beliefs section
+
+.beliefs {
+    @include flexbox(row, nowrap, space-between, flex-start);
+    margin-bottom: 100px;
+}
+.beliefs_heading {
+    width: 355px;
+    font-family: 'Didot';
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 2;
+    color: #000000;
+}
+.beliefs_text {
+    width: 545px;
+    font-family: 'Sofia Pro';
+    font-size: 13px;
+    line-height: 1.54;
+    color: #4a4a4a;
+}
+.section_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    font-weight: 600;
+    color: $subTextColor;
+    margin-bottom: 30px;
+}
+.team_heading {
+    width: 545px;
+    height: 120px;
+    font-family: 'Didot';
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #000;
+    margin-bottom: 50px;
+}
+.team_items {
+    @include flexbox(row, wrap, space-between, flex-start);
+}
+.teammember {
+    width: 356px;
+    min-height: 356px;
+    margin-bottom: 50px;
+}
+.member_image{
+    width: inherit;
+    height: 356px;
+    @include background;
+    margin-bottom: 30px;
+}
+.member_name {
+    font-family: 'Sofia Pro Medium';
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.member_position {
+    font-family: 'Sofia Pro';
+    font-size: 14px;
+    color: #4a4a4a;
+}
+.member_one {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F86813cc485b5fa7c283a46fb3f145de96fb1f42c.png?alt=media&token=95b82294-17ef-449a-9283-6c3ca7311239);
+}
+.member_two {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F1c9266d969f04ce7ba5db9b5c9362bf97827eef9.png?alt=media&token=f8f66439-9920-4cc9-bfb3-624120025193);
+}
+.member_three {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F79f66fd6d0df59d352bf9615fb30b75ff1f56347.png?alt=media&token=2070d628-516b-401d-8d6d-8a4853cf31de);
+}
+.member_four {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F472c0399e713781959674901c26456d3dea050d7.png?alt=media&token=af534471-2a6c-44c5-b256-ababa70801dc);
+}
+.member_five {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Ff0dcd16b3793315fe60f0972bebaf821e215f0cf.png?alt=media&token=3686c531-49ee-4e77-a37d-acafefaceee8);
+}
+.member_six {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fchristopher-campbell-rDEOVtE7vOs-unsplash.jpg?alt=media&token=76efbfa1-8807-470d-9851-a9c5917fb713);
+}

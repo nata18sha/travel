@@ -1,10 +1,12 @@
 <header [class.header_light]="header_variable">
-    <div class="logo" ><span routerLink="/home">Travelsy</span> </div>
+    <div class="logo"><span routerLink="/home">Travelsy</span> </div>
     <nav>
         <ul>
-            <li ><a routerLink="/home" routerLinkActive="active-link">Home </a></li>
-            <li ><a routerLink="/locations" routerLinkActive="active-link" [class.active-link]="isLocation">Camping Locations</a></li>
+            <li><a routerLink="/home" routerLinkActive="active-link">Home </a></li>
+            <li><a routerLink="/locations" routerLinkActive="active-link" [class.active-link]="isLocation">Camping
+                    Locations</a></li>
             <li><a routerLink="/blogs" routerLinkActive="active-link" [class.active-link]="isArticle">Blogs</a></li>
+            <li><a routerLink="/about" routerLinkActive="active-link" [class.active-link]="isArticle">About</a></li>
         </ul>
     </nav>
     <div class="login-block">
@@ -14,8 +16,8 @@
             </div>
             <div>Reservations</div>
         </div> -->
-        <div class="login" routerLink="/login"><span>Sign In/Sign Up</span></div>
+        <div class="login" routerLink="/login" *ngIf="!adminStatus || !userStatus"><span>Sign In/Sign Up</span></div>
         <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus"><span>Admin</span></div>
-        <div class="login" routerLink="/user" *ngIf="userStatus"><span>User</span></div>
+        <div class="login" routerLink="/user"  *ngIf="userStatus">Profile</div>
     </div>
 </header>

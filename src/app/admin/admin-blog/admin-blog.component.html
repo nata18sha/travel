@@ -1,7 +1,11 @@
 <p>admin-blog works!</p>
+<div class="container">
+    <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+        <label for="editor">Editor</label>
+        <quill-editor [style]="editorStyle"  formControlName="editor"></quill-editor>
+        <button type="submit" class="btn btn-warning mt-3 mb-3">Try</button>
+    </form>
 
-<!-- <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-
-    <label for="editor">Editor</label>
-    <quill-editor></quill-editor>
-</form> -->
+    <p>Output</p>
+    <div [innerHTML]="editorContent"></div>
+</div>

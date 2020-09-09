@@ -6,6 +6,7 @@ import { LocationService } from '../../shared/services/location.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { OrderPipe } from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-admin-location',
@@ -37,6 +38,12 @@ export class AdminLocationComponent implements OnInit {
   thingsToDo: string;
   price: number;
 
+
+  searchName: string;
+  order: string = 'info.name';
+  reverse: boolean = false;
+  sortedCollection: Array<ILocation>;
+
   //Booleans
   editStatus = false;
   imageStatus = false;
@@ -46,12 +53,21 @@ export class AdminLocationComponent implements OnInit {
 
   constructor(private modalService: BsModalService,
     private locationService: LocationService,
-    private afStorage: AngularFireStorage) { }
+    private afStorage: AngularFireStorage,
+    private orderPipe: OrderPipe) {
+    this.sortedCollection = orderPipe.transform(this.adminLocations, 'info.name');
+    console.log(this.sortedCollection);
+  }
 
   ngOnInit(): void {
     this.adminFireCloudLocations();
+  }
+  setOrder(value: string) {
+    if (this.order === value) {
+      this.reverse = !this.reverse;
+    }
 
-
+    this.order = value;
   }
   openModal(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, { class: 'gray modal-lg' });
@@ -67,10 +83,10 @@ export class AdminLocationComponent implements OnInit {
         this.adminLocations = collection.map(document => {
           const data = document.payload.doc.data() as ILocation;
           const id = document.payload.doc.id;
-          
+
           return { id, ...data };
         });
-  
+
       }
     );
   }
@@ -234,5 +250,5 @@ export class AdminLocationComponent implements OnInit {
     this.moreImageStatus = false;
   }
 
- 
+
 }

@@ -24,6 +24,11 @@ export class AuthService {
           snap => {
             snap.forEach(userRef => {
               this.currentUser = userRef.data();
+              const userID = userRef.id;
+
+              console.log(userRef.id)
+
+
               if (this.currentUser.role === 'admin' && this.currentUser.access) {
                 localStorage.setItem('admin', JSON.stringify(this.currentUser));
                 this.router.navigateByUrl('/admin/admin-location');
@@ -31,6 +36,7 @@ export class AuthService {
               }
               else if (this.currentUser.role === 'user') {
                 localStorage.setItem('user', JSON.stringify(this.currentUser));
+                localStorage.setItem('userID', JSON.stringify(userID));
                 this.router.navigateByUrl('/user');
                 this.userStatusChanges.next('user');
               }
@@ -45,6 +51,7 @@ export class AuthService {
     this.afAuth.signOut().then(() => {
       localStorage.removeItem('admin');
       localStorage.removeItem('user');
+      localStorage.removeItem('userID');
       this.router.navigateByUrl('home');
       this.userStatusChanges.next('logout');
     });
@@ -68,6 +75,11 @@ export class AuthService {
           .catch(err => console.log(err));
       })
       .catch(err => console.log(err));
+
+  }
+
+  updateFireStoreUser(user, userID): Promise<void> {
+    return this.afFirestore.collection('users').doc(userID.toString()).update({...user});
   }
 
 

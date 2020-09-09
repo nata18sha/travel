@@ -62,7 +62,13 @@
     width: 283px;
     height: inherit;
     background-color: #fff;
+    text-align: center;
+    cursor: default;
     // border-right: 1px solid black;
+    div {
+        // @include flexbox(column, nowrap, center, center);
+        text-align: left;
+    }
 }
 .check-out {
     font-family: 'Sofia Pro';
@@ -79,6 +85,8 @@
     padding-bottom: 5px;
     border-bottom: 1px solid transparent;
     // text-decoration: none;
+    outline: none;
+    
 }
 .text-link:hover {
     color: $mainColor;
@@ -107,6 +115,8 @@
     font-weight: 600;
     color: #ffffff;
     fill: #fff;
+    cursor: pointer;
+    outline: none;
 }
 .scroll {
     height: inherit;
@@ -200,7 +210,7 @@
     position: absolute;
     left: 0;
     bottom: 4px;
-    z-index: 3;
+    // z-index: 3;
     width: 123px;
     height: 60px;
     background-color: #ffffff;
@@ -281,6 +291,7 @@
     fill: $mainColor;
     @include flexbox(row, nowrap, center, center);
     cursor: pointer;
+    outline: none;
 }
 //Services section
 

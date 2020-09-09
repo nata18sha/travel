@@ -1,15 +1,16 @@
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
-<p>user works!</p>
+<div class="container_admin">
+    <div class="user_nav">
+        <div class="custom_tab">
+            <a [routerLink]="['user-profile']" routerLinkActive="active_link"> <svg-icon class="icon_big" src="../../../assets/icons/user.svg"
+                [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon>Profile</a></div>
+        <div class="custom_tab">
+            <a [routerLink]="['user-reservations']" routerLinkActive="active_link"><svg-icon class="icon_big" src="../../../assets/icons/reservation.svg"
+                [svgStyle]="{ 'height.px':16, 'width.px':16 }"></svg-icon>My reservations</a></div>
+        <div class="custom_tab">
+            <a (click)="logout()"><svg-icon class="icon_big" src="../../../assets/icons/logout.svg"
+                [svgStyle]="{ 'height.px':16, 'width.px':16 }"></svg-icon>Log Out</a></div>
+    </div>
+    <div class="user_body">
+        <router-outlet></router-outlet>
+    </div>
+</div>

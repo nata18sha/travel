@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-// import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,11 @@ import { LocationDetailsComponent } from './pages/location-details/location-deta
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AboutComponent } from './pages/about/about.component';
+
 import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { ReservationsComponent } from './user/reservations/reservations.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -32,6 +37,10 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminLocationComponent } from './admin/admin-location/admin-location.component';
 import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
 import { AdminReservationComponent } from './admin/admin-reservation/admin-reservation.component';
+import { SearchLocationPipe } from './shared/pipes/search-location.pipe';
+import { SearchReservationPipe } from './shared/pipes/search-reservation.pipe';
+
+
 
 
 @NgModule({
@@ -49,7 +58,12 @@ import { AdminReservationComponent } from './admin/admin-reservation/admin-reser
     AdminBlogComponent,
     ArticleComponent,
     LocationDetailsComponent,
-    AdminReservationComponent
+    AdminReservationComponent,
+    ProfileComponent,
+    ReservationsComponent,
+    SearchLocationPipe,
+    SearchReservationPipe,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +79,9 @@ import { AdminReservationComponent } from './admin/admin-reservation/admin-reser
     ModalModule.forRoot(),
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    // QuillModule.forRoot()
+    QuillModule.forRoot(),
+    ReactiveFormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
+import { ILocation } from './location.interface';
+
 export interface IReservation {
     id: string;
-    locationID: string;
-    locationTitle: string;
-    userID: string;
+    location: Array <ILocation>;
+    user: object;
     dateFrom:any;
     dateTo:any;
     days: number;
