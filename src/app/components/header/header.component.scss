@@ -85,6 +85,21 @@ li:hover {
     transform: translate(-50%, -50%);
 }
 
+.second_active {
+    color: $mainColor !important;  
+}
+.second_active::before {
+    content: '';
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: block;
+    background-color:$mainColor;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .logo {
     // font-family: SamsungSharpSans;

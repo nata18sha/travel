@@ -3,10 +3,10 @@
     <nav>
         <ul>
             <li><a routerLink="/home" routerLinkActive="active-link">Home </a></li>
-            <li><a routerLink="/locations" routerLinkActive="active-link" [class.active-link]="isLocation">Camping
+            <li><a routerLink="/locations" routerLinkActive="active-link" [class.second_active]="isLocation">Camping
                     Locations</a></li>
-            <li><a routerLink="/blogs" routerLinkActive="active-link" [class.active-link]="isArticle">Blogs</a></li>
-            <li><a routerLink="/about" routerLinkActive="active-link" [class.active-link]="isArticle">About</a></li>
+            <li><a routerLink="/blogs" routerLinkActive="active-link" [class.second_active]="isArticle">Blogs</a></li>
+            <li><a routerLink="/about" routerLinkActive="active-link" >About</a></li>
         </ul>
     </nav>
     <div class="login-block">
@@ -16,7 +16,7 @@
             </div>
             <div>Reservations</div>
         </div> -->
-        <div class="login" routerLink="/login" *ngIf="!adminStatus || !userStatus"><span>Sign In/Sign Up</span></div>
+        <div class="login" routerLink="/login" *ngIf="!loginStatus"><span>Sign In/Sign Up</span></div>
         <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus"><span>Admin</span></div>
         <div class="login" routerLink="/user"  *ngIf="userStatus">Profile</div>
     </div>

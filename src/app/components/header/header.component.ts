@@ -18,11 +18,12 @@ export class HeaderComponent implements OnInit {
   isLocation = false;
   adminStatus = false;
   userStatus = true;
+  loginStatus = false;
 
   userImage: string = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73';
   loggedUser: any;
 
-  constructor(private actRoute: ActivatedRoute, private router: Router,private authService: AuthService) {
+  constructor(private actRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
@@ -30,7 +31,9 @@ export class HeaderComponent implements OnInit {
         console.log(this.currentRoute);
         if (this.currentRoute.lastIndexOf('/') > 0) {
           this.currentRoute = this.currentRoute.slice(0, this.currentRoute.lastIndexOf('/'))
-          console.log(this.currentRoute);
+          console.log('current route:',this.currentRoute);
+
+
         }
 
         if (this.currentRoute === '/user' || this.currentRoute === '/admin' || this.currentRoute === '/blogs' || this.currentRoute === '/login') {
@@ -51,7 +54,6 @@ export class HeaderComponent implements OnInit {
         else {
           this.isLocation = false;
         }
-
       }
     });
 
@@ -60,11 +62,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.checkLogin();
     this.updateCheckLogin();
-    // this.getUserData();
   }
 
 
-    //Check scroll position
+  //Check scroll position
   @HostListener("document:scroll")
   scrollfunction() {
     if (this.currentRoute === '/user' ||
@@ -89,32 +90,26 @@ export class HeaderComponent implements OnInit {
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (admin != null && admin.role === 'admin' && admin.access) {
       this.adminStatus = true;
-  
+      this.loginStatus = true;
+
     }
     else if (user != null && user.role === 'user') {
       this.userStatus = true;
-      // this.userImage = this.loggedUser.image;
-
+      this.loginStatus = true;
     }
     else {
       this.adminStatus = false;
       this.userStatus = false;
+      this.loginStatus = false;
     }
   }
   private updateCheckLogin(): void {
     this.authService.userStatusChanges.subscribe(
       () => {
         this.checkLogin();
-        // this.getUserData();
-
-      
       }
     );
   }
-  // private getUserData(): void {
-  //   const user = JSON.parse(localStorage.getItem('user'));
-  //   this.userImage = user.image;
-  //   console.log(user);
-  // }
+
 
 }

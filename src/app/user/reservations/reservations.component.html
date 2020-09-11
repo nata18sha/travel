@@ -7,43 +7,47 @@
         <div class="head_name">My reservation</div>
     </div>
     <div class="user_block">
-<div class="res_block " *ngFor="let currentReserv of myReserv">
-        <div class="reserv_block">
-            <div class="info_text"> <span>Reservation ID:</span> {{currentReserv?.id}}</div>
-            <div class="info_text"> <span>Dates:</span> {{currentReserv?.dateFrom.toDate() | date:'dd MMM yyyy'}} - {{currentReserv?.dateTo.toDate()   | date:'dd MMM yyyy'}}</div>
-            <div class="info_text"> <span>Status:</span> {{currentReserv?.status}}</div>
-            <div class="info_text"> <span>Total payment:</span> {{currentReserv?.totalPrice}} USD</div>
-            <div class="info_text"> <span>Contact person:</span> {{currentReserv?.contacts.fName}} {{currentReserv?.contacts.lName}}</div>
-            <div class="info_text"> <span>Email:</span> {{currentReserv?.contacts.email}}</div>
-            <div class="info_text"> <span>Phone number:</span> {{currentReserv?.contacts.phone}}</div>
-        </div>
-        
-        <div class="reserv_block reserv_block_right">
-            <div class="location_item" >
-                <div class="item_image" [style.backgroundImage]="'url('+currentReserv?.location.mainImage+')'"
-                    [routerLink]="[ '/location-details/'+currentReserv.location.dataID ]">
-                    <div class="image_shadow">
-                        <div class="image_text">{{currentReserv?.location.title}}</div>
+        <div class="info_text" *ngIf="myReserv.length === 0">You have no reservations yet!</div>
+        <div class="res_block " *ngFor="let currentReserv of myReserv">
+            <div class="reserv_block">
+                <div class="info_text"> <span>Reservation ID:</span> {{currentReserv?.id}}</div>
+                <div class="info_text"> <span>Dates:</span> {{currentReserv?.dateFrom.toDate() | date:'dd MMM yyyy'}} -
+                    {{currentReserv?.dateTo.toDate()   | date:'dd MMM yyyy'}}</div>
+                <div class="info_text"> <span>Status:</span> {{currentReserv?.status}}</div>
+                <div class="info_text"> <span>Total payment:</span> {{currentReserv?.totalPrice}} USD</div>
+                <div class="info_text"> <span>Contact person:</span> {{currentReserv?.contacts.fName}}
+                    {{currentReserv?.contacts.lName}}</div>
+                <div class="info_text"> <span>Email:</span> {{currentReserv?.contacts.email}}</div>
+                <div class="info_text"> <span>Phone number:</span> {{currentReserv?.contacts.phone}}</div>
+            </div>
+
+            <div class="reserv_block reserv_block_right">
+                <div class="location_item">
+                    <div class="item_image" [style.backgroundImage]="'url('+currentReserv?.location.mainImage+')'"
+                        [routerLink]="[ '/location-details/'+currentReserv.location.dataID ]">
+                        <div class="image_shadow">
+                            <div class="image_text">{{currentReserv?.location.title}}</div>
+                        </div>
                     </div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">${{currentReserv?.location.price}}/person
-                        </span>
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        {{currentReserv?.location.location}}
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        {{currentReserv?.location.rate}}
-                        <span class="star_count"></span>
+                    <div class="item_content">
+                        <div class="item_price">From <span
+                                class="item_price_bold">${{currentReserv?.location.price}}/person
+                            </span>
+                        </div>
+                        <div class="item_location">
+                            <svg-icon class="location_icon " src="../../../assets/icons/location.svg"
+                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{currentReserv?.location.location}}
+                        </div>
+                        <div class="item_rate">
+                            <svg-icon class="star_icon " src="../../../assets/icons/star.svg"
+                                [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
+                            {{currentReserv?.location.rate}}
+                            <span class="star_count"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>

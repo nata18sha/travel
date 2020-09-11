@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
   firstName: string;
   lastName: string;
   email: string;
-  phone = '';
+  phone = ' ';
   profileImage: string;
   role = 'user';
 
@@ -83,8 +83,9 @@ export class ProfileComponent implements OnInit {
     this.authService.updateFireStoreUser(user, this.userDOC)
     .then(message => console.log(message))
     .catch(err => console.log(err));
-    localStorage.setItem('user', JSON.stringify(user));
 
+  
+    localStorage.setItem('user', JSON.stringify(user));
     this.getUserData();
 
 

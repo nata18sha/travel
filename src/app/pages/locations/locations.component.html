@@ -1,39 +1,36 @@
 <section>
     <div class="banner__main">
-        <div class="banner__main_heading">
-            <p class="heading_small">Experience a Different World</p>
-            <p class="heading_big">Enjoy every moment, choose your destination</p>
-            <!-- <div class="visit_banner"> 
-                <span class="add_space">Visit Site</span>
-                <svg-icon class="arrow-link arrow-right" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
-                    [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
-            </div> -->
-        </div>
-        <div class="banner__main_pannel">
-            <div class="blanc"></div>
-            <div class="container_main check">
-                <div class="check_item">
-                    <div>
-                        <span class="add_space main_smalltext">Mountain Experience</span>
-                    </div>
-                </div>
-                <div class="check_item">
-                    <div>
-                        <span class="add_space main_smalltext">Lake Experience</span>
-                    </div>
-                </div>
-                <div class="check_item">
-                    <div>
-                        <span class="add_space main_smalltext">Forest Experience</span>
-                    </div>
-                </div>
-                <div class="find">
-                    <span class="add_space main_smalltext">Farm Experience</span>
-                </div>
+        <div class="main_shadow">
+            <div class="banner__main_heading">
+                <p class="heading_small">Experience a Different World</p>
+                <p class="heading_big">Enjoy every moment, choose your destination</p>
             </div>
-            <div class="scroll">
-                <div class="scroll_text">Scroll</div>
-                <div class="scroll_line"></div>
+            <div class="banner__main_pannel">
+                <div class="blanc"></div>
+                <div class="container_main check">
+                    <div class="check_item">
+                        <div>
+                            <span class="add_space main_smalltext">Mountain Experience</span>
+                        </div>
+                    </div>
+                    <div class="check_item">
+                        <div>
+                            <span class="add_space main_smalltext">Lake Experience</span>
+                        </div>
+                    </div>
+                    <div class="check_item">
+                        <div>
+                            <span class="add_space main_smalltext">Forest Experience</span>
+                        </div>
+                    </div>
+                    <div class="find">
+                        <span class="add_space main_smalltext">Farm Experience</span>
+                    </div>
+                </div>
+                <div class="scroll">
+                    <div class="scroll_text">Scroll</div>
+                    <div class="scroll_line"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -47,43 +44,110 @@
                     <div class="filter_line"></div>
                 </div>
                 <div class="filter_content">
-                    <div class="filter_budget">
-                        <p class="filter_heading">Budget Per Night</p>
-                        <input type="range" id="range" min="0" max="1000">
-                    </div>
-                    <hr class="dashed">
-                    <div class="filter_location">
-                        <p class="filter_heading">Location</p>
-                        <div class="filter_details">
-                            <span class="detail">Anywhere</span>
-                            <span class="detail">Gothland</span>
-                            <span class="detail">Mombasa</span>
-                            <span class="detail">Komo</span>
-                            <span class="detail">Veneto</span>
-                            <span class="detail">Catalonia</span>
-                            <span class="detail">Trentino-South Tyrol</span>
+                    <form>
+                        <div class="filter_budget">
+                            <!-- <form action="demo_form.asp" method="get">
+                                <label for="Points">Points:</label>
+                                <input type="range" id="rangeValue" name="points" min="0" max="100" onchange="rangevalue.value=value">
+                                <output id="rangevalue"></output>    
+                              </form> -->
+                            <p class="filter_heading">Budget Per Night</p>
+                            <input type="range" id="range" min="0" max="50" onchange="rangevalue.value=value"
+                                (change)="changeRange($event)">
+                            <!-- <output class="filter_heading" id="rangevalue">50</output>  -->
+                            <span class="filter_heading">{{filteredPrice}}$</span>
                         </div>
-                    </div>
-                    <hr class="dashed">
-                    <div class="filter_category">
-                        <p class="filter_heading">Category</p>
-                        <div class="filter_details">
-                            <span class="detail">All</span>
-                            <span class="detail">Farm visit</span>
-                            <span class="detail">Forest visit</span>
-                            <span class="detail">Lake visit</span>
-                            <span class="detail">Great landscapes</span>
-                            <span class="detail">Mountain visit</span>
-                            <span class="detail">Beach visit</span>
+                        <hr class="dashed">
+                        <div class="filter_location">
+                            <p class="filter_heading">Location</p>
+                            <div class="filter_details">
+                                <div>
+                                    <input type="radio" name="locations" id="allLocations" [checked]="locationChecked"
+                                        hidden>
+                                    <label for="allLocations" class="detail"
+                                        (click)="filterLocations('all')">Anywhere</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="gothland" hidden>
+                                    <label for="gothland" class="detail"
+                                        (click)="filterLocations('Gothland')">Gothland</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="mombasa" hidden>
+                                    <label for="mombasa" class="detail"
+                                        (click)="filterLocations('Mombasa')">Mombasa</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="komo" hidden>
+                                    <label for="komo" class="detail" (click)="filterLocations('Komo')">Komo</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="veneto" hidden>
+                                    <label for="veneto" class="detail"
+                                        (click)="filterLocations('Veneto')">Veneto</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="catalonia" hidden>
+                                    <label for="catalonia" class="detail"
+                                        (click)="filterLocations('Catalonia')">Catalonia</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="locations" id="trentino-south" hidden>
+                                    <label for="trentino-south" class="detail"
+                                        (click)="filterLocations('Trentino-South Tyrol')">Trentino-South Tyrol</label>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <hr class="dashed">
+                        <div class="filter_category">
+                            <p class="filter_heading">Category</p>
+                            <div class="filter_details">
+                                <div>
+                                    <input type="radio" name="category" id="allCategories" [checked]="categoryChecked"
+                                        hidden>
+                                    <label for="allCategories" class="detail"
+                                        (click)="filterCategories('all')">All</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="farm" hidden>
+                                    <label for="farm" class="detail" (click)="filterCategories('Farm visit')">Farm
+                                        visit</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="forest" hidden>
+                                    <label for="forest" class="detail" (click)="filterCategories('Forest visit')">Forest
+                                        visit</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="lake" hidden>
+                                    <label for="lake" class="detail" (click)="filterCategories('Lake visit')">Lake
+                                        visit</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="landscapes" hidden>
+                                    <label for="landscapes" class="detail"
+                                        (click)="filterCategories('Great landscapes')">Great landscapes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="mountains" hidden>
+                                    <label for="mountains" class="detail"
+                                        (click)="filterCategories('Mountain visit')">Mountain visit</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="category" id="beach" hidden>
+                                    <label for="beach" class="detail" (click)="filterCategories('Beach visit')">Beach
+                                        visit</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="popular__content_locations">
+                <!-- <div class="locations_header_big" [innerHTML]="allLocations.length > 0? 'Popular Locations' :'Sorry, nothing found :(' ">Popular Locations</div> -->
                 <div class="locations_header_big">Popular Locations</div>
+                <!-- <div class="locations_header_big" *ngIf="allLocations.length == 0">Sorry, nothing found :(</div> -->
                 <div class="locations_items">
-
-
                     <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index ">
                         <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
                             [routerLink]="[ '/location-details/'+location.id ]">
@@ -108,63 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="location_item">
-                        <div class="item_image">
-                            <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                        </div>
-                        <div class="item_content">
-                            <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                            </div>
-                            <div class="item_location">
-                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                Mombasa road, Nextgen Mall
-                            </div>
-                            <div class="item_rate">
-                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                4.8 <span class="star_count">(89)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="location_item">
-                        <div class="item_image">
-                            <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                        </div>
-                        <div class="item_content">
-                            <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                            </div>
-                            <div class="item_location">
-                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                Mombasa road, Nextgen Mall
-                            </div>
-                            <div class="item_rate">
-                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                4.8 <span class="star_count">(89)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="location_item">
-                        <div class="item_image">
-                            <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                        </div>
-                        <div class="item_content">
-                            <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                            </div>
-                            <div class="item_location">
-                                <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                Mombasa road, Nextgen Mall
-                            </div>
-                            <div class="item_rate">
-                                <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                                    [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                                4.8 <span class="star_count">(89)</span>
-                            </div>
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -213,121 +221,6 @@
 <section class="more_items">
     <div class="container_main">
         <div class="locations_items">
-            <!-- <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div> -->
-
             <div class="location_item" *ngFor="let location of allLocations | slice:4:10; let i = index ">
                 <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
                     [routerLink]="[ '/location-details/'+location.id ]">
@@ -352,82 +245,27 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-<section class="one_large_visit">
-    <div class="large_image">
-        <div class="visit_block">
-            <p class="farm_visit">Farm Visit</p>
-            <div class="visit_heading">Market tour & Cooking class: Kenyan meal</div>
-            <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
+<section class="one_large_visit" *ngIf="allLocations.length > 0">
+    <div class="large_image" [style.backgroundImage]="'url('+allLocations[allLocations.length -1]?.mainImage+')'">
+        <div class="visit_block" [routerLink]="[ '/location-details/'+allLocations[allLocations.length -1]?.id ]">
+            <p class="farm_visit">{{allLocations[allLocations.length -1]?.category}}</p>
+            <div class="visit_heading">{{allLocations[allLocations.length -1]?.title}}</div>
+            <div class="item_price">From <span
+                    class="item_price_bold">${{allLocations[allLocations.length -1]?.price}}/person </span>
             </div>
-            <svg-icon class="arrow_visit" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
-                [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-left.px':10}"></svg-icon>
+            <div class="arrow_visit">
+                <svg-icon class="arrow_visit" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
+                    [svgStyle]="{ 'height.px':14, 'width.px':14}"></svg-icon>
+            </div>
         </div>
     </div>
 </section>
 <section class="more_items">
     <div class="container_main">
         <div class="locations_items">
-            <!-- <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="location_item">
-                <div class="item_image">
-                    <div class="image_text">Coffee Farm Tour, From Seedling to Cup</div>
-                </div>
-                <div class="item_content">
-                    <div class="item_price">From <span class="item_price_bold">$60/person </span> · 9 hours
-                    </div>
-                    <div class="item_location">
-                        <svg-icon class="location_icon " src="../../assets/icons/location.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        Mombasa road, Nextgen Mall
-                    </div>
-                    <div class="item_rate">
-                        <svg-icon class="star_icon " src="../../assets/icons/star.svg"
-                            [svgStyle]="{ 'height.px':16, 'width.px':13,'margin-right.px':10 }"></svg-icon>
-                        4.8 <span class="star_count">(89)</span>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="location_item" *ngFor="let location of allLocations | slice:10: sliceNumber; let i = index ">
                 <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
