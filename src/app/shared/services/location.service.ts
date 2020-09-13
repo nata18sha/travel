@@ -20,7 +20,7 @@ export class LocationService {
     return this.firecloud.collection('locations').doc(id).delete();
   }
   updateFireCloudLocation(location: ILocation): Promise<void> {
-    return this.firecloud.collection('locations').doc(location.id.toString()).update(location);
+    return this.firecloud.collection('locations').doc(location.id).update(location);
   }
   getOneFireCloudLocation(id: string): any {
     return this.firecloud.collection('locations').doc(id).get();

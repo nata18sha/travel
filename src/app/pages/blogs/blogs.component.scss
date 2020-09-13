@@ -63,6 +63,7 @@
     fill: #fff;
     cursor: pointer;
     position: relative;
+    outline: none;
 
 }
 .arrow-right {
@@ -115,6 +116,7 @@
 .article_preview {
     margin-bottom: 80px;
     padding-bottom: 20px;
+    outline: none;
 }
 // .article_preview:hover {
 //     box-shadow: 0 0 23px -4px rgba(0, 0, 0, 0.1);
@@ -124,6 +126,7 @@
     width: inherit;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F5a98f159c07f7ecad4a7fca41bc1f37e0901688c.png?alt=media&token=abbfbd1b-a5fd-4d62-8b1a-65a28e7c02c5);
     margin-bottom: 20px;
+    @include background;
 }
 .article_date {
     font-family: 'Sofia Pro';
@@ -153,6 +156,7 @@
 }
 .article_link:hover {
     fill: $mainColor;
+    cursor: pointer;
 }
 .article_pages {
     font-family: 'Sofia Pro Medium';
@@ -178,6 +182,7 @@
 .recent_block{
     @include flexbox(row, nowrap, space-between, flex-start);
     margin-bottom: 20px;
+    outline: none;
 }
 .recent_image {
     height: 100px;
@@ -217,4 +222,26 @@
     font-size: 14px;
     font-weight: 600;
     color: $linkColor;
+}
+
+//Load more button
+.button_block {
+    width: 100%;
+    // width: 1000px;
+    // min-height: 100px;
+    @include flexbox(row, nowrap, center, center);
+    // border: 1px solid #000;
+}
+.load_more {
+    // margin: 100px 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: $mainColor;
+    border: none;
+    font-family: 'Sofia Pro';
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
 }

@@ -86,19 +86,16 @@ export class LocationDetailsComponent implements OnInit {
         // console.log(this.location)
         // this.imageObject = this.location.images;
         // console.log(this.imageObject)
-        for (let i = 0; i < this.location.images.length; i++) {
+        for (const image of this.location.images) {
           let img = {
-            image: `${this.location.images[i]}`,
-            thumbImage: `${this.location.images[i]}`,
+            image: `${image}`,
+            thumbImage: `${image}`,
             alt: 'alt of image'
           }
           this.imageObject.push(img);
         }
       }
     );
-
-  
-
 
   }
 

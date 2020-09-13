@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'locations', component: LocationsComponent},
   { path: 'location-details/:id', component: LocationDetailsComponent},
   { path: 'blogs', component: BlogsComponent},
-  { path: 'article', component: ArticleComponent},
+  { path: 'article/:id', component: ArticleComponent},
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'user', component: UserComponent, children: [

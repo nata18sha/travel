@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { QuillModule } from 'ngx-quill';
 import { OrderModule } from 'ngx-order-pipe';
+// import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +40,7 @@ import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
 import { AdminReservationComponent } from './admin/admin-reservation/admin-reservation.component';
 import { SearchLocationPipe } from './shared/pipes/search-location.pipe';
 import { SearchReservationPipe } from './shared/pipes/search-reservation.pipe';
+import { SearchBlogPipe } from './shared/pipes/search-blog.pipe';
 
 
 
@@ -63,7 +65,8 @@ import { SearchReservationPipe } from './shared/pipes/search-reservation.pipe';
     ReservationsComponent,
     SearchLocationPipe,
     SearchReservationPipe,
-    AboutComponent
+    AboutComponent,
+    SearchBlogPipe
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,8 @@ import { SearchReservationPipe } from './shared/pipes/search-reservation.pipe';
     BsDatepickerModule.forRoot(),
     QuillModule.forRoot(),
     ReactiveFormsModule,
-    OrderModule
+    OrderModule,
+    // LazyLoadImagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

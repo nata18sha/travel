@@ -169,15 +169,16 @@ export class AdminLocationComponent implements OnInit {
 
   }
   deleteLocation(location: ILocation): void {
+    console.log(location.id)
     if (confirm('Are you sure you want to delete this item?')) {
       this.locationService.deleteFireCloudLocation(location.id)
         .then(message => console.log(message))
         .catch(err => console.log(err));
       const index = this.adminLocations.findIndex(elem => elem.id === location.id);
       this.afStorage.storage.refFromURL(this.adminLocations[index].mainImage).delete();
-      for (let i = 0; i < this.adminLocations[index].images.length; i++) {
-        // console.log(this.adminLocations[index].images[i]);
-        this.afStorage.storage.refFromURL(this.adminLocations[index].images[i]).delete();
+      for (const image of this.adminLocations[index].images) {
+        console.log(image);
+        this.afStorage.storage.refFromURL(image).delete();
       }
     }
 

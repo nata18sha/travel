@@ -19,6 +19,7 @@
     font-family: 'Sofia Pro Medium';
     font-size: 14px;
     color: #3b3b3b;
+    transition: all ease-in 0.3s;
 }
 .custom_tab:hover {
     color: $mainColor;

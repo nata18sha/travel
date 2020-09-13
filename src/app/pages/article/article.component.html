@@ -1,152 +1,52 @@
 <section>
-    <div class="banner__main">
-        <div class="banner__main_heading">
-            <p class="heading_small">30 Jul 2019</p>
-            <p class="heading_big">New Ideas For A Low Cost Vacation On Water</p>
+    <div class="banner__main" [style.backgroundImage]="'url('+article?.mainImage+')'">
+        <div class="main_shadow">
+            <div class="banner__main_heading">
+                <p class="heading_small">{{article?.date.toDate() | date:'dd MMM yyyy'}}</p>
+                <p class="heading_big">{{article?.title}}</p>
+            </div>
         </div>
     </div>
 </section>
-<article class="article_container">
-    <p class="article_text">If you really enjoy spending your vacation ‘on water’ or would like to try something new and
-        exciting for the first time, then you can consider a houseboat vacation. There are so many fun things to do and
-        so many great landscapes to see on a houseboat vacation! But before making further plans, let’s take a look at
-        the options that you have for a low-cost vacation on water: you could rent a houseboat this year and try out an
-        altogether exotic kind of vacation this year, or you could indulge in a houseboat timeshare.</p>
-    <p class="article_text"> What is a houseboat timeshare? Most people who have used a houseboat timeshare say that it
-        is a great way to
-        spend your vacation at a very high-quality resort, in a place where you couldn’t get reservations so easily that
-        too at a very low price! Doesn’t that sound great? But let’s see how and why houseboat timeshares can offer you
-        with such fabulous opportunities of low-cost vacationing on water.</p>
-    <aside class="article_quote">
-        <div class="qoute_line"></div>
-        <div class="quote_text">Las Vegas has more than 100,000 hotel rooms to choose from. There is something for every
-            budget, and enough
-            entertainment within walking distance to keep anyone occupied for months, never mind the usual weekend stay
-            or honeymoon.</div>
-    </aside>
-    <p class="article_text">The Centers for Disease Control & Prevention (CDC) on Saturday began distributing cards at
-        airports receiving flights returning directly from Hong Kong warning travelers returning to the United States
-        from Hong Kong & Guangdong Province, People’s Republic of China & Hanoi, Vietnam that they may have been exposed
-        to cases of severe acute respiratory syndrome (SARS).</p>
-    <p class="article_text">The cards are being handed out by quarantine officials at Chicago, O’Hare International
-        Airport; Los Angeles; old York City, JFK International Airport; Newark; & San Francisco. These airports are the
-        only U.S. airports receiving direct flights from Hong Kong. No U.S. airports receive direct flights from Hanoi
-        or the Guangdong Province. CDC officials expect to expand the distribution of cards to Anchorage, Alaska & the
-        territory of Guam later today.</p>
-    <div class="article_images">
-        <div class="one_image"></div>
-        <div class="one_image"></div>
-    </div>
-    <p class="article_text">Now, if you are interested in being the best player, getting really good money and knowing
-        some tricks and advices of what to do in a live tournament games, here is the best place to learn them.</p>
-    <p class="article_text_bold">1) Try not to get drunk</p>
-    <p class="article_text">Some of the people that are playing, and that have few rounds to play in the tournament
-        don’t count the drinks they have during their games and at the very end of the day they don’t have power to
-        continue till the last game, which is a pity to loose such a big opportunity, so, don’t drink a lot and be
-        prepare for the last round, also come up with all your senses in order. If you drink, do it measurable and just
-        to loose the nerves before the games but also have some other drinks like soda, water, coffee and others to
-        hydrate your self. 2) Is it important where I sit? Yes it is, in a tournament try not to sit next to the dealer,
-        take a place in where you will feel that you are in front of the dealer to have the feeling that he is giving
-        you a game. Also in a place where you will feel comfortable with your self and you will have a perspective of
-        the other players.</p>
-    <p class="article_text_bold"></p>
-    <p class="article_text_bold">2) Make your self comfortable while playing</p>
-    <p class="article_text">Don’t show the other players with your position what you cards are telling you. Make sure to
-        seat back and relax, don’t adopt positions that will make you move too much or feel uncomfortable during the
-        time of the game. Some players in the tournaments show their game with the position they adopt while playing
-        either putting the elbows on the table or resting in the bumper. 4) Do the most important thing in the brake.
-    </p>
-    <p class="article_text">Don’t get distracted from what you really need to do in the brake. Take your time to go to
-        the bathroom and rest, sometimes the discussions about the previous game or lines for getting drinks will waste
-        your time for what is really important.</p>
-    <p class="article_text_bold">3) Also your words and mimic are important during the game.</p>
-    <p class="article_text">When ever you are playing don’t show your cards to the other player in the way you talk or
-        look, is important that they will have other impression, for example in your hand Is good you can try on making
-        faces or saying words that show that your hand is not good, then people will think you have a bad game and you
-        will surprise them at the end. This doesn’t work all the time so try to find different ways to hide your
-        game.Also you can read the other player’s movements and words to see either they are lying or telling the truth
-        in the hand.</p>
-    <p class="article_text">The rules of travel have altered so much in the last few years, with strict regulation
-        regarding air travel, questionable car searches that may vary in regulation from state to state, and the feeling
-        of never really being ultimately sure what is appropriate or improper in the travel world any longer. In most
-        cases, if you decide to fly the formerly affable skies, your airline or airport website will have an accurate
-        and up to date list regarding what is okay and what is not okay regarding your luggage. As if packing for a trip
-        wasnt difficult enough, now we all have to do it with cloudy and blurry regulations and a list we print out from
-        the airlines.</p>
-    <p class="article_text">The first measure of travel complacency is simple; dont try to squeeze on a carry on that
-        you know is not really a carry on. You will get yourself into the frustrating position of trying to argue your
-        way onto the airplane with an large bag that just wont do. Youre not going to succeed. Once upon a time you
-        would, but not anymore. Now, you will simply be forced to check it and risk being charged an additional fee for
-        having too many luggage items. Plus, youre going to end up travelling without your usual band of comfort items
-        that you could have had if you just scaled down into standard sized carry on luggage. The simple fact is that
-        there used to be wiggle room, and now, there is none.</p>
-    <div class="article_tags">
-        <div class="article_text"><span class="article_text_bold">Tags:</span> Hotels, Camping</div>
-        <div class="share">
-            <div class="article_text_bold">Share:</div>
-            <div class="icons share_fb">
-                <svg-icon class="icon" src="../../assets/icons/facebook.svg" [svgStyle]="{ 'height.px':10}"></svg-icon>
-            </div>
-            <div class="icons">
-                <svg-icon class="icon" src="../../assets/icons/twitter.svg" [svgStyle]="{ 'height.px':10}"></svg-icon>
-            </div>
-        </div>
-    </div>
+<article class="article_container" [innerHTML]="article?.article">   
+</article>
+<div class="article_container" *ngIf="article?.comments?.length > 0">
     <hr>
-    <div class="article_comments">
+    <div class="article_comments" *ngFor="let comm of article?.comments">
         <p class="article_text_bold">Comments</p>
         <div class="single_comment">
             <div class="comment_data">
-                <div class="user_image"></div>
-                <div class="user_name"><span class="article_text_bold">John Snow | <span class="comment_date">May
-                            2019</span></span> </div>
+                <div class="user_image" [style.backgroundImage]="'url('+comm?.user.image+')'"></div>
+                <div class="user_name"><span class="article_text_bold">{{comm?.user.userFirstName}} {{comm?.user.userLastName}} | <span class="comment_date">{{comm?.date?.toDate() | date:'dd MMM yyyy'}}</span></span> </div>
             </div>
             <div class="comment_body">
-                <p class="article_text">This place was amazing! My husband and I loved the mix of antiques and modern
-                    style. It was perfectly clean and had a very comfortable bed. It was conveniently located in Surry
-                    Hills with access to plenty of hip cafes and restaurants.</p>
-                <hr>
-            </div>
-        </div>
-        <div class="single_comment">
-            <div class="comment_data">
-                <div class="user_image"></div>
-                <div class="user_name"><span class="article_text_bold">John Snow | <span class="comment_date">May
-                            2019</span></span> </div>
-            </div>
-            <div class="comment_body">
-                <p class="article_text">This place was amazing! My husband and I loved the mix of antiques and modern
-                    style. It was perfectly clean and had a very comfortable bed. It was conveniently located in Surry
-                    Hills with access to plenty of hip cafes and restaurants. The provided folder of local tips was
-                    extremely helpful in making some of those choices. We are active people so had no issue with walking
-                    from the place to Darling Harbour, the Royal Botanic Garden, and Circular Quay. We would highly
-                    recommend staying here. In fact, we hope to do so again in a few weeks!</p>
+                <p class="article_text">{{comm?.text}}</p>
                 <hr>
             </div>
         </div>
     </div>
-</article>
+</div>
 <div class="comment_container">
     <div class="leave_comment_container">
         <p class="article_text_bold">LEAVE A COMMENT</p>
-        <p class="article_text">You need to sign in to add a comment or create an account if you don’t have one already.
+        <p *ngIf="!loggedUser" class="article_text">You need to <span class="login_link" routerLink="/login" >sign in</span> to add a comment or create an account if you don’t have one already.
         </p>
-        <form>
+        <form *ngIf="loggedUser">
             <p class="article_text_bold">Comment:</p>
-            <textarea name="" id="" class="comment_area" placeholder="Type your comment here"></textarea>
+            <textarea [(ngModel)]="singleComment" name="singleComment" class="comment_area" placeholder="Type your comment here"></textarea>
             <br>
-            <button type="submit" class="post_button">Post Comment</button>
+            <button type="submit" class="post_button" (click)="addComment()">Post Comment</button>
         </form>
     </div>
 </div>
-<div class="leave_comment_container next_block">
+<!-- <div class="leave_comment_container next_block">
     <div class="next_line"></div>
     <div class="next_post">NEXT POST</div>
     <div class="next_title">Tremblant In Canada</div>
     <div class="next_button">
         <button type="submit" class="post_button">
             <svg-icon class="" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
-                    [svgStyle]="{ 'height.px':14, 'width.px':14}"></svg-icon>
+                [svgStyle]="{ 'height.px':14, 'width.px':14}"></svg-icon>
         </button>
     </div>
-</div>
+</div> -->

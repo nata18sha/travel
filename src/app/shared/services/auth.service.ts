@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   updateFireStoreUser(user, userID): Promise<void> {
-    return this.afFirestore.collection('users').doc(userID.toString()).update({...user});
+    return this.afFirestore.collection('users').doc(userID).update({...user});
   }
 
 
