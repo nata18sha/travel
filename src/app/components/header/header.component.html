@@ -1,4 +1,4 @@
-<header [class.header_light]="header_variable">
+<header [class.header_light]="header_variable" [class.expand_header]="navbarOpen">
     <div class="logo"><span routerLink="/home" (click)="navbarHide()">Travelsy</span> </div>
     <nav class="navbar navbar-expand-lg " [ngClass]="!header_variable ? 'navbar-dark' : 'navbar-light'">
 
