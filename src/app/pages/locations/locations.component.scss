@@ -6,7 +6,7 @@
 .banner__main {
     height: 815px;
     width: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fbart-zimny-xzaR7lEA1E4-unsplash.jpg?alt=media&token=e22a8c63-51cd-49fb-9adb-4c4ca483563a);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fbart-zimny-xzaR7lEA1E4-unsplash.jpg?alt=media&token=e22a8c63-51cd-49fb-9adb-4c4ca483563a);
     @include background;
     // z-index: 1;
     // @include flexbox(column, nowrap, space-between, flex-start);
@@ -153,7 +153,7 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -161,6 +161,7 @@
     height: 40px;
     background-color: #ffffff;
     margin-bottom: 45px;
+    margin-top: 25px;
 }
 
 //Pupular section

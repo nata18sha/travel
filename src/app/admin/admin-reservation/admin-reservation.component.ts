@@ -10,6 +10,8 @@ import { OrderPipe } from 'ngx-order-pipe';
   styleUrls: ['./admin-reservation.component.scss']
 })
 export class AdminReservationComponent implements OnInit {
+  defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fnoimage.jpg?alt=media&token=9a954c2c-65f0-49c8-8b9c-687a4d70dfe5';
+
 
   reservations: Array<IReservation> = [];
   currentReserv: Array<IReservation> = [];

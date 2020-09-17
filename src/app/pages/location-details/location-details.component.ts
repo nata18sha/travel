@@ -15,6 +15,8 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./location-details.component.scss']
 })
 export class LocationDetailsComponent implements OnInit {
+  defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fnoimage.jpg?alt=media&token=9a954c2c-65f0-49c8-8b9c-687a4d70dfe5';
+
 
   modalRef: BsModalRef;
 
@@ -191,10 +193,7 @@ export class LocationDetailsComponent implements OnInit {
     this.loggedUser = user;
     // console.log(user.id)
   }
-  // private setDetails():void {
-  //   this.total = this.daysStay*this.location.price*this.persons;
-  //   this.vat = +(this.total * 0.1).toFixed(2);
-  // }
+
 
   checkMinDate():void {
     this.minDateTo = this.inDate;

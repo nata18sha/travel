@@ -10,6 +10,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { QuillModule } from 'ngx-quill';
 import { OrderModule } from 'ngx-order-pipe';
 // import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -85,6 +88,7 @@ import { SearchBlogPipe } from './shared/pipes/search-blog.pipe';
     QuillModule.forRoot(),
     ReactiveFormsModule,
     OrderModule,
+    LazyLoadImageModule
     // LazyLoadImagesModule
   ],
   providers: [],

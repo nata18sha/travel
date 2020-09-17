@@ -1,46 +1,46 @@
 <section>
-    <div class="banner__main">
+    <div class="banner__main" [lazyLoad]="bannerImage">
         <div class="main_shadow">
-        <div class="banner__main_heading">
-            <p class="heading_small">Welcome to Travelsy</p>
-            <p class="heading_big">Mother Earth</p>
-            <p class="heading_big">Hosts Our Travels</p>
-        </div>
-        <div class="banner__main_pannel">
-            <div class="blanc"></div>
-            <div class="container_main check">
-                <div class="check_item">
-                    <div>
-                        <p class="check-out">CHECK OUT</p>
-                        <p class="text-link" routerLink="/locations">Our Camping Sites</p>
+            <div class="banner__main_heading">
+                <p class="heading_small">Welcome to Travelsy</p>
+                <p class="heading_big">Mother Earth</p>
+                <p class="heading_big">Hosts Our Travels</p>
+            </div>
+            <div class="banner__main_pannel">
+                <div class="blanc"></div>
+                <div class="container_main check">
+                    <div class="check_item">
+                        <div>
+                            <p class="check-out">CHECK OUT</p>
+                            <p class="text-link" routerLink="/locations">Our Camping Sites</p>
+                        </div>
+                        <div class="line"></div>
                     </div>
-                    <div class="line"></div>
+                    <div class="check_item">
+                        <div>
+                            <p class="check-out space-link">CHECK OUT</p>
+                            <p class="text-link space-link" routerLink="/blogs">Our Latest Articles</p>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="check_item">
+                        <div>
+                            <p class="check-out space-link">CHECK OUT</p>
+                            <p class="text-link space-link" routerLink="/about">Our Amazing Team</p>
+                        </div>
+                    </div>
+                    <div class="find" routerLink="/locations">
+                        <div>FIND A LOCATION
+                            <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
+                                [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
+                        </div>
+                    </div>
                 </div>
-                <div class="check_item">
-                    <div>
-                        <p class="check-out space-link">CHECK OUT</p>
-                        <p class="text-link space-link" routerLink="/blogs">Our Latest Articles</p>
-                    </div>
-                    <div class="line"></div>
-                </div>
-                <div class="check_item">
-                    <div>
-                        <p class="check-out space-link">CHECK OUT</p>
-                        <p class="text-link space-link" routerLink="/about">Our Amazing Team</p>
-                    </div>
-                </div>
-                <div class="find" routerLink="/locations">
-                    <div>FIND A LOCATION
-                        <svg-icon class="arrow-link" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
-                            [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
-                    </div>
+                <div class="scroll">
+                    <div class="scroll_text">Scroll</div>
+                    <div class="scroll_line"></div>
                 </div>
             </div>
-            <div class="scroll">
-                <div class="scroll_text">Scroll</div>
-                <div class="scroll_line"></div>
-            </div>
-        </div>
         </div>
     </div>
 </section>
@@ -55,9 +55,8 @@
                     status. At the height of its power, the temple owned 421,000 head of cattles. </div>
             </div>
             <div id="slider">
-                <ng-image-slider class="article_picture" [images]="imageObject" #nav 
-                    [imageSize]="{width: '733px', height: '475px', space: 10 }"  [imagePopup]="false" [showArrow]="false"
-                    ></ng-image-slider>
+                <ng-image-slider class="article_picture" [images]="imageObject" #nav [imageSize]="sliderConfig"
+                    [imagePopup]="false" [showArrow]="false"></ng-image-slider>
                 <div class="slider_buttons">
                     <div class="button" (click)="prevImageClick()">
                         <div>
@@ -72,7 +71,7 @@
                             </svg-icon>
                         </div>
                     </div>
-             
+
                 </div>
             </div>
         </div>

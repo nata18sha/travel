@@ -44,7 +44,10 @@ export class AuthService {
           }
         );
       })
-      .catch(err => console.log(err));
+      .catch(err => 
+        // console.log(err)
+        alert('Oops! Incorrect email or password, please try again!')
+        );
   }
 
   signOut(): void {
@@ -66,11 +69,12 @@ export class AuthService {
           userFirstName: firstName,
           userLastName: lastName,
           role: 'user',
-          image: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fusgs-AQ9-jKmebjM-unsplash.jpg?alt=media&token=4f099184-9327-4c0d-917a-ebdc98ae7931'
+          image: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fusgs-AQ9-jKmebjM-unsplash.jpg?alt=media&token=4f099184-9327-4c0d-917a-ebdc98ae7931',
+          phone: '380'
         };
         this.afFirestore.collection('users').add(user)
           .then(() => {
-            alert('Successful registration!');
+            alert('Registered! Please sign in to proceed');
           })
           .catch(err => console.log(err));
       })

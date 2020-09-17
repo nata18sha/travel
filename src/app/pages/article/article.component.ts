@@ -12,6 +12,8 @@ import { BlogsService } from 'src/app/shared/services/blogs.service';
 })
 export class ArticleComponent implements OnInit {
 
+  defaultImage = 'https://www.placecage.com/1000/1000';
+
   article: any;
   articleID:string;
   comments: Array<any> = [];
@@ -72,8 +74,8 @@ export class ArticleComponent implements OnInit {
       this.article.date,
       this.comments
     )
-    console.log(updateWithComment)
-    console.log(updateWithComment.id)
+    // console.log(updateWithComment)
+    // console.log(updateWithComment.id)
     this.blogService.updateFireCloudBlog({ ...updateWithComment })
       .then(message => console.log(message))
       .catch(err => console.log(err));

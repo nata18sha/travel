@@ -7,33 +7,43 @@
         <div class="head_name">Profile</div>
     </div>
     <div class="user_block add_line">
-        <div class="user_image">
-            <div class="profile_block">
-                <div class="profile_image" [style.backgroundImage]="'url('+loggedUser.image+')'"></div>
+        <div class="user_image" [defaultImage]="defaultImage" [lazyLoad]="bannerImage">
+            <div class="profile_block" >
+                <div class="profile_image"  [lazyLoad]="loggedUser.image" [defaultImage]="defaultImage"></div>
                 <span class="user_main_name">{{loggedUser.userFirstName}} {{loggedUser.userLastName}}</span>
             </div>
         </div>
     </div>
     <div class="user_block">
         <p class="info_heading">Profile information</p>
-        <form>
+        <form #profileForm="ngForm" novalidate>
             <div class="user_box">
                 <div class="name">
                     <label for="firstName" class="input_name">First Name*</label>
                     <br>
-                    <input type="text" id="firstName" class="input_field" [(ngModel)]="firstName" name="firstName">
+                    <input type="text" #proName="ngModel" id="firstName" class="input_field" [(ngModel)]="firstName" name="firstName" required>
+                    <div class="invalidText" *ngIf="proName.invalid && (proName.dirty || proName.touched)">
+                        <div *ngIf="proName.errors.required">
+                            Required field
+                        </div>
+                    </div>
                 </div>
                 <div class="name">
                     <label for="lastName" class="input_name">Last Name*</label>
                     <br>
-                    <input type="text" id="lastName" class="input_field" [(ngModel)]="lastName" name="lastName">
+                    <input type="text" #proSurname="ngModel" id="lastName" class="input_field" [(ngModel)]="lastName" name="lastName" required>
+                    <div class="invalidText" *ngIf="proSurname.invalid && (proSurname.dirty || proSurname.touched)">
+                        <div *ngIf="proSurname.errors.required">
+                            Required field
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="user_box">
                 <div class="name">
-                    <label for="email" class="input_name">Email*</label>
+                    <label for="email" class="input_name">Email</label>
                     <br>
-                    <input type="text" id="email" class="input_field" [(ngModel)]="email" name="email">
+                    <input type="text" id="email" class="input_field" [(ngModel)]="email" name="email" disabled>
                 </div>
                 <div class="name">
                     <label for="phone" class="input_name">Phone Number</label>

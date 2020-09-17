@@ -1,5 +1,6 @@
 <section>
-    <div class="banner__main" [style.backgroundImage]="'url('+article?.mainImage+')'">
+    <!-- <div class="banner__main" [style.backgroundImage]="'url('+article?.mainImage+')'"> -->
+        <div class="banner__main"  [lazyLoad]="article?.mainImage">
         <div class="main_shadow">
             <div class="banner__main_heading">
                 <p class="heading_small">{{article?.date.toDate() | date:'dd MMM yyyy'}}</p>
@@ -12,12 +13,13 @@
 </article>
 <div class="article_container" *ngIf="article?.comments?.length > 0">
     <hr>
+    <p class="article_text_bold">Comments</p>
     <div class="article_comments" *ngFor="let comm of article?.comments">
-        <p class="article_text_bold">Comments</p>
+        
         <div class="single_comment">
             <div class="comment_data">
                 <div class="user_image" [style.backgroundImage]="'url('+comm?.user.image+')'"></div>
-                <div class="user_name"><span class="article_text_bold">{{comm?.user.userFirstName}} {{comm?.user.userLastName}} | <span class="comment_date">{{comm?.date?.toDate() | date:'dd MMM yyyy'}}</span></span> </div>
+                <div class="user_name"><span class="article_text_bold">{{comm?.user.userFirstName}} {{comm?.user.userLastName}} | <span class="comment_date">{{comm?.date.toDate() | date:'dd MMM yyyy'}}</span></span> </div>
             </div>
             <div class="comment_body">
                 <p class="article_text">{{comm?.text}}</p>

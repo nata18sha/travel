@@ -1,23 +1,36 @@
 <header [class.header_light]="header_variable">
-    <div class="logo"><span routerLink="/home">Travelsy</span> </div>
-    <nav>
-        <ul>
-            <li><a routerLink="/home" routerLinkActive="active-link">Home </a></li>
-            <li><a routerLink="/locations" routerLinkActive="active-link" [class.second_active]="isLocation">Camping
-                    Locations</a></li>
-            <li><a routerLink="/blogs" routerLinkActive="active-link" [class.second_active]="isArticle">Blogs</a></li>
-            <li><a routerLink="/about" routerLinkActive="active-link" >About</a></li>
-        </ul>
+    <div class="logo"><span routerLink="/home" (click)="navbarHide()">Travelsy</span> </div>
+    <nav class="navbar navbar-expand-lg " [ngClass]="!header_variable ? 'navbar-dark' : 'navbar-light'">
+
+        <button class="navbar-toggler " type="button" (click)="toggleNavbar()" *ngIf="!navbarOpen">
+            <!-- <span class="login">Menu</span> -->
+            
+            
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item" (click)="toggleNavbar()"><a routerLink="/home" routerLinkActive="active-link">Home
+                    </a></li>
+                <li class="nav-item" (click)="toggleNavbar()"><a routerLink="/locations" routerLinkActive="active-link"
+                        [class.second_active]="isLocation">Camping
+                        Locations</a></li>
+                <li class="nav-item" (click)="toggleNavbar()"><a routerLink="/blogs" routerLinkActive="active-link"
+                        [class.second_active]="isArticle">Blogs</a></li>
+                <li class="nav-item" (click)="toggleNavbar()"><a routerLink="/about"
+                        routerLinkActive="active-link">About</a></li>
+            </ul>
+        </div>
+
     </nav>
+
     <div class="login-block">
-        <!-- <div class="reservations">
-            <div style="height: 34px;">
-                <svg-icon class="icon" src="../../assets/icons/bookmark.svg" [svgStyle]="{ 'height.px':14,'margin-right.px':10}"></svg-icon>
-            </div>
-            <div>Reservations</div>
-        </div> -->
-        <div class="login" routerLink="/login" *ngIf="!loginStatus"><span>Sign In/Sign Up</span></div>
-        <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus"><span>Admin</span></div>
-        <div class="login" routerLink="/user"  *ngIf="userStatus">Profile</div>
+        <div class="login" routerLink="/login" *ngIf="!loginStatus" (click)="navbarHide()"><span>Sign In/Sign Up</span>
+        </div>
+        <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus" (click)="navbarHide()">
+            <span>Admin</span></div>
+        <div class="login" routerLink="/user" *ngIf="userStatus" (click)="navbarHide()">Profile</div>
     </div>
 </header>

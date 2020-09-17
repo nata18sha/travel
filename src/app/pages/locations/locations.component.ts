@@ -12,6 +12,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+lazyImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fbart-zimny-xzaR7lEA1E4-unsplash.jpg?alt=media&token=e22a8c63-51cd-49fb-9adb-4c4ca483563a'
+defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fnoimage.jpg?alt=media&token=9a954c2c-65f0-49c8-8b9c-687a4d70dfe5';
+
+
   imageObject: Array<object> = [{
     image: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73',
     thumbImage: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73',
@@ -40,7 +44,7 @@ export class LocationsComponent implements OnInit {
     private firecloud: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.adminFireCloudLocations()
+    this.adminFireCloudLocations();
   }
   //Photo slider
   @ViewChild('nav') slider: NgImageSliderComponent;
@@ -158,6 +162,8 @@ export class LocationsComponent implements OnInit {
         })
       })
   }
+
+  
 
 
 

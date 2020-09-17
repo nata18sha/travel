@@ -3,11 +3,12 @@
         <div class="main_title">Stories to inspire your journey</div>
         <div class="main_line"></div>
     </div>
-    <div class="banner__main" [style.backgroundImage]="'url('+recentArticles[3]?.mainImage+')'">
+    <div class="banner__main" [lazyLoad]="recentArticles[3]?.mainImage">
         <div class="banner__main_heading">
             <p class="heading_small">{{recentArticles[3]?.date.toDate() | date:'dd MMM yyyy'}}</p>
             <p class="heading_big">{{recentArticles[3]?.title}}</p>
-            <div class="visit_banner" [routerLink]="[ '/article/'+recentArticles[3]?.id ]"> <span class="add_space">Read More</span>
+            <div class="visit_banner" [routerLink]="[ '/article/'+recentArticles[3]?.id ]"> <span class="add_space">Read
+                    More</span>
                 <svg-icon class="arrow-link arrow-right" src="../../assets/icons/long-arrow-pointing-to-the-right.svg"
                     [svgStyle]="{ 'height.px':14, 'width.px':14,'margin-right.px':10 }"></svg-icon>
             </div>
@@ -18,7 +19,7 @@
     <div class="articles_all">
         <div class="article_preview" *ngFor="let blog of allArticles | slice:0: sliceNumber; let i=index"
             [routerLink]="[ '/article/'+blog.id ]">
-            <div class="article_image" [style.backgroundImage]="'url('+blog?.mainImage+')'"></div>
+            <div class="article_image" [lazyLoad]="blog?.mainImage" [defaultImage]="defaultImage"></div>
             <div class="article_date">{{blog?.date.toDate() | date:'dd MMM yyyy'}}</div>
             <div class="article_heading">{{blog?.title}}</div>
             <div class="article_text"></div><span class="article_text"
@@ -35,8 +36,8 @@
     <div class="articles_recent">
         <div class="recent_heading">Recent Posts</div>
         <div class="recent_block" [routerLink]="[ '/article/'+recentArticles[recentArticles?.length -1]?.id ]">
-            <div class="recent_image"
-                [style.backgroundImage]="'url('+recentArticles[recentArticles?.length -1]?.mainImage+')'"></div>
+            <div class="recent_image" [lazyLoad]="recentArticles[recentArticles?.length -1]?.mainImage"
+                [defaultImage]="defaultImage"></div>
             <div class="recent_details">
                 <div class="recent_title"> {{recentArticles[recentArticles?.length -1]?.title}}</div>
                 <div class="recent_date">
@@ -44,8 +45,8 @@
             </div>
         </div>
         <div class="recent_block" [routerLink]="[ '/article/'+recentArticles[recentArticles?.length -2]?.id ]">
-            <div class="recent_image"
-                [style.backgroundImage]="'url('+recentArticles[recentArticles?.length -2]?.mainImage+')'"></div>
+            <div class="recent_image" [lazyLoad]="recentArticles[recentArticles?.length -2]?.mainImage"
+                [defaultImage]="defaultImage"></div>
             <div class="recent_details">
                 <div class="recent_title"> {{recentArticles[recentArticles?.length -2]?.title}}</div>
                 <div class="recent_date">
@@ -54,7 +55,8 @@
         </div>
         <div class="recent_block" [routerLink]="[ '/article/'+recentArticles[recentArticles?.length -3]?.id ]">
             <div class="recent_image"
-                [style.backgroundImage]="'url('+recentArticles[recentArticles?.length -3]?.mainImage+')'"></div>
+            [lazyLoad]="recentArticles[recentArticles?.length -3]?.mainImage"
+            [defaultImage]="defaultImage"></div>
             <div class="recent_details">
                 <div class="recent_title"> {{recentArticles[recentArticles?.length -3]?.title}}</div>
                 <div class="recent_date">

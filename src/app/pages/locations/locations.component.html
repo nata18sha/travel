@@ -1,5 +1,5 @@
 <section>
-    <div class="banner__main">
+    <div class="banner__main" [lazyLoad]="lazyImage">
         <div class="main_shadow">
             <div class="banner__main_heading">
                 <p class="heading_small">Experience a Different World</p>
@@ -46,15 +46,9 @@
                 <div class="filter_content">
                     <form>
                         <div class="filter_budget">
-                            <!-- <form action="demo_form.asp" method="get">
-                                <label for="Points">Points:</label>
-                                <input type="range" id="rangeValue" name="points" min="0" max="100" onchange="rangevalue.value=value">
-                                <output id="rangevalue"></output>    
-                              </form> -->
                             <p class="filter_heading">Budget Per Night</p>
                             <input type="range" id="range" min="0" max="50" onchange="rangevalue.value=value"
                                 (change)="changeRange($event)">
-                            <!-- <output class="filter_heading" id="rangevalue">50</output>  -->
                             <span class="filter_heading">{{filteredPrice}}$</span>
                         </div>
                         <hr class="dashed">
@@ -149,7 +143,7 @@
                 <!-- <div class="locations_header_big" *ngIf="allLocations.length == 0">Sorry, nothing found :(</div> -->
                 <div class="locations_items">
                     <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index ">
-                        <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                        <div class="item_image"  [lazyLoad]="location.mainImage" [defaultImage]="defaultImage"
                             [routerLink]="[ '/location-details/'+location.id ]">
                             <div class="image_shadow">
                                 <div class="image_text">{{location.title}}</div>
@@ -222,7 +216,7 @@
     <div class="container_main">
         <div class="locations_items">
             <div class="location_item" *ngFor="let location of allLocations | slice:4:10; let i = index ">
-                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                <div class="item_image" [lazyLoad]="location.mainImage" [defaultImage]="defaultImage"
                     [routerLink]="[ '/location-details/'+location.id ]">
 
                     <div class="image_shadow">
@@ -249,7 +243,7 @@
     </div>
 </section>
 <section class="one_large_visit" *ngIf="allLocations.length > 0">
-    <div class="large_image" [style.backgroundImage]="'url('+allLocations[allLocations.length -1]?.mainImage+')'">
+    <div class="large_image" [lazyLoad]="allLocations[allLocations.length -1]?.mainImage" >
         <div class="visit_block" [routerLink]="[ '/location-details/'+allLocations[allLocations.length -1]?.id ]">
             <p class="farm_visit">{{allLocations[allLocations.length -1]?.category}}</p>
             <div class="visit_heading">{{allLocations[allLocations.length -1]?.title}}</div>
@@ -268,7 +262,7 @@
         <div class="locations_items">
 
             <div class="location_item" *ngFor="let location of allLocations | slice:10: sliceNumber; let i = index ">
-                <div class="item_image" [style.backgroundImage]="'url('+location.mainImage+')'"
+                <div class="item_image" [lazyLoad]="location.mainImage" [defaultImage]="defaultImage"
                     [routerLink]="[ '/location-details/'+location.id ]">
                     <div class="image_shadow">
                         <div class="image_text">{{location.title}}</div>

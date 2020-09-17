@@ -53,9 +53,9 @@
     height: 27px;
 }
 
-.footer_info {
-    height: 485px;
-}
+// .footer_info {
+//     height: 485px;
+// }
 .footer_info .footer_container {
     @include flexbox(row, nowrap, space-between, flex-start);
     margin-top: 105px;
@@ -117,5 +117,61 @@
 .email_text {
     font-family: 'Sofia Pro';
     font-size: 13px;
-    color: #9b9b9b;
+    color: $textColor;
+    outline: none;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .footer_copyright {
+        height: 50px;
+        font-size: 10px;
+    }
+    .footer_container {
+        width: 320px;
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    .footer_partners {
+        height: 50px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .partners img {
+        margin-left: 5px;
+       height: auto;
+        width: 35px;
+
+    }
+    .company, .other, .links, .mailing {
+        display: none;
+    }
+    .info {
+        @include flexbox(row, nowrap, space-between, flex-start);
+        margin-bottom: 50px;
+    }
+    
+    .footer_info {
+        min-height: 200px;
+    }
+    .footer_info .footer_container {
+        @include flexbox(row, nowrap, space-between, flex-start);
+        margin-top: 50px;
+    }
+    
+    .contact {
+        margin-top: 0px;
+    }
+
+    .icons-links {
+        @include flexbox(column, nowrap, flex-start, center);
+    }
+    
+    .icons { 
+        @include flexbox(row, nowrap, center, center);
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
 }

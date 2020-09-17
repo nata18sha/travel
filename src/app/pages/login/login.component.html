@@ -1,50 +1,97 @@
 <div class="sign_in">
     <div class="login_container" *ngIf="changeStatus">
         <div class="main_title">Sign In</div>
-        <form>
+        <form #loginForm="ngForm" novalidate>
             <label for="email" class="input_name">Email</label>
             <br>
-            <input type="text" id="email" class="input_field" [(ngModel)]="userEmail" name="userEmail" placeholder="Enter Email">
-            <br>
+            <input type="text" id="email" #loginEmail="ngModel" class="input_field" [(ngModel)]="userEmail"
+                name="userEmail" placeholder="Enter Email" required>
+
+
+            <div class="invalidText" *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)">
+                <div *ngIf="loginEmail.errors.required">
+                    Required field
+                </div>
+            </div>
+            <!-- <br> -->
+
             <label for="password" class="input_name">Password</label>
             <br>
-            <input type="password" id="password" class="input_field" [(ngModel)]="userPassword" name="userPassword" placeholder="Enter Password">
+            <input type="password" id="password" #loginPass="ngModel" class="input_field" [(ngModel)]="userPassword" name="userPassword"
+                placeholder="Enter Password" required>
+                <div class="invalidText" *ngIf="loginPass.invalid && (loginPass.dirty || loginPass.touched)">
+                    <div *ngIf="loginPass.errors.required">
+                        Required field
+                    </div>
+                </div>
+
             <!-- <div class=" checkbox">
                 <input type="checkbox" id="checkbox">
                 <label for="checkbox" class="checkbox_text">Remember me</label>
             </div> -->
-            <button type="submit" class="submit_button" (click)="loginUser()">Sign In</button>
+            <button type="submit" class="submit_button" (click)="loginUser(loginForm)">Sign In</button>
         </form>
         <div class="change">Don’t have an Account? <span class="change_link" (click)="changeLogin()">Sign Up</span>
         </div>
     </div>
     <div class="login_container" *ngIf="!changeStatus">
         <div class="main_title">Create Account</div>
-        <form>
+        <form #registerForm="ngForm" novalidate>
             <div class="user_name">
                 <div class="name">
                     <label for="firstName" class="input_name">First Name</label>
                     <br>
-                    <input type="text" id="firstName" class="input_field" [(ngModel)]="firstName" name="firstName" placeholder="Enter first name">
+                    <input type="text" id="firstName" #regName="ngModel" class="input_field" [(ngModel)]="firstName" name="firstName"
+                        placeholder="Enter first name" required>
+
+                        <div class="invalidText" *ngIf="regName.invalid && (regName.dirty || regName.touched)">
+                            <div *ngIf="regName.errors.required">
+                                Required field
+                            </div>
+                        </div>
                 </div>
                 <div class="name">
                     <label for="lastName" class="input_name">Last Name</label>
                     <br>
-                    <input type="text" id="lastName" class="input_field" [(ngModel)]="lastName" name="lastName" placeholder="Enter last name ">
+                    <input type="text" id="lastName" #regSurname="ngModel" class="input_field" [(ngModel)]="lastName" name="lastName"
+                        placeholder="Enter last name " required>
+                        <div class="invalidText" *ngIf="regSurname.invalid && (regSurname.dirty || regSurname.touched)">
+                            <div *ngIf="regSurname.errors.required">
+                                Required field
+                            </div>
+                        </div>
                 </div>
             </div>
             <label for="email" class="input_name">Email</label>
             <br>
-            <input type="text" id="email" class="input_field" [(ngModel)]="userEmail" name="userEmail" placeholder="Enter Email">
-            <br>
+            <input type="text" id="email" #regEmail="ngModel" class="input_field" [(ngModel)]="userEmail" name="userEmail"
+                placeholder="Enter Email" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$">
+                <div class="invalidText" *ngIf="regEmail.invalid && (regEmail.dirty || regEmail.touched)">
+                    <div *ngIf="regEmail.errors.required">
+                        Required field
+                    </div>
+                    <div *ngIf="regEmail.errors.pattern">
+                        Please provide a valid email
+                    </div>
+                </div>
+            <!-- <br> -->
             <label for="password" class="input_name">Password</label>
             <br>
-            <input type="password" id="password" class="input_field" [(ngModel)]="userPassword" name="userPassword" placeholder="Create Password">
+            <input type="password" #regPass="ngModel" id="password" class="input_field" [(ngModel)]="userPassword" name="userPassword"
+                placeholder="Create Password" required pattern="\S{8,16}" maxlength="16">
+                <div class="invalidText" *ngIf="regPass.invalid && (regPass.dirty || regPass.touched)">
+                    <div *ngIf="regPass.errors.required">
+                        Required field
+                    </div>
+                    <div *ngIf="regPass.errors.pattern">
+                        Please provide a valid password
+                    </div>
+                </div>
             <div class="checkbox">
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" name="checkTerms"  id="checkbox" [checked]="agree" required (click)="acceptTerms()">
                 <label for="checkbox" class="checkbox_text">I have read and agree to the Terms and Condions</label>
             </div>
-            <button type="submit" class="submit_button" (click)="registerUser()">Sign Up</button>
+            <button type="submit" class="submit_button" (click)="registerUser(registerForm)" [disabled]="(registerForm.invalid) || (!agree)">Sign Up</button>
         </form>
         <div class="change">Don’t have an Account? <span class="change_link" (click)="changeLogin()">Sign In</span>
         </div>

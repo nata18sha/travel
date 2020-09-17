@@ -22,7 +22,7 @@
 .banner__main {
     height: 815px;
     width: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0c2c426f1191c5525a59ad418f223a476816a036.png?alt=media&token=095d47b2-3839-471f-9eef-186e0688ea61);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0c2c426f1191c5525a59ad418f223a476816a036.png?alt=media&token=095d47b2-3839-471f-9eef-186e0688ea61);
     @include background;
     z-index: 1;
     // @include flexbox(column, nowrap, space-between, flex-start);
@@ -122,7 +122,7 @@
     width: 356px;
     height: 280px;
     @include background;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F78a9a0dd9310e9c86da5086590cf71c8a379391b.png?alt=media&token=67241f91-1909-4bd9-8389-b3d131a5cb8a);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F78a9a0dd9310e9c86da5086590cf71c8a379391b.png?alt=media&token=67241f91-1909-4bd9-8389-b3d131a5cb8a);
 }
 hr {
     border: 1px solid #d8d8d8;
@@ -160,7 +160,7 @@ hr {
     height: 60px;
     border-radius: 50%;
     margin-right: 12px;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F47bdc311f113f39e6a99170a319cc5cf4d6217ee.png?alt=media&token=b2ba3e6f-72b0-4640-aca4-80670a395290);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F47bdc311f113f39e6a99170a319cc5cf4d6217ee.png?alt=media&token=b2ba3e6f-72b0-4640-aca4-80670a395290);
     @include background;
 }
 

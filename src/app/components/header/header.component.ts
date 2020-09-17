@@ -23,6 +23,9 @@ export class HeaderComponent implements OnInit {
   userImage: string = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73';
   loggedUser: any;
 
+
+  navbarOpen = false;
+
   constructor(private actRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -109,6 +112,14 @@ export class HeaderComponent implements OnInit {
         this.checkLogin();
       }
     );
+  }
+
+
+  toggleNavbar():void {
+    this.navbarOpen = !this.navbarOpen;
+  }
+  navbarHide():void {
+    this.navbarOpen = false;
   }
 
 

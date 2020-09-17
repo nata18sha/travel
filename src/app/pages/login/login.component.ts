@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
   firstName: string;
   lastName: string;
 
+  agree = false;
+
   constructor( private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -21,17 +24,23 @@ export class LoginComponent implements OnInit {
   changeLogin():void {
     this.changeStatus  = !this.changeStatus;
   }
-  loginUser(): void {
+  loginUser(loginForm:NgForm): void {
     this.authService.login(this.userEmail, this.userPassword);
-    this.resetFields();
+    loginForm.resetForm();
+    // this.resetFields();
 
   }
-  registerUser(): void {
+  registerUser(registerForm:NgForm): void {
     this.authService.register(this.userEmail, this.userPassword, this.firstName, this.lastName);
     this.changeStatus = !this.changeStatus;
-    this.resetFields();
+    registerForm.resetForm();
+    // this.resetFields();
 
   }
+  acceptTerms(): void {
+    this.agree = !this.agree;
+  }
+
   private resetFields(): void {
     this.userEmail = '';
     this.userPassword = '';

@@ -1,5 +1,5 @@
 <section>
-    <div class="banner__main" [style.backgroundImage]="'url('+location?.mainImage+')'">
+    <div class="banner__main" [lazyLoad]="location?.mainImage">
         <div class="main_shadow">
             <div class="banner__main_heading">
                 <p class="heading_small">{{location?.category}}</p>
@@ -117,13 +117,6 @@
                 </div>
                 <div class="main_heading">What You Will Do</div>
                 <div class="main_text">{{location?.thingsToDo}}</div>
-                <!-- <div class="main_heading">What will be provided</div>
-                <div class="main_text">
-                    <p>Snacks </p>
-                    <p>Trail mix/ Energy bars,</p>
-                    <p>Vegetable Hummus Wrap/ Egg Salsa Avocado Wrap, </p>
-                    <p> Fruit parfait.</p>
-                </div> -->
             </div>
 
 
@@ -136,14 +129,25 @@
                         <div class="date">
                             <label class="input_label_thin">First Name*</label>
                             <br>
-                            <input type="text" [(ngModel)]="firstName" name="firstName" class="reserv_input "
-                                placeholder="Enter your first name" required>
+                            <input type="text" #resName="ngModel" [(ngModel)]="firstName" name="firstName"
+                                class="reserv_input " placeholder="Enter your first name" required>
+                            <div class="invalidText" *ngIf="resName.invalid && (resName.dirty || resName.touched)">
+                                <div *ngIf="resName.errors.required">
+                                    Required field
+                                </div>
+                            </div>
                         </div>
                         <div class="date">
                             <label class="input_label_thin">Last Name*</label>
                             <br>
-                            <input type="text" [(ngModel)]="lastName" name="lastName" class="reserv_input "
-                                placeholder="Enter your last name" required>
+                            <input type="text" #resSurname="ngModel" [(ngModel)]="lastName" name="lastName"
+                                class="reserv_input " placeholder="Enter your last name" required>
+                            <div class="invalidText"
+                                *ngIf="resSurname.invalid && (resSurname.dirty || resSurname.touched)">
+                                <div *ngIf="resSurname.errors.required">
+                                    Required field
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -151,17 +155,32 @@
                         <div class="date">
                             <label class="input_label_thin">Email*</label>
                             <br>
-                            <input type="text" [(ngModel)]="email" name="email" class="reserv_input  "
-                                placeholder="Enter your email" required>
+                            <input type="text" #resEmail="ngModel" [(ngModel)]="email" name="email"
+                                class="reserv_input  " placeholder="Enter your email" required
+                                pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$">
+                            <div class="invalidText" *ngIf="resEmail.invalid && (resEmail.dirty || resEmail.touched)">
+                                <div *ngIf="resEmail.errors.required">
+                                    Required field
+                                </div>
+                                <div *ngIf="resEmail.errors.pattern">
+                                    Please provide a valid email
+                                </div>
+                            </div>
                         </div>
                         <div class="date">
                             <label class="input_label_thin">Phone Number*</label>
                             <br>
-                            <input type="text" [(ngModel)]="phone" name="phone" class="reserv_input "
-                                placeholder="Enter your phone number" required>
+                            <input type="number" #resPhone="ngModel" [(ngModel)]="phone" name="phone"
+                                class="reserv_input " placeholder="Enter your phone number" required>
+                            <div class="invalidText" *ngIf="resPhone.invalid && (resPhone.dirty || resPhone.touched)">
+                                <div *ngIf="resPhone.errors.required">
+                                    Required field
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" class=" next_button" (click)="confirmGuests()" [disabled]="contactsForm.invalid">Continue</button>
+                    <button type="submit" class=" next_button" (click)="confirmGuests()"
+                        [disabled]="contactsForm.invalid">Continue</button>
                 </form>
             </div>
 
@@ -174,37 +193,79 @@
 
                     <label class="input_label_thin">Cardholder Name</label>
                     <br>
-                    <input type="text" [(ngModel)]="cardName" name="cardName" class="reserv_input card_input" placeholder="Enter name" required>
-
+                    <input type="text" #payName="ngModel" [(ngModel)]="cardName" name="cardName"
+                        class="reserv_input card_input" placeholder="Enter name" required>
+                    <div class="invalidText" *ngIf="payName.invalid && (payName.dirty || payName.touched)">
+                        <div *ngIf="payName.errors.required">
+                            Required field
+                        </div>
+                    </div>
                     <label class="input_label_thin">Card Number</label>
                     <br>
-                    <input type="text" [(ngModel)]="cardNumber" name="cardNumber" class="reserv_input card_input" placeholder="Enter card number"   required>
-
+                    <input type="text" #payCard="ngModel" [(ngModel)]="cardNumber" name="cardNumber"
+                        class="reserv_input card_input" placeholder="Enter card number" required maxlength="16"
+                        pattern="[0-9]{16}">
+                    <div class="invalidText" *ngIf="payCard.invalid && (payCard.dirty || payCard.touched)">
+                        <div *ngIf="payCard.errors.required">
+                            Required field
+                        </div>
+                        <div *ngIf="payCard.errors.pattern">
+                            Please provide a valid card number
+                        </div>
+                    </div>
 
                     <div class="card_details">
                         <div>
                             <label class="input_label_thin">Expiry Month</label>
                             <br>
-                            <input type="text" [(ngModel)]="expMonth" name="expMonth" class="reserv_input card_input" placeholder="mm"  required>
+                            <input type="text" #payMonth="ngModel" [(ngModel)]="expMonth" name="expMonth"
+                                class="reserv_input card_input" placeholder="mm" required maxlength="2"
+                                pattern="[0-9]{2}">
+                            <div class="invalidText" *ngIf="payMonth.invalid && (payMonth.dirty || payMonth.touched)">
+                                <div *ngIf="payMonth.errors.required">
+                                    Required field
+                                </div>
+                                <div *ngIf="payCard.errors.pattern">
+                                    Please provide a valid month
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <label class="input_label_thin">Expiry Year</label>
                             <br>
-                            <input type="text" [(ngModel)]="expYear" name="expYear" class="reserv_input card_input" placeholder="yyyy" required>
+                            <input type="text" #payYear="ngModel" [(ngModel)]="expYear" name="expYear"
+                                class="reserv_input card_input" placeholder="yyyy" required maxlength="4"
+                                pattern="[0-9]{4}">
+                            <div class="invalidText" *ngIf="payYear.invalid && (payYear.dirty || payYear.touched)">
+                                <div *ngIf="payYear.errors.required">
+                                    Required field
+                                </div>
+                                <div *ngIf="payCard.errors.pattern">
+                                    Please provide a valid year
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <label class="input_label_thin">CVV (3 digits)</label>
                             <br>
-                            <input type="password" [(ngModel)]="expCvv" name="expCvv" class="reserv_input card_input" placeholder="***" required>
+                            <input type="password" #payCvv="ngModel" [(ngModel)]="expCvv" name="expCvv"
+                                class="reserv_input card_input" placeholder="***" required maxlength="3">
+                            <div class="invalidText" *ngIf="payCvv.invalid && (payCvv.dirty || payCvv.touched)">
+                                <div *ngIf="payCvv.errors.required">
+                                    Required field
+                                </div>
+                            </div>
                         </div>
 
                     </div>
 
 
-                    <button type="button" class=" next_button" (click)="confirmPayment()" [disabled]="paymentForm.invalid">Pay Now</button>
+                    <button type="button" class=" next_button" (click)="confirmPayment()"
+                        [disabled]="paymentForm.invalid">Pay Now</button>
                     <!-- <button type="button" class=" next_button pay_later">Pay Later</button> -->
                 </form>
-                <div class="main_text" *ngIf="paymentDone">Reservation Paid!</div>
+                <div class="main_text" *ngIf="paymentDone">Reservation Paid! Visit your <span class="login_link"
+                        routerLink="/user">profile </span> to check it.</div>
             </div>
 
 
@@ -232,7 +293,7 @@
                                 <label class="input_label">Check-Out Date</label>
                                 <br>
                                 <input type="text" [(ngModel)]="outDate" name="outDate" class="reserv_input " required
-                                    bsDatepicker [minDate]="minDateTo"  (click)="checkMinDate()"
+                                    bsDatepicker [minDate]="minDateTo" (click)="checkMinDate()"
                                     [bsConfig]="{ dateInputFormat: 'DD MMM YYYY', containerClass: 'theme-default' }">
                             </div>
                         </div>
@@ -243,7 +304,8 @@
                             <br>
                             <input type="number" [(ngModel)]="persons" name="persons" class="reserv_input " required>
                         </div>
-                        <button type="submit" class="submit_button" (click)="makeReservation(loginToProceed)" [disabled]="datesForm.invalid">Make
+                        <button type="submit" class="submit_button" (click)="makeReservation(loginToProceed)"
+                            [disabled]="datesForm.invalid">Make
                             Reservation</button>
                     </div>
                 </form>
@@ -270,8 +332,8 @@
                             <div class="details_bold_text">Guests:</div>
                             <div class="text_thin">{{persons}} Persons</div>
                         </div>
-                        <button type="button" class="details_link" (click)="editReservation()"
-                            *ngIf="!paymentDone">Edit Booking</button>
+                        <button type="button" class="details_link" (click)="editReservation()" *ngIf="!paymentDone">Edit
+                            Booking</button>
                     </div>
                 </div>
 

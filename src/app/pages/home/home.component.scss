@@ -10,12 +10,12 @@
     width: 100%;
     // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fashim-d-silva-WeYamle9fDM-unsplash.jpg?alt=media&token=d8bae057-bb48-4950-84df-699672ec0aa0);
     // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fflorian-van-duyn-BR1WANLLpDU-unsplash.jpg?alt=media&token=c3764c48-8de5-4572-951c-73079881960b);
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fconstant-loubier-5cVnZ5fgipc-unsplash.jpg?alt=media&token=f55e133f-acba-4795-a908-256c43ad1935);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fconstant-loubier-5cVnZ5fgipc-unsplash.jpg?alt=media&token=f55e133f-acba-4795-a908-256c43ad1935);
     // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fclaudio-buttler-iv7C1g1Vt-k-unsplash.jpg?alt=media&token=576906b2-7c53-42ac-b59d-bf51f0d8b131);
    
     @include background;
     z-index: 1;
-    @include flexbox(column, nowrap, space-between, flex-start);
+    // @include flexbox(column, nowrap, space-between, flex-start);
 }
 .main_shadow {
     width: 100%;
@@ -50,7 +50,8 @@
     width: 100%;
     // background-color: #fff;
     width: 100%;
-    @include flexbox(row, nowrap, center, flex-end);
+    @include flexbox(row, nowrap, flex-start, flex-end);
+    
 }
 .container_main {
     width: 1110px;
@@ -61,11 +62,13 @@
     height: inherit;
     width: 100%;
     background-color: #fff;
+    // border: 3px solid green;
 }
 .check {
     @include flexbox(row, nowrap, center, center);
     height: 120px;
     width: 1110px;
+    // border: 3px solid red;
 }
 .check_item {
     @include flexbox(row, nowrap, space-between, center);
@@ -74,7 +77,7 @@
     background-color: #fff;
     text-align: center;
     cursor: default;
-    // border-right: 1px solid black;
+    // border-right: 1px solid red;
     div {
         // @include flexbox(column, nowrap, center, center);
         text-align: left;
@@ -96,6 +99,7 @@
     border-bottom: 1px solid transparent;
     // text-decoration: none;
     outline: none;
+    cursor: pointer;
     
 }
 .text-link:hover {
@@ -133,6 +137,7 @@
     width: 100%;
     @include flexbox(column, nowrap, center, center);
     // background-color: #fff;
+    // border: 3px solid green;
 }
 .scroll_text {
     width: 36px;
@@ -141,7 +146,7 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -149,6 +154,7 @@
     height: 40px;
     background-color: #ffffff;
     margin-bottom: 45px;
+    margin-top: 25px;
 }
 
 //One article section

@@ -66,10 +66,10 @@
     <div class="modal-body">
 
         <div class="container">
-            <form>
+            <form #blogForm="ngForm" novalidate>
                 <label for="title" class="input_name">Title</label>
                 <br>
-                <input [(ngModel)]="title" name="title" type="text" id="title" class="input_field" placeholder=""
+                <input [(ngModel)]="title" name="title" type="text" id="title" class="input_field" 
                     required>
                 <br>
                 <p class="input_name">Main image</p>
@@ -100,12 +100,8 @@
 
                     <label class="input_name" for="editor">Editor</label>
                     <quill-editor [style]="editorStyle"  formControlName="editor" ></quill-editor>
-                    <!-- <button type="submit" class="btn btn-warning mt-3 mb-3">Try</button> -->
                 </form>
             </form>
-
-            <!-- <p>Output</p>
-            <div [innerHTML]="editorContent"></div> -->
         </div>
 
 
@@ -113,7 +109,7 @@
     </div>
     <div class="modal-footer">
         <button type="submit" class="next_button close_button" (click)="modalRef.hide()">Close</button>
-        <button type="submit" class="next_button" *ngIf="!editStatus" (click)="addBlog()">Add</button>
-        <button type="submit" class="next_button" *ngIf="editStatus" (click)="updateArticle()">Update</button>
+        <button type="submit" class="next_button" *ngIf="!editStatus" (click)="addBlog()" [disabled]="blogForm.invalid || !imageStatus">Add</button>
+        <button type="submit" class="next_button" *ngIf="editStatus" (click)="updateArticle()" [disabled]="blogForm.invalid || !imageStatus">Update</button>
     </div>
 </ng-template>

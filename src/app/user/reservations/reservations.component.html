@@ -23,7 +23,8 @@
 
             <div class="reserv_block reserv_block_right">
                 <div class="location_item">
-                    <div class="item_image" [style.backgroundImage]="'url('+currentReserv?.location.mainImage+')'"
+                    <div class="item_image" 
+                    [defaultImage]="defaultImage" [lazyLoad]="currentReserv?.location.mainImage"
                         [routerLink]="[ '/location-details/'+currentReserv.location.dataID ]">
                         <div class="image_shadow">
                             <div class="image_text">{{currentReserv?.location.title}}</div>

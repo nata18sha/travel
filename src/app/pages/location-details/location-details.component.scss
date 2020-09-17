@@ -8,7 +8,7 @@
 .banner__main {
     height: 815px;
     width: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fe903201cac99d53821b689cee47184f4136d7d9a.png?alt=media&token=39e0086f-12f8-499d-af1f-ac52ef8b2ded);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fe903201cac99d53821b689cee47184f4136d7d9a.png?alt=media&token=39e0086f-12f8-499d-af1f-ac52ef8b2ded);
     @include background;
     z-index: 1;
     // @include flexbox(column, nowrap, space-between, flex-start);
@@ -144,7 +144,7 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -152,6 +152,7 @@
     height: 40px;
     background-color: #ffffff;
     margin-bottom: 45px;
+    margin-top: 25px;
 }
 
 
@@ -328,6 +329,7 @@
     background-color: $mainColor;
     border: none;
     color: #fff;
+    margin-top: 20px;
 }
 .card_details {
     @include flexbox(row, nowrap, space-between, flex-start);
@@ -368,16 +370,16 @@
     // border: 1px solid #000;
 }
 .reserv_input {
-    font-family: 'Sofia Pro Medium';
+    font-family: 'Sofia Pro';
     font-size: 14px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     width: 100%;
     height: 40px;
     border: solid 1px #e4e4e4;
     padding: 13px;
     line-height: 1.43;
-    color: #a8a8a8;
+    color: $textColor;
     outline-color: rgba(255, 82, 0, 0.5);
 }
 .card_input {
@@ -393,6 +395,7 @@
     font-family: 'Sofia Pro Medium';
     font-size: 14px;
     color: #3b3b3b;
+    margin-top: 20px;
 }
 hr {
     border: 1px dashed #e4e4e4;
@@ -409,6 +412,7 @@ hr {
     font-size: 14px;
     margin-bottom: 30px;
     cursor: pointer;
+    margin-top: 20px;
 }
 .pannel_details {
     border: solid 1px #e4e4e4;
@@ -471,4 +475,14 @@ hr {
 }
 button[disabled] {
     background-color: #f17941;
+}
+.invalidText {
+    font-family: 'Sofia Pro';
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+}
+.login_link {
+    color: $linkColor;
+        cursor: pointer;
 }

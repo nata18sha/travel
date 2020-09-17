@@ -15,6 +15,9 @@ import { User } from 'src/app/shared/models/user.model';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fnoimage.jpg?alt=media&token=9a954c2c-65f0-49c8-8b9c-687a4d70dfe5';
+  bannerImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fdavid-marcu-78a265wpio4-unsplash.jpeg?alt=media&token=b38c52cc-fe60-4bf0-a04d-650041e787ad';
+
   loggedUser: any;
   userDOC: string;
   firstName: string;
