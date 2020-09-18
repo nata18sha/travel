@@ -94,7 +94,7 @@
 
                 <div class="location_photos" id="slider">
                     <ng-image-slider class="article_picture" [images]="imageObject" #nav
-                        [imageSize]="{width: '544px', height: '444px', space: 0 }" [imagePopup]="true"
+                        [imageSize]="sliderConfig" [imagePopup]="true"
                         [showArrow]="false">
                     </ng-image-slider>
                     <div class="slider_buttons">
@@ -215,7 +215,7 @@
                     </div>
 
                     <div class="card_details">
-                        <div>
+                        <div class="details_small">
                             <label class="input_label_thin">Expiry Month</label>
                             <br>
                             <input type="text" #payMonth="ngModel" [(ngModel)]="expMonth" name="expMonth"
@@ -230,7 +230,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="details_small">
                             <label class="input_label_thin">Expiry Year</label>
                             <br>
                             <input type="text" #payYear="ngModel" [(ngModel)]="expYear" name="expYear"
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div class="details_small">
                             <label class="input_label_thin">CVV (3 digits)</label>
                             <br>
                             <input type="password" #payCvv="ngModel" [(ngModel)]="expCvv" name="expCvv"

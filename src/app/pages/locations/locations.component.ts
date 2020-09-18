@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { NgImageSliderComponent } from 'ng-image-slider';
 
 import { ILocation } from '../../shared/interfaces/location.interface';
@@ -40,11 +40,22 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
   categoryChecked = true;
   filteredPrice = 50;
 
+  innerWidth: any;
+
+  sliderConfig = {width: '733px', height: '475px', space: 10 };
+
   constructor(private locationService: LocationService,
     private firecloud: AngularFirestore) { }
 
   ngOnInit(): void {
     this.adminFireCloudLocations();
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '200px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
   }
   //Photo slider
   @ViewChild('nav') slider: NgImageSliderComponent;
@@ -163,6 +174,17 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
       })
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
+    console.log(this.innerWidth)
+  }
   
 
 

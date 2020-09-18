@@ -7,7 +7,7 @@
             </div>
             <div class="banner__main_pannel">
                 <div class="blanc"></div>
-                <div class="container_main check">
+                <div class="check">
                     <div class="check_item">
                         <div>
                             <span class="add_space main_smalltext">Mountain Experience</span>
@@ -23,8 +23,10 @@
                             <span class="add_space main_smalltext">Forest Experience</span>
                         </div>
                     </div>
-                    <div class="find">
-                        <span class="add_space main_smalltext">Farm Experience</span>
+                    <div class="check_item">
+                        <div>
+                            <span class="add_space main_smalltext">Farm Experience</span>
+                        </div>
                     </div>
                 </div>
                 <div class="scroll">
@@ -138,12 +140,12 @@
                 </div>
             </div>
             <div class="popular__content_locations">
-                <!-- <div class="locations_header_big" [innerHTML]="allLocations.length > 0? 'Popular Locations' :'Sorry, nothing found :(' ">Popular Locations</div> -->
-                <div class="locations_header_big">Popular Locations</div>
+                <div class="locations_header_big" [innerHTML]="allLocations.length > 0? 'Popular Locations' :'Sorry, nothing found :(' ">Popular Locations</div>
+                <!-- <div class="locations_header_big">Popular Locations</div> -->
                 <!-- <div class="locations_header_big" *ngIf="allLocations.length == 0">Sorry, nothing found :(</div> -->
                 <div class="locations_items">
                     <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index ">
-                        <div class="item_image"  [lazyLoad]="location.mainImage" [defaultImage]="defaultImage"
+                        <div class="item_image" [lazyLoad]="location.mainImage" [defaultImage]="defaultImage"
                             [routerLink]="[ '/location-details/'+location.id ]">
                             <div class="image_shadow">
                                 <div class="image_text">{{location.title}}</div>
@@ -187,9 +189,8 @@
                         status. At the height of its power, the temple owned 421,000 head of cattles. </div>
                 </div>
                 <div id="slider">
-                    <ng-image-slider class="article_picture" [images]="imageObject" #nav
-                        [imageSize]="{width: '733px', height: '475px', space: 10}" [imagePopup]="false"
-                        [showArrow]="false"></ng-image-slider>
+                    <ng-image-slider class="article_picture" [images]="imageObject" #nav [imageSize]="sliderConfig"
+                        [imagePopup]="false" [showArrow]="false"></ng-image-slider>
                     <div class="slider_buttons">
                         <div class="button" (click)="prevImageClick()">
                             <div>
@@ -243,11 +244,11 @@
     </div>
 </section>
 <section class="one_large_visit" *ngIf="allLocations.length > 0">
-    <div class="large_image" [lazyLoad]="allLocations[allLocations.length -1]?.mainImage" >
+    <div class="large_image" [lazyLoad]="allLocations[allLocations.length -1]?.mainImage">
         <div class="visit_block" [routerLink]="[ '/location-details/'+allLocations[allLocations.length -1]?.id ]">
             <p class="farm_visit">{{allLocations[allLocations.length -1]?.category}}</p>
             <div class="visit_heading">{{allLocations[allLocations.length -1]?.title}}</div>
-            <div class="item_price">From <span
+            <div class="item_price oneitem_price">From <span
                     class="item_price_bold">${{allLocations[allLocations.length -1]?.price}}/person </span>
             </div>
             <div class="arrow_visit">

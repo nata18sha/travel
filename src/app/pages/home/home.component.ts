@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   innerWidth: any;
 
   sliderConfig = {width: '733px', height: '475px', space: 10 };
-  // sliderConfig = {width: '733px', height: '475px', space: 10 };
+
 
 
   constructor() {

@@ -3,15 +3,13 @@
 @import '../../common/_mixins.scss';
 
 
-//Main banner styles
+//Main banner styles------------------------------
 
 .banner__main {
     height: 815px;
     width: 100%;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fe903201cac99d53821b689cee47184f4136d7d9a.png?alt=media&token=39e0086f-12f8-499d-af1f-ac52ef8b2ded);
     @include background;
     z-index: 1;
-    // @include flexbox(column, nowrap, space-between, flex-start);
 }
 
 .main_shadow {
@@ -47,7 +45,6 @@
 .banner__main_pannel {
     height: 120px;
     width: 100%;
-    // background-color: #fff;
     width: 100%;
     @include flexbox(row, nowrap, center, flex-end);
 }
@@ -55,8 +52,8 @@
     width: 1110px;
     margin: 0 auto;
     @include flexbox(row, nowrap, space-between, flex-start);
-    // border: 1px solid #000;
 }
+
 .bottom_margin_main {
     margin-bottom: 100px;
 }
@@ -65,19 +62,20 @@
     width: 100%;
     background-color: #fff;
 }
+
 .check {
     @include flexbox(row, nowrap, center, center);
     height: 120px;
     width: 1110px;
 }
+
 .check_item {
     @include flexbox(row, nowrap, space-between, center);
     width: 251px;
     height: inherit;
     background-color: #fff;
-    // padding-right: 20px;
-    // border-right: 1px solid black;
 }
+
 .check-out {
     font-family: 'Sofia Pro';
     font-size: 14px;
@@ -85,6 +83,7 @@
     color: $subTextColor;
     margin-bottom: 15px;
 }
+
 .text-link {
     font-family: 'Sofia Pro Medium';
     font-size: 16px;
@@ -92,24 +91,24 @@
     color: #000000;
     padding-bottom: 5px;
     border-bottom: 1px solid transparent;
-    // text-decoration: none;
 }
+
 .text-link:hover {
     color: $mainColor;
-    // text-decoration: underline ;
     border-bottom: 1px solid $mainColor;
-    // text-underline-offset: 0.5em;
-    
 }
+
 .line {
     height: 70px;
     width: 1px;
     transform: rotate(20deg);
     background-color: #d8d8d8;
 }
+
 .space-link {
     margin-left: 54px;
 }
+
 .find {
     @include flexbox(column, nowrap, center, flex-start);
     width: 357px;
@@ -120,6 +119,7 @@
     fill: #fff;
     padding: 20px;
 }
+
 .find_big_text {
     font-family: 'Sofia Pro';
     font-size: 18px;
@@ -131,12 +131,13 @@
     font-size: 13px;
     margin-bottom: 10px;
 }
+
 .scroll {
     height: inherit;
     width: 100%;
     @include flexbox(column, nowrap, center, center);
-    // background-color: #fff;
 }
+
 .scroll_text {
     width: 36px;
     height: 13px;
@@ -144,7 +145,6 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -155,27 +155,24 @@
     margin-top: 25px;
 }
 
-
 .item_location {
     font-family: 'Sofia Pro';
     font-size: 13px;
     color: #9b9b9b;
-    // margin-bottom: 20px;
     position: relative;
-    // margin-left: 20px;
 }
+
 .location_icon {
     fill: #9b9b9b;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -3px;
 }
 .rate_block {
     @include flexbox(row, nowrap, center, flex-start);
-    // background: khaki;
     width: 100%;
 }
+
 .item_rate {
     font-family: 'Sofia Pro Bold';
     font-size: 13px;
@@ -185,44 +182,44 @@
     margin-left: 20px;
     text-align: center;
 }
+
 .star_icon {
     fill: #30797c;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -1px;
-
 }
+
 .star_count {
     font-family: 'Sofia Pro';
     font-size: 13px;
     color: #9b9b9b; 
 }
+
 .opening_block {
     font-family: 'Sofia Pro';
     font-size: 13px;
     font-weight: 500;
     color: $textColor;
-    // margin-left: 20px;
-}
-.bold_text {
-    font-family: 'Sofia Pro Medium';
-    // font-weight: bold;
 }
 
-//Main block styles
+.bold_text {
+    font-family: 'Sofia Pro Medium';
+}
+
+//Main block styles-------------------------------
 
 .location_main {
     width: 544px;
-    min-height: 400px;
-    // border: 1px solid green;
-    
+    min-height: 400px;    
 }
+
 .navigation {
     @include flexbox(row, nowrap, flex-start, flex-start); 
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
 .nav_tab {
     border-bottom: 2px solid #9b9b9b;
     height: 25px;
@@ -232,6 +229,7 @@
     color: #9b9b9b;
     position: relative;
 }
+
 .tick_icon {
     position: absolute;
     top: -10px;
@@ -253,14 +251,15 @@
     color: $linkColor;
     font-family: 'Sofia Pro Medium';
     border-bottom: 2px solid $linkColor;
-  
 }
+
 .nav_line {
     width: 1px;
     height: 25px;
     background-color: #d8d8d8;
     margin: 0 10px;
 }
+
 .main_heading {
     font-family: 'Didot';
     font-size: 24px;
@@ -269,6 +268,7 @@
     color: #000000;
     margin-bottom: 20px;
 }
+
 .main_text {
     font-family: 'Sofia Pro';
     font-size: 13px;
@@ -276,31 +276,28 @@
     color: $textColor;
     margin-bottom: 20px;
 }
+
 #slider {
-    border-radius: 0% !important;
-    // overflow: visible;
-    // width: 100vw;
-    // border: 1px solid #000;
-    // z-index: 1;
     position: relative;
 }
+
 .slider_buttons {
-    // border: 1px solid green;
     position: absolute;
     left: 0;
     bottom: 4px;
-    // z-index: 3;
     width: 123px;
     height: 60px;
     background-color: #ffffff;
     @include flexbox(row, nowrap, space-between, center);
 }
+
 .button_line {
     width: 1px;
     height: 40px;
     transform: rotate(20deg);
     background-color: #d8d8d8;
 }
+
 .button {
     height: inherit;
     width: inherit;
@@ -308,20 +305,23 @@
     @include flexbox(row, nowrap, center, center);
     cursor: pointer;
 }
+
 .button:hover {
     fill: $mainColor;
 }
+
 .location_photos {
     margin-bottom: 40px;
 }
+
 .subheading {
     font-family: 'Sofia Pro Medium';
     font-size: 20px;
     line-height: 2.5;
     letter-spacing: normal;
     color: $textColor;
-    
 }
+
 .next_button {
     width: 168px;
     height: 50px;
@@ -331,9 +331,11 @@
     color: #fff;
     margin-top: 20px;
 }
+
 .card_details {
     @include flexbox(row, nowrap, space-between, flex-start);
 }
+
 .pay_later {
     color: $mainColor;
     background-color: #fff;
@@ -348,14 +350,11 @@
 .location_pannel {
     width: 356px;
     min-height: 200px;
-    // border-radius: 3px;
-    // border: 1px solid khaki;
-    // background-color: #f8f8f8;
 }
+
 .reservation_block {
     width: 356px;
     min-height: 290px;
-    // border-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     background-color: #f8f8f8;
@@ -365,15 +364,15 @@
 .date_block {
     @include flexbox(row, nowrap, space-between, flex-start);
 }
+
 .date {
     width: 48%;
-    // border: 1px solid #000;
 }
+
 .reserv_input {
     font-family: 'Sofia Pro';
     font-size: 14px;
     margin-top: 10px;
-    // margin-bottom: 20px;
     width: 100%;
     height: 40px;
     border: solid 1px #e4e4e4;
@@ -382,25 +381,29 @@
     color: $textColor;
     outline-color: rgba(255, 82, 0, 0.5);
 }
+
 .card_input {
     font-family: 'Sofia Pro';
 }
+
 .input_label {
     font-family: 'Sofia Pro Medium';
     font-size: 13px;
     color: #000000;
-   
 }
+
 .input_label_thin {
     font-family: 'Sofia Pro Medium';
     font-size: 14px;
     color: #3b3b3b;
     margin-top: 20px;
 }
+
 hr {
     border: 1px dashed #e4e4e4;
     margin-bottom: 20px;
 }
+
 .submit_button {
     width: 100%;
     height: 50px;
@@ -414,31 +417,37 @@ hr {
     cursor: pointer;
     margin-top: 20px;
 }
+
 .pannel_details {
     border: solid 1px #e4e4e4;
     margin-bottom: 20px;
- 
 }
+
 .details_header, .details_body {
     padding: 20px;
 }
+
 .details_bold_text {
     font-family: 'Sofia Pro Medium';
     font-size: 13px;
     color: #000000;
 }
+
 .details_header {
     background-color: #f8f8f8;
 }
+
 .space_between {
     @include flexbox(row, nowrap, space-between, flex-start);
     margin-bottom: 15px;
 }
+
 .text_thin {
     font-family: 'Sofia Pro';
     font-size: 13px;
     color: #000000;
 }
+
 .details_link {
     font-family: 'Sofia Pro';
     font-size: 13px;
@@ -473,16 +482,195 @@ hr {
         cursor: pointer;
     }
 }
+
 button[disabled] {
     background-color: #f17941;
 }
+
 .invalidText {
     font-family: 'Sofia Pro';
     font-size: 12px;
     color: red;
     margin-top: 5px;
 }
+
 .login_link {
     color: $linkColor;
         cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+    //Main banner styles---------------------------------
+
+    .banner__main {
+        height: 615px;
+    }
+
+    .banner__main_heading {
+        width: 320px;
+        margin: 150px auto;
+        min-height: 150px;
+    }
+
+    .heading_small {
+        margin-bottom: 20px;
+    }
+
+    .heading_big {
+        font-size: 50px;
+        width: 320px;
+    }
+
+    .banner__main_pannel {
+        height: 100px;
+        width: 100%;
+        @include flexbox(row, nowrap, flex-start, flex-end);
+    }
+
+    .container_main {
+        width: 320px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .blanc {
+        display: none;
+    }
+
+    .check {
+        @include flexbox(row, nowrap, center, center);
+        height: inherit;
+        width: 320px;
+        width: 100%;
+    }
+
+    .check_item {
+        @include flexbox(row, nowrap, space-between, center);
+        width: 25%;
+        height: inherit;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+            div {
+                text-align: center;
+            }
+        padding: 5px;
+        padding-top: 10px;
+    }
+
+    .check-out {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+
+    .text-link {
+        font-size: 13px;    
+        padding: 0;
+    }
+
+    .line {
+      display: none;
+    }
+
+    .space-link {
+        margin-left: 0px;
+    }
+
+    .find {
+        width: 25%;
+        font-size: 13px;
+        padding: 10px;
+        border-radius: 0;
+    }
+    .find_big_text {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .find_text {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .scroll {
+        display: none;
+    }
+    .scroll_text {
+        display: none;
+    }
+    
+    .scroll_line {
+        display: none;
+    }
+    //Main block styles-------------------------------
+
+    .location_main {
+        width: 320px;
+        
+    }
+
+    .nav_tab {
+        height: 50px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .nav_line {
+        min-height: 40px;
+    }
+
+    .main_heading {
+        font-size: 20px;
+    }
+
+    .slider_buttons {
+        width: 80px;
+        height: 40px;
+    }
+ 
+    .subheading {
+        font-size: 18px;
+    }
+
+    .next_button {
+        width: 168px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .card_details {
+        @include flexbox(row, nowrap, space-between, flex-start);
+    }
+
+    .pay_later {
+        color: $mainColor;
+        background-color: #fff;
+        margin-left: 20px;
+        border: 1px solid $mainColor;
+    }
+
+    .details_small {
+        width: 30%;
+    }
+
+    //Pannel styles-------------------------------------
+    .location_pannel {
+        width: 320px;
+    }
+
+    .reservation_block {
+        width: 320px;
+        margin-bottom: 50px;
+    }
+
+    .details_pannel {
+        margin-bottom: 50px;
+    }
+
+    .reserv_input {
+        font-size: 12px;
+    }
+    
+
+
 }

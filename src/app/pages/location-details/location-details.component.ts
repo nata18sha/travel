@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, HostListener } from '@angular/core';
 import { NgImageSliderComponent } from 'ng-image-slider';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -61,6 +61,11 @@ export class LocationDetailsComponent implements OnInit {
   cardName:string;
 
 
+  innerWidth: any;
+
+  sliderConfig = {width: '544px', height: '444px', space: 0 };
+
+
   constructor(private actRoute: ActivatedRoute,
               private firecloud: AngularFirestore,
               private reservationService: ReservationService,
@@ -72,6 +77,13 @@ export class LocationDetailsComponent implements OnInit {
     this.getViewLocation();
     this.calculateDays();
     this.getUserData();
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '200px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
   }
   openModal(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template);
@@ -198,6 +210,18 @@ export class LocationDetailsComponent implements OnInit {
   checkMinDate():void {
     this.minDateTo = this.inDate;
     
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
+    console.log(this.innerWidth)
   }
 
 }

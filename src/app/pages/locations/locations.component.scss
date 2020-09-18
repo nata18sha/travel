@@ -2,15 +2,13 @@
 @import '../../common/_variables.scss';
 @import '../../common/_mixins.scss';
 
-//Main banner
+//Main banner-------------------------------------------
 .banner__main {
     height: 815px;
     width: 100%;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fbart-zimny-xzaR7lEA1E4-unsplash.jpg?alt=media&token=e22a8c63-51cd-49fb-9adb-4c4ca483563a);
     @include background;
-    // z-index: 1;
-    // @include flexbox(column, nowrap, space-between, flex-start);
 }
+
 .main_shadow {
     width: 100%;
     height: 100%;
@@ -93,7 +91,7 @@
     @include flexbox(row, nowrap, space-between, center);
     width: 283px;
     height: inherit;
-    border-top: red;
+    // border-top: red;
 }
 .check-out {
     font-family: 'Sofia Pro';
@@ -122,10 +120,6 @@
     line-height: 1.38;
     color: #ffffff;
 }
-// .main_smalltext:hover {
-//     color: $mainColor;
-//     // cursor: pointer;
-// }
 
 .space-link {
     margin-left: 54px;
@@ -153,7 +147,6 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -164,7 +157,7 @@
     margin-top: 25px;
 }
 
-//Pupular section
+//Pupular section------------------------------------
 .popular {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -247,7 +240,7 @@
     margin-bottom: 50px;
 }
 
-//Location items
+//Location items------------------------------------------------
 
 .locations_items {
     @include flexbox(row, wrap, space-between, flex-start);
@@ -269,7 +262,6 @@
 }
 .item_image {
     @include background;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F2fa522de79f247265ee6abc7cdd3291b33284c81.png?alt=media&token=a6fa89a1-5800-47d9-b55d-473948a2d27b);
     width: 100%;
     height: 340px;
     
@@ -306,7 +298,6 @@
 }
 .location_icon {
     fill: #9b9b9b;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -3px;
@@ -321,7 +312,6 @@
 }
 .star_icon {
     fill: #30797c;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -1px;
@@ -334,7 +324,7 @@
 }
 
 
-// Discover section / One article section
+// Discover section / One article section-----------------------------------------------------
 
 .discover_container{
     width: 100%;
@@ -394,7 +384,6 @@
 }
 #slider {
     border-radius: 0% !important;
-    // z-index: 1;
     position: relative;
 }
 
@@ -425,12 +414,12 @@
     fill: $mainColor;
 }
 
-//One large image
+//One large image-----------------------------------
 .large_image {
     @include background;
     height: 700px;
     width: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Faed30a8a4a1508b80d2a0be8310719af951cc6c4.png?alt=media&token=c5fe987e-b4d0-4fe3-af8e-6dde0cc63829);
+    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Faed30a8a4a1508b80d2a0be8310719af951cc6c4.png?alt=media&token=c5fe987e-b4d0-4fe3-af8e-6dde0cc63829);
     margin-top: 100px;
     margin-bottom: 100px;
     @include flexbox(row, nowrap, flex-end, flex-end);
@@ -542,5 +531,237 @@
 }
 .feedback_two {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F666e2e39921cc92a85ce3ad7b0580b9abdc6cf9b.png?alt=media&token=f5b7dead-ecae-48d4-9e12-08f64468cd86);
+}
+
+
+@media only screen and (max-width: 480px) {
+//Main banner-------------------------------
+    .banner__main {
+        height: 615px;
+    }
+    .banner__main_heading {
+        width: 320px;
+        margin: 150px auto;
+        min-height: 150px;
+    }
+    .heading_small {
+        margin-bottom: 20px;
+    }
+    .heading_big {
+        font-size: 50px;
+        width: 320px;
+        margin-bottom: 0;
+    
+    }
+    .banner__main_pannel {
+        height: 100px;
+    }
+
+    .add_space {
+        margin-right: 0px;
+    }
+ 
+    .container_main {
+        width: 320px;
+        margin: 0 auto;
+        display: block;
+    }
+    .blanc {
+        display: none;
+    }
+
+    .check {
+        height: inherit;
+        width: inherit;
+    }
+
+    .check_item {
+        width: 80px;
+    }
+
+    .check-out {
+        font-size: 13px;
+        margin-bottom: 0px;
+    }
+
+    .find {
+        @include flexbox(row, nowrap, space-between, center);
+        width: 80px;
+    }
+
+    .scroll {
+        display: none;
+    }
+
+    //Pupular section------------------------------------------------
+    .popular {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .popular__content {
+        display: block;
+    }
+
+    .popular__content_filter {
+        width: 320px;
+    }
+
+    .popular__content_locations {
+        width: 320px;
+    }
+
+    .filter_headertext {
+        font-size: 20px;
+    }
+
+    .filter_line {
+        width: 74px;
+        height: 3px;
+        background-color: #30797c;
+        margin-bottom: 20px;
+    }
+
+    .locations_header_big {
+        width: 320px;
+        height: auto;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    //Location items---------------------------------------------------------
+
+    .location_item {
+        width: 320px;
+    }
+
+    //One article section----------------------------------------------------
+    .discover_container{
+        min-height: 300px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    .section_name {
+        font-size: 13px;
+    }
+
+    .article {
+        width: 320px;
+        min-height: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .article_text {
+        display: block;
+
+        margin-bottom: 20px;
+        width: 320px;
+    }
+
+    .heading_text, .main_text_width {
+        width: 320px;
+        height: auto;
+    }
+
+    .heading_text {
+        font-size: 40px;
+        width: 320px;
+        margin-bottom: 20px;
+    }
+
+    .main_text {
+        font-size: 13px;
+        width: 320px;
+    }
+
+    .slider_buttons {
+        width: 80px;
+        height: 40px;
+    }
+
+    .button_line {
+        height: 35px;
+    }
+
+    .button:hover {
+        fill: $mainColor;
+    }
+
+    //One large image-------------------------------------------
+    .large_image {
+        height: 380px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .visit_block {
+        width: 250px;
+        height: 100px;
+        padding: 10px 15px;
+    }
+    .farm_visit {
+        margin-bottom: 5px;
+    }
+
+    .visit_heading {
+        width: auto;
+        height: auto;
+        font-family: 'Didot';
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .arrow_visit {
+        fill: $mainColor;
+        cursor: pointer;
+        margin-top: -10px;
+    }
+
+//Load more button--------------------------
+    .button_block {
+        width: 100%;
+        @include flexbox(row, nowrap, center, center);
+    }
+    .load_more {
+        margin: 50px 0;
+    }
+
+    .oneitem_price {
+
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+ //Testimonials section-------------------------------
+
+    .testimonials {
+        padding: 50px 0;
+    }
+
+    .test_content {
+        @include flexbox(column, nowrap, center, center);
+
+    }
+
+    .test_block {
+        width: 320px;
+        height: 320px;
+        margin-bottom: 10px;
+    }
+
+    .feedback_header {
+        font-size: 15px;
+    }
+
+    .feedback_text {
+        font-size: 13px;
+    }
+
+    
+
+
+
 }
 
