@@ -216,3 +216,19 @@ font-style: 13px !important;
     }
 
 }
+@media only screen and (max-width: 991px) {
+    li {
+        margin: 5px;
+    }
+    li:hover::before {
+        bottom: -5px;
+    }
+    
+    .active-link::before {
+        bottom: -5px;
+    }
+    
+    .second_active::before {
+        bottom: -5px;
+    }
+}

@@ -2,10 +2,6 @@
 @import '../../common/_variables.scss';
 @import '../../common/_mixins.scss';
 
-// * img {
-//     width: 100%;
-//     height: auto;
-// }
 * {
     font-family: 'Sofia Pro';
     font-size: 14px;
@@ -19,14 +15,15 @@
         }
         overflow: hidden;
 }
+
+//Banner main--------------------------------------------------------
 .banner__main {
     height: 815px;
     width: 100%;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0c2c426f1191c5525a59ad418f223a476816a036.png?alt=media&token=095d47b2-3839-471f-9eef-186e0688ea61);
     @include background;
     z-index: 1;
-    // @include flexbox(column, nowrap, space-between, flex-start);
 }
+
 .main_shadow {
     width: 100%;
     height: 100%;
@@ -59,7 +56,7 @@
     margin-bottom: 70px;
   
 }
-//Main article styles
+//Main article styles------------------------------
 
 .article_container {
     width: 920px;
@@ -150,7 +147,7 @@ hr {
    
 }
 
-//Comments
+//Comments----------------------------------------------------------------------
 .comment_data {
     @include flexbox(row, nowrap, flex-start, flex-start);
     margin-bottom: 15px;
@@ -160,7 +157,6 @@ hr {
     height: 60px;
     border-radius: 50%;
     margin-right: 12px;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F47bdc311f113f39e6a99170a319cc5cf4d6217ee.png?alt=media&token=b2ba3e6f-72b0-4640-aca4-80670a395290);
     @include background;
 }
 
@@ -249,4 +245,68 @@ img {
 .login_link {
     color: $linkColor;
         cursor: pointer;
+}
+
+
+@media only screen and (max-width: 480px) {
+    * {
+        font-size: 13px;
+    }
+    
+    //Banner main--------------------------------------------------------
+    .banner__main {
+        height: 615px;
+    }
+    
+    .banner__main_heading {
+        width: 320px;
+        margin: 150px auto;
+    }
+
+    .heading_small {
+        font-size: 13px;
+    }
+
+    .heading_big {
+        height: auto;
+        width: 320px;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+//Main article styles------------------------------
+
+    .article_container {
+        width: 320px;
+        margin-top: -80px;
+        padding: 30px;
+    }
+
+    .user_image {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    
+    .user_name {
+        padding: 15px 0;
+    }
+    
+    .comment_container {
+        min-height: 300px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .leave_comment_container {
+        width: 320px;
+        padding: 0;
+    }
+
+    .comment_area {
+        height: 150px;
+        font-size: 13px;
+    }
+
+
+
 }

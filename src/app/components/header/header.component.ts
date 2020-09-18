@@ -26,6 +26,8 @@ export class HeaderComponent implements OnInit {
 
   navbarOpen = false;
 
+  innerWidth: any;
+
   constructor(private actRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -65,6 +67,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.checkLogin();
     this.updateCheckLogin();
+    this.innerWidth = window.innerWidth;
   }
 
 
@@ -116,10 +119,21 @@ export class HeaderComponent implements OnInit {
 
 
   toggleNavbar():void {
-    this.navbarOpen = !this.navbarOpen;
+    if (this.innerWidth <= 991) {
+       this.navbarOpen = !this.navbarOpen;
+    }
+   
   }
   navbarHide():void {
     this.navbarOpen = false;
+  }
+
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth)
   }
 
 

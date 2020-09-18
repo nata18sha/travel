@@ -34,7 +34,7 @@ export class LocationDetailsComponent implements OnInit {
 
   minDate = new Date();
   minDateTo: Date;
- 
+
 
   reservID = '1';
   locationID: string;
@@ -47,7 +47,7 @@ export class LocationDetailsComponent implements OnInit {
   vat: number;
   total: number;
   status = 'paid';
-  
+
   contacts: object;
   firstName: string;
   lastName: string;
@@ -58,18 +58,20 @@ export class LocationDetailsComponent implements OnInit {
   expYear: string;
   expMonth: string;
   cardNumber: string;
-  cardName:string;
+  cardName: string;
 
 
   innerWidth: any;
 
-  sliderConfig = {width: '544px', height: '444px', space: 0 };
+  sliderConfig = { width: '544px', height: '444px', space: 0 };
+  isShow: boolean;
+  topPosToStartShowing = 100;
 
 
   constructor(private actRoute: ActivatedRoute,
-              private firecloud: AngularFirestore,
-              private reservationService: ReservationService,
-              private modalService: BsModalService) {
+    private firecloud: AngularFirestore,
+    private reservationService: ReservationService,
+    private modalService: BsModalService) {
 
   }
 
@@ -79,10 +81,10 @@ export class LocationDetailsComponent implements OnInit {
     this.getUserData();
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 480) {
-      this.sliderConfig = {width: '320px', height: '200px', space: 5 };
+      this.sliderConfig = { width: '320px', height: '200px', space: 5 };
     }
     else {
-      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
     }
   }
   openModal(template: TemplateRef<any>): void {
@@ -126,19 +128,23 @@ export class LocationDetailsComponent implements OnInit {
 
   makeReservation(template: TemplateRef<any>): void {
     if (JSON.parse(localStorage.getItem('user'))) {
-          this.isDetails = false;
-    this.isPersons = true;
-    this.isPannelDetails = true;
-    this.locationDone = true;
+      this.isDetails = false;
+      this.isPersons = true;
+      this.isPannelDetails = true;
+      this.locationDone = true;
 
-    // console.log(this.inDate)
-    // console.log(this.outDate)
-    console.log(this.persons)
-    this.calculateDays();
+      // console.log(this.inDate)
+      // console.log(this.outDate)
+      console.log(this.persons)
+      this.calculateDays();
     }
     else {
       this.modalRef = this.modalService.show(template);
     }
+    if (this.innerWidth <= 480) {
+      this.gotoTop();
+    }
+
 
   }
   editReservation(): void {
@@ -187,9 +193,9 @@ export class LocationDetailsComponent implements OnInit {
       this.outDate,
       this.daysStay,
       this.persons,
-      this.total = this.daysStay*this.location.price*this.persons,
+      this.total = this.daysStay * this.location.price * this.persons,
       this.vat = +(this.total * 0.1).toFixed(2),
-      this.contacts = {fName: this.firstName, lName: this.lastName, email: this.email, phone: this.phone},
+      this.contacts = { fName: this.firstName, lName: this.lastName, email: this.email, phone: this.phone },
       status = 'paid'
     );
     delete newReserv.id;
@@ -207,21 +213,43 @@ export class LocationDetailsComponent implements OnInit {
   }
 
 
-  checkMinDate():void {
+  checkMinDate(): void {
     this.minDateTo = this.inDate;
-    
+
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 480) {
-      this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+      this.sliderConfig = { width: '320px', height: '208px', space: 5 };
     }
     else {
-      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
     }
     console.log(this.innerWidth)
+  }
+
+
+
+
+  @HostListener('window:scroll')
+  checkScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    // console.log('[scroll]', scrollPosition);
+    if (scrollPosition >= this.topPosToStartShowing) {
+      this.isShow = true;
+    } else {
+      this.isShow = false;
+    }
+  }
+
+  gotoTop(): void {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }
