@@ -108,8 +108,15 @@
     border: solid 1px #979797;
     border-radius: 50%;
     fill: $textColor;
+    transition: all ease-out 0.3s;
+    cursor: pointer;
     // background-color: rgb(65, 165, 98);
 
+}
+.icons:hover {
+    fill: #fff;
+    background-color: #4a4a4a;
+    border: solid 1px #4a4a4a;
 }
 .icon {
     margin-top: -3px;
@@ -121,7 +128,19 @@
     outline: none;
 }
 
+@media only screen and (max-width: 1200px) {
+    .footer_container {
+        width: 735px;
+    }
 
+    .mailing {
+        display: none;
+    }
+
+
+
+
+}
 
 @media only screen and (max-width: 480px) {
     .footer_copyright {
@@ -178,3 +197,4 @@
     }
 
 }
+

@@ -6,7 +6,7 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
-//header
+//Header-----------------------------------------------------
 
 .admin_header {
     width: 100%;
@@ -235,6 +235,9 @@ input .choose_image {
 button[disabled] {
     background-color: #f17941;
 }
+.next_button {
+    font-size: 13px;
+}
 
 //Order pipe
 thead th {
@@ -252,5 +255,61 @@ thead th {
       span {
         visibility: visible;
       }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .hidden {
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    //Header-----------------------------------------------------
+
+    .hidden {
+        display: none;
+    }
+    .head_name {
+        font-size: 13px;
+    }
+
+    .add_location_btn {
+        margin-bottom: 13px;
+        font-size: 13px;
+    }
+    .thead_styles {
+        font-size: 12px;
+    }
+    td {
+        font-size: 12px; 
+    }
+
+    .input_name {
+        font-size: 13px;
+    }
+
+
+    //Order pipe---------------------------
+    thead th {
+        // cursor: pointer;
+        margin-right: 5px;
+        margin-left: 5px;
+    
+        span {
+        visibility: hidden;
+        }
+    
+        &.active {
+        color: #fff;
+    
+        span {
+            visibility: visible;
+        }
+        }
+    }
+    table {
+       width: 320px;
+       word-wrap: normal;
     }
   }

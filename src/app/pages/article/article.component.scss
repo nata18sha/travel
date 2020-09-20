@@ -248,6 +248,35 @@ img {
 }
 
 
+@media only screen and (max-width: 1200px) {
+    .banner__main_heading {
+        width: 735px;
+    }
+
+    .container_main {
+        width: 735px;
+    }
+    .check {
+        width: 735px;
+    }
+    .check_item {
+        width: 180px;
+    }
+
+    //Main article styles------------------------------
+
+    .article_container {
+        width: 735px;
+        padding: 75px;
+        }
+
+    .leave_comment_container {
+        width: 735px;
+    }
+
+
+}
+
 @media only screen and (max-width: 480px) {
     * {
         font-size: 13px;

@@ -18,7 +18,6 @@
 .main_icon {
     width: 36px;
     height: 36px;
-    // opacity: 0.4;
     background-color: #fcb493;;
     border-radius: 50%;
     @include flexbox(row, nowrap, center, center);
@@ -39,7 +38,6 @@
     color: $mainColor;
     height: 100%;
     @include flexbox(row, nowrap, flex-start, center);
-    // border: 1px solid #000;
 }
 .user_block{
     padding: 20px 30px;
@@ -53,12 +51,12 @@
 .reserv_block {
     min-height: 100px;
     width: 49%;
-    // border: 1px solid #000;
 }
+
 .reserv_block_right {
     width: 356px;
 }
-//location item
+//Location item------------------------------
 .locations_items {
     @include flexbox(row, wrap, space-between, flex-start);
     margin: 0 auto;
@@ -68,7 +66,6 @@
     width: 356px;
     height: 477px;
     border-radius: 3px;
-    // border: 1px solid #000;
     margin-bottom: 30px;
     cursor: pointer;
     transition: all ease-in 0.3s;
@@ -118,7 +115,6 @@
 }
 .location_icon {
     fill: #9b9b9b;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -3px;
@@ -135,7 +131,6 @@
 }
 .star_icon {
     fill: #30797c;
-    // background-color: khaki;
     position: absolute;
     left: -20px;
     top: -1px;
@@ -155,4 +150,76 @@
     span {
         font-family: 'Sofia Pro Medium';
     }
+
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .reserv_block {
+        width: 100%;
+    }
+    .res_block {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .head_name {
+        font-size: 13px;
+
+    }
+
+    .res_block {
+        display: block;
+    }
+    .reserv_block {
+        width: 100%;
+    }
+    .reserv_block_right {
+        width: inherit;
+    }
+
+    .location_item {
+        width: 258px;
+        height: auto;
+    }
+ 
+    .item_content {
+        padding: 10px 15px;
+    }
+
+    .item_image {
+        width: 100%;
+        height: 258px;
+    }
+
+    .image_shadow {
+        padding: 10px 15px;
+    }
+
+    .image_text {
+        font-size: 20px;
+    }
+
+    .item_price {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .item_location {
+        font-family: 'Sofia Pro';
+        font-size: 13px;
+        color: #9b9b9b;
+        margin-bottom: 20px;
+        position: relative;
+        margin-left: 20px;
+    }
+  
+    .info_text {
+        font-size: 13px;
+    }
+        
 }

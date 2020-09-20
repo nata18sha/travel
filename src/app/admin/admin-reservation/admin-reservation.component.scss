@@ -228,7 +228,7 @@ button[disabled] {
     background-color: #f17941;
 }
 
-//Modal Reservation Details
+//Modal Reservation Details------------------------------------
 .modal-body {
     @include flexbox(row, nowrap, space-between, flex-start);
 }
@@ -240,7 +240,7 @@ button[disabled] {
 .reserv_block_right {
     width: 356px;
 }
-//location item
+//Location item-----------------------------------------------
 .locations_items {
     @include flexbox(row, wrap, space-between, flex-start);
     margin: 0 auto;
@@ -355,4 +355,120 @@ thead th {
         visibility: visible;
       }
     }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .modal-body {
+        display: block;
+    }
+    .reserv_block_right {
+        width: 100%;
+        // @include flexbox(row, nowrap, center, center);
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    //Header-----------------------------------------------------
+
+    .hidden {
+        display: none;
+    }
+    .head_name {
+        font-size: 13px;
+    }
+
+    .add_location_btn {
+        margin-bottom: 13px;
+        font-size: 13px;
+    }
+    .thead_styles {
+        font-size: 12px;
+    }
+    td {
+        font-size: 12px; 
+    }
+
+    .input_name {
+        font-size: 13px;
+    }
+
+
+    //Order pipe---------------------------
+    thead th {
+        // cursor: pointer;
+        margin-right: 5px;
+        margin-left: 5px;
+    
+        span {
+        visibility: hidden;
+        }
+    
+        &.active {
+        color: #fff;
+    
+        span {
+            visibility: visible;
+        }
+        }
+    }
+    table {
+       width: 320px;
+       word-wrap: normal;
+    }
+    .next_button  {
+        font-size: 13px;
+    }
+
+    //Modal Reservation Details------------------------------------
+
+    .reserv_block {
+        // min-height: 100px;
+        width: 40%;
+        // border: 1px solid #000;
+    }
+    .reserv_block_right {
+        width: 200px;
+    }
+    //Location item-----------------------------------------------
+ 
+    .location_item {
+        width: 200px;
+        height: auto;
+    }
+ 
+    .item_content {
+        padding: 10px 15px;
+    }
+
+    .item_image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .image_shadow {
+        padding: 10px 15px;
+    }
+
+    .image_text {
+        font-size: 20px;
+    }
+
+    .item_price {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .item_location {
+        font-family: 'Sofia Pro';
+        font-size: 13px;
+        color: #9b9b9b;
+        margin-bottom: 20px;
+        position: relative;
+        margin-left: 20px;
+    }
+  
+    .info_text {
+        font-size: 13px;
+    }
+
   }

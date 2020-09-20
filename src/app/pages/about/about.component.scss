@@ -3,7 +3,7 @@
 @import '../../common/_mixins.scss';
 
 
-//Main banner styles
+//Main banner styles-----------------------------------
 
 .banner__main {
     height: 815px;
@@ -11,8 +11,8 @@
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F98447a2944a2784fca36d17674c1eca512df0477.png?alt=media&token=8ba4f531-39c2-4d4d-b4a8-efc600548ab2);
     @include background;
     z-index: 1;
-    // @include flexbox(column, nowrap, space-between, flex-start);
 }
+
 .main_shadow {
     width: 100%;
     height: 100%;
@@ -20,6 +20,7 @@
 
     @include flexbox(column, nowrap, space-between, flex-start);
 }
+
 .banner__main_heading {
     width: 1110px;
     margin: 100px auto;
@@ -27,6 +28,7 @@
     min-height: 200px;
     text-align: center;
 }
+
 .heading_small {
     font-family: 'Sofia Pro';
     font-size: 14px;
@@ -34,6 +36,7 @@
     color: #fafafa;
     margin-bottom: 30px;
 }
+
 .heading_big {
     font-family: 'Didot';
     font-size: 80px;
@@ -43,46 +46,48 @@
     line-height: 1.19;
     letter-spacing: normal;
     color: #ffffff;
-    
 }
+
 .banner__main_pannel {
     height: 120px;
     width: 100%;
-    // background-color: #fff;
     width: 100%;
     @include flexbox(row, nowrap, center, flex-end);
 }
+
 .container_main {
     width: 1110px;
     margin: 0 auto;
-    // @include flexbox(row, nowrap, space-between, flex-start);
-    // border: 1px solid #000;
 }
+
 .container_small {
     width: 920px;
     margin: 0 auto;
 }
+
 .bottom_margin_main {
     margin-bottom: 100px;
 }
+
 .blanc {
     height: inherit;
     width: 100%;
     background-color: #fff;
 }
+
 .check {
     @include flexbox(row, nowrap, center, center);
     height: 120px;
     width: 1110px;
 }
+
 .check_item {
     @include flexbox(row, nowrap, space-between, center);
     width: 251px;
     height: inherit;
     background-color: #fff;
-    // padding-right: 20px;
-    // border-right: 1px solid black;
 }
+
 .check-out {
     font-family: 'Sofia Pro';
     font-size: 14px;
@@ -90,6 +95,7 @@
     color: $subTextColor;
     margin-bottom: 15px;
 }
+
 .text-link {
     font-family: 'Sofia Pro Medium';
     font-size: 12px;
@@ -105,34 +111,37 @@
     transform: rotate(20deg);
     background-color: #d8d8d8;
 }
+
 .space-link {
     margin-left: 54px;
-
 }
+
 .find {
     width: 357px;
     height: inherit;
     background-color: #ffffff;
     border-top-right-radius: 20px;
-
 }
+
 .find_big_text {
     font-family: 'Sofia Pro';
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
 }
+
 .find_text {
     font-family: 'Sofia Pro';
     font-size: 13px;
     margin-bottom: 10px;
 }
+
 .scroll {
     height: inherit;
     width: 100%;
     @include flexbox(column, nowrap, center, center);
-    // background-color: #fff;
 }
+
 .scroll_text {
     width: 36px;
     height: 13px;
@@ -140,7 +149,6 @@
     font-family: 'Sofia Pro';
     font-size: 14px;
     color: #ffffff;
-    // margin-bottom: 25px;
 }
 
 .scroll_line {
@@ -151,33 +159,32 @@
     margin-top: 25px;
 }
 
-//One article section
+//One article section------------------------------------
 
 .article {
     width: 1110px;
     min-height: 400px;
     margin-top: 80px;
     margin-bottom: 100px;
-    // overflow: visible;
 }
+
 .article_text {
     @include flexbox(row, nowrap, space-between, center);
     margin-bottom: 60px;
-    // border: 1px solid #000;
     width: 733px;
     min-height: 250px;
 }
+
 .heading_text, .main_text_width {
     width: 356px;
     height: 125px;
-    // border: 1px solid #000;
 }
+
 .heading_text {
     font-family: 'Didot';
     font-size: 50px;
     font-weight: bold;
     line-height: 1.1;
-   
 }
 
 .main_text {
@@ -187,52 +194,42 @@
     letter-spacing: normal;
     color: $textColor; 
 }
+
 .link {
     color: $linkColor;
     font-weight: bold;
     cursor: pointer;
 }
+
 .article_picture {
-    // overflow: visible;
     width: 733px;
-    // width: 100vw;
     height: 475px;
-    // border: 1px solid #000;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F01d56c67bc26fa89ec01ab262e6ea756d77efc5b.png?alt=media&token=49a2c7a5-f19a-4a92-b586-c2d199f36b73);
     @include background;
-    // border: 1px solid red;
 }
 
 
 #slider {
     border-radius: 0% !important;
-    // overflow: visible;
-    // width: 100vw;
-    // border: 1px solid #000;
-    // z-index: 1;
     position: relative;
 }
-// ng-image-slider {
-//     overflow: visible;
 
-// }
 .slider_buttons {
-    // border: 1px solid green;
     position: absolute;
     left: 0;
     bottom: 4px;
-    // z-index: 3;
     width: 123px;
     height: 60px;
     background-color: #ffffff;
     @include flexbox(row, nowrap, space-between, center);
 }
+
 .button_line {
     width: 1px;
     height: 40px;
     transform: rotate(20deg);
     background-color: #d8d8d8;
 }
+
 .button {
     height: inherit;
     width: inherit;
@@ -240,11 +237,12 @@
     @include flexbox(row, nowrap, center, center);
     cursor: pointer;
 }
+
 .button:hover {
     fill: $mainColor;
 }
 
-//Beliefs section
+//Beliefs section--------------------------------------------
 
 .beliefs {
     @include flexbox(row, nowrap, space-between, flex-start);
@@ -272,6 +270,8 @@
     color: $subTextColor;
     margin-bottom: 30px;
 }
+
+//Team-----------------------------------------------------
 .team_heading {
     width: 545px;
     height: 120px;
@@ -324,4 +324,272 @@
 }
 .member_six {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fchristopher-campbell-rDEOVtE7vOs-unsplash.jpg?alt=media&token=76efbfa1-8807-470d-9851-a9c5917fb713);
+}
+
+
+@media only screen and (max-width: 1200px) {
+     //Main banner styles---------------------------------
+
+     .banner__main_heading {
+        width: 735px;
+    }
+
+    .container_main {
+        width: 735px;
+    }
+
+    .check {
+        width: 735px;
+    }
+    
+    .check_item {
+        width: 200px;
+       
+    }
+    .space-link {
+        margin-left: 0px;
+    }
+    .empty_item {
+        width: 10px;
+        padding: 0;
+    }
+
+    .find {
+        width: 80px;
+    }
+    .line {
+        display: none;
+    }
+    .container_small {
+        width: 735px;
+    }
+//One article section------------------------------------
+
+    .article {
+        width: 735px;
+        min-height: 400px;
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+//Beliefs section--------------------------------------------
+
+    .beliefs {
+        @include flexbox(row, nowrap, space-between, flex-start);
+        margin-bottom: 100px;
+    }
+
+    .beliefs_text {
+        width: 360px;
+ 
+    }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+    //Main banner styles---------------------------------
+
+    .banner__main {
+        height: 615px;
+        width: 100%;
+        @include background;
+        z-index: 1;
+    }
+
+    .banner__main_heading {
+        width: 320px;
+        margin: 150px auto;
+        margin-bottom: 0;
+        min-height: 150px;
+    }
+
+    .heading_small {
+        margin-bottom: 20px;
+    }
+
+    .heading_big {
+        font-size: 50px;
+        width: 320px;
+    }
+
+    .banner__main_pannel {
+        height: 100px;
+        width: 100%;
+        @include flexbox(row, nowrap, flex-start, flex-end);
+    }
+
+    .container_main {
+        width: 320px;
+        margin: 0 auto;
+    }
+
+    .blanc {
+        display: none;
+    }
+
+    .check {
+        display: block;
+        height: 100px;
+        width: 100%;
+    }
+    .check_item {
+        @include flexbox(row, nowrap, center, center);
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+            div {
+                text-align: center;
+            }
+        padding: 5px;
+        padding-top: 10px; 
+    }
+
+    .check-out {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text-link {
+        font-size: 13px;    
+        padding: 0;
+        word-wrap: break-word;
+        text-align: center;
+        width: 100%;
+    }
+
+    .line {
+    display: none;
+    }
+    .empty_item {
+        display: none;
+    }
+
+    .space-link {
+        margin-left: 0px;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .find {
+        display: none;
+    }
+
+    .scroll {
+        display: none;
+    }
+    .scroll_text {
+        display: none;
+    }
+
+    .scroll_line {
+        display: none;
+    }
+//One article section---------------------------
+
+    .article {
+        width: 320px;
+        min-height: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .article_text {
+        display: block;
+
+        margin-bottom: 20px;
+        width: 320px;
+    }
+
+    .heading_text, .main_text_width {
+        width: 320px;
+        height: auto;
+    }
+
+    .heading_text {
+        font-size: 40px;
+        width: 320px;
+        margin-bottom: 20px;
+    }
+
+    .main_text {
+        font-size: 13px;
+        width: 320px;
+    }
+
+    .slider_buttons {
+        width: 80px;
+        height: 40px;
+    }
+
+    .button_line {
+        height: 35px;
+    }
+
+    .button:hover {
+        fill: $mainColor;
+    }
+    //Beliefs section--------------------------------------------
+
+    .beliefs {
+        display: block;
+        margin-bottom: 30px;
+    }
+    .container_small {
+        width: 320px;
+    }
+
+    .beliefs_heading {
+        width: 320px;
+    }
+    
+    .beliefs_text {
+        width: 320px;
+    }
+
+    .section_name {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    //Team-----------------------------------------------------
+    .team_heading {
+        width: 320px;
+        height: auto;
+        font-family: 'Didot';
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .team_items {
+        @include flexbox(row, wrap, space-between, flex-start);
+    }
+    
+    .teammember {
+        width: 320px;
+        min-height: 320px;
+        margin-bottom: 30px;
+    }
+
+    .member_image{
+        width: inherit;
+        height: 320px;
+        margin-bottom: 20px;
+    }
+
+    .member_name {
+        font-size: 13px;
+    }
+
+    .member_position {
+        font-size: 13px;
+    }
+
+
+
+
+
 }

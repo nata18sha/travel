@@ -84,7 +84,7 @@ export class LocationDetailsComponent implements OnInit {
       this.sliderConfig = { width: '320px', height: '200px', space: 5 };
     }
     else {
-      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '544px', height: '444px', space: 10 };
     }
   }
   openModal(template: TemplateRef<any>): void {
@@ -225,7 +225,7 @@ export class LocationDetailsComponent implements OnInit {
       this.sliderConfig = { width: '320px', height: '208px', space: 5 };
     }
     else {
-      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '544px', height: '444px', space: 10 };
     }
     console.log(this.innerWidth)
   }

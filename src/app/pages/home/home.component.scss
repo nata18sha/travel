@@ -316,8 +316,6 @@
     width: 733px;
     height: 350px;
     @include background;
-    // padding: 20px 30px;
-    // @include flexbox(column, nowrap, flex-end, flex-start);
 }
 
 .services_small_image {
@@ -474,82 +472,36 @@
 
 
 
-@media only screen and (max-width: 480px) {
-//Main banner styles---------------------------------
 
-    .banner__main {
-        height: 615px;
-        width: 100%;
-        @include background;
-        z-index: 1;
-    }
+
+
+
+@media only screen and (max-width: 1200px) {
+    //Main banner styles---------------------------------
 
     .banner__main_heading {
-        width: 320px;
-        margin: 150px auto;
-        min-height: 150px;
-    }
-
-    .heading_small {
-        margin-bottom: 20px;
-    }
-
-    .heading_big {
-        font-size: 50px;
-        width: 320px;
-    }
-
-    .banner__main_pannel {
-        height: 100px;
-        width: 100%;
-        // width: 100%;
-        @include flexbox(row, nowrap, flex-start, flex-end);
+        width: 735px;
     }
 
     .container_main {
-        width: 320px;
-        margin: 0 auto;
-    }
-
-    .blanc {
-        display: none;
+        width: 735px;
     }
 
     .check {
-        @include flexbox(row, nowrap, center, center);
-        height: inherit;
-        width: 320px;
-        width: 100%;
-        // border: 1px solid red;
+        width: 735px;
     }
+    
     .check_item {
-        @include flexbox(row, nowrap, space-between, center);
-        width: 25%;
-        height: inherit;
-        background-color: #fff;
-        text-align: center;
-        cursor: default;
-            div {
-                text-align: center;
-            }
-        padding: 5px;
-        padding-top: 10px;
-        
+        width: 160px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
-
-    .check-out {
-        font-size: 12px;
-        font-weight: 500;
-        margin-bottom: 0px;
+    .check_first {
+        padding-left: 0px;
     }
-
-    .text-link {
-        font-size: 13px;    
-        padding: 0;
-    }
-
-    .line {
-      display: none;
+    .check_second {
+        padding-left: 10px;
+        padding-right: 35px;
     }
 
     .space-link {
@@ -557,187 +509,59 @@
     }
 
     .find {
-        // width: 120px;
-        width: 25%;
-        font-size: 14px;
-        padding-left: 10px;
-        border-radius: 0;
+        width: 200px;
     }
 
-    .scroll {
-        // height: inherit;
-        // width: 100%;
-        // @include flexbox(column, nowrap, center, center);
-        display: none;
-    }
-    .scroll_text {
-        display: none;
-    }
-    
-    .scroll_line {
-        display: none;
-    }
-
-//One article section---------------------------
+    //One article section---------------------------
 
     .article {
-        width: 320px;
-        min-height: 400px;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .article_text {
-        display: block;
-
-        margin-bottom: 20px;
-        width: 320px;
-    }
-
-    .heading_text, .main_text_width {
-        width: 320px;
-        height: auto;
-    }
-
-    .heading_text {
-        font-size: 40px;
-        width: 320px;
-        margin-bottom: 20px;
-    }
-
-    .main_text {
-        font-size: 13px;
-        width: 320px;
-    }
-
-    .slider_buttons {
-        width: 80px;
-        height: 40px;
-    }
-
-    .button_line {
-        height: 35px;
-    }
-
-    .button:hover {
-        fill: $mainColor;
+        width: 735px;
     }
 
     //About Us section----------------------------------
 
-    .section_name {
-        font-size: 13px;
-        margin-bottom: 20px;
-    }
-
-    .about_header {
-        width: 320px;
-        height: auto;
-        font-size: 50px;
-        margin-bottom: 30px;
-    }
 
     .about_content {
-        display: block;
+        @include flexbox(row, nowrap, space-between, center);
     }
-    
+
     .about_text {
         height: auto;
-        width: 320px;
-        margin-bottom: 20px;
+        width: 360px;
     }
-    
+
     .content_small {
-        width: 320px;
+        width: 360px;
     }
-    
+
     .about_image_box {
-        height: auto;
+        height: 600px;
     }
-    
+
     .about_image_left {
-        width: 320px;
+        width: 360px;
+        height: 600px;
+    }
+
+    .about_image_right {
+        width: 360px;
         height: 450px;
     }
-    
-    .about_image_right {
-        display: none;
-    }
-    
-    .about {
-        margin-bottom: 50px;
-    }
-    
-    .button_link {
-        width: 150px;
-        height: 50px;
-        font-size: 13px;
-    }
+
     //Services section---------------------------------------
 
     .services_images {
         height: auto;
-        margin-bottom: 50px;
     }
 
     .services_big_image {
-        width: 320px;
-        height: 325px;
-
-        margin-bottom: 10px;
+        margin-bottom: 25px;
     }
 
     .services_small_image {
-        width: 320px;
-        height: 325px;
-        margin-bottom: 10px;
-    }
-
+        margin-bottom: 25px;
     
-
-    .service_location {
-        font-size: 20px;
     }
-
-    .service_count {
-        font-size: 13px;
-    }
-
-    .count_large {
-        font-size: 20px;
-    }
-
-    .services_sometext {
-        width: inherit;
-        height: auto;
-        font-size: 20px;
-        margin-bottom: 30px;
-    }
-
-    .services_numbers{
-        @include flexbox(row, wrap, space-between, flex-start);
-        margin-bottom: 50px;
-    }
-
-    .numbers_details {
-        width: 50%;
-        margin-right: 0;
-        .section_name {
-            text-align: center;
-        }
-    }
-
-    .section_num {
-        font-family: 'Didot';
-        font-size: 50px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .large_image {
-        height: 380px;
-    }
-
     //Testimonials section-------------------------------
 
     .testimonials {
@@ -765,6 +589,299 @@
 
 
 
-
 }
 
+
+@media only screen and (max-width: 480px) {
+    //Main banner styles---------------------------------
+    
+        .banner__main {
+            height: 615px;
+            width: 100%;
+            @include background;
+            z-index: 1;
+        }
+    
+        .banner__main_heading {
+            width: 320px;
+            margin: 150px auto;
+            min-height: 150px;
+        }
+    
+        .heading_small {
+            margin-bottom: 20px;
+        }
+    
+        .heading_big {
+            font-size: 50px;
+            width: 320px;
+        }
+    
+        .banner__main_pannel {
+            height: 100px;
+            width: 100%;
+            // width: 100%;
+            @include flexbox(row, nowrap, flex-start, flex-end);
+        }
+    
+        .container_main {
+            width: 320px;
+            margin: 0 auto;
+        }
+    
+        .blanc {
+            display: none;
+        }
+    
+        .check {
+            @include flexbox(row, nowrap, center, center);
+            height: inherit;
+            width: 320px;
+            width: 100%;
+            // border: 1px solid red;
+        }
+        .check_item {
+            @include flexbox(row, nowrap, space-between, center);
+            width: 25%;
+            height: inherit;
+            background-color: #fff;
+            text-align: center;
+            cursor: default;
+                div {
+                    text-align: center;
+                }
+            padding: 5px;
+            padding-top: 10px;
+            
+        }
+    
+        .check-out {
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 0px;
+        }
+    
+        .text-link {
+            font-size: 13px;    
+            padding: 0;
+        }
+    
+        .line {
+          display: none;
+        }
+    
+        .space-link {
+            margin-left: 0px;
+        }
+    
+        .find {
+            // width: 120px;
+            width: 25%;
+            font-size: 14px;
+            padding-left: 10px;
+            border-radius: 0;
+        }
+    
+        .scroll {
+            // height: inherit;
+            // width: 100%;
+            // @include flexbox(column, nowrap, center, center);
+            display: none;
+        }
+        .scroll_text {
+            display: none;
+        }
+        
+        .scroll_line {
+            display: none;
+        }
+    
+    //One article section---------------------------
+    
+        .article {
+            width: 320px;
+            min-height: 400px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    
+        .article_text {
+            display: block;
+    
+            margin-bottom: 20px;
+            width: 320px;
+        }
+    
+        .heading_text, .main_text_width {
+            width: 320px;
+            height: auto;
+        }
+    
+        .heading_text {
+            font-size: 40px;
+            width: 320px;
+            margin-bottom: 20px;
+        }
+    
+        .main_text {
+            font-size: 13px;
+            width: 320px;
+        }
+    
+        .slider_buttons {
+            width: 80px;
+            height: 40px;
+        }
+    
+        .button_line {
+            height: 35px;
+        }
+    
+        .button:hover {
+            fill: $mainColor;
+        }
+    
+        //About Us section----------------------------------
+    
+        .section_name {
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+    
+        .about_header {
+            width: 320px;
+            height: auto;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+    
+        .about_content {
+            display: block;
+        }
+        
+        .about_text {
+            height: auto;
+            width: 320px;
+            margin-bottom: 20px;
+        }
+        
+        .content_small {
+            width: 320px;
+        }
+        
+        .about_image_box {
+            height: auto;
+        }
+        
+        .about_image_left {
+            width: 320px;
+            height: 450px;
+        }
+        
+        .about_image_right {
+            display: none;
+        }
+        
+        .about {
+            margin-bottom: 50px;
+        }
+        
+        .button_link {
+            width: 150px;
+            height: 50px;
+            font-size: 13px;
+        }
+        //Services section---------------------------------------
+    
+        .services_images {
+            height: auto;
+            margin-bottom: 50px;
+        }
+    
+        .services_big_image {
+            width: 320px;
+            height: 325px;
+    
+            margin-bottom: 10px;
+        }
+    
+        .services_small_image {
+            width: 320px;
+            height: 325px;
+            margin-bottom: 10px;
+        }
+    
+        
+    
+        .service_location {
+            font-size: 20px;
+        }
+    
+        .service_count {
+            font-size: 13px;
+        }
+    
+        .count_large {
+            font-size: 20px;
+        }
+    
+        .services_sometext {
+            width: inherit;
+            height: auto;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    
+        .services_numbers{
+            @include flexbox(row, wrap, space-between, flex-start);
+            margin-bottom: 50px;
+        }
+    
+        .numbers_details {
+            width: 50%;
+            margin-right: 0;
+            .section_name {
+                text-align: center;
+            }
+        }
+    
+        .section_num {
+            font-family: 'Didot';
+            font-size: 50px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    
+        .large_image {
+            height: 380px;
+        }
+    
+        //Testimonials section-------------------------------
+    
+        .testimonials {
+            padding: 50px 0;
+        }
+    
+        .test_content {
+            @include flexbox(column, nowrap, center, center);
+    
+        }
+    
+        .test_block {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 10px;
+        }
+    
+        .feedback_header {
+            font-size: 15px;
+        }
+    
+        .feedback_text {
+            font-size: 13px;
+        }
+    
+    
+    
+    
+    }

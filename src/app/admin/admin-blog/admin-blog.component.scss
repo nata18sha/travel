@@ -256,3 +256,56 @@ thead th {
       }
     }
   }
+
+  @media only screen and (max-width: 480px) {
+       //Header-----------------------------------------------------
+
+    .hidden {
+        display: none;
+    }
+    .head_name {
+        font-size: 13px;
+    }
+
+    .add_article_btn {
+        margin-bottom: 13px;
+        font-size: 13px;
+    }
+    .thead_styles {
+        font-size: 12px;
+    }
+    td {
+        font-size: 12px; 
+    }
+
+    .input_name {
+        font-size: 13px;
+    }
+
+
+    //Order pipe---------------------------
+    thead th {
+        // cursor: pointer;
+        margin-right: 5px;
+        margin-left: 5px;
+    
+        span {
+        visibility: hidden;
+        }
+    
+        &.active {
+        color: #fff;
+    
+        span {
+            visibility: visible;
+        }
+        }
+    }
+    table {
+       width: 320px;
+       word-wrap: normal;
+    }
+    .next_button {
+        font-size: 13px;
+    }
+  }

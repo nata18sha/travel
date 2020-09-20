@@ -252,6 +252,43 @@
 }
 
 
+
+@media only screen and (max-width: 1200px) {
+
+    .banner__main_heading {
+        width: 735px;
+    }
+
+    .container_main {
+        width: 735px;
+    }
+    .check {
+        width: 735px;
+    }
+    .check_item {
+        width: 180px;
+    }
+
+    //Blogs-------------------------------------------------------------------
+
+    //Articles all------------------------------
+    .container_blogs {
+        @include flexbox(column, nowrap, center, center);
+        width: 735px;
+        margin: 50px auto;
+    }
+
+       //Load more button----------------------------
+       .button_block {
+        margin-bottom: 50px;
+    }
+
+       //Recent articles--------------------------------------------
+
+   
+}
+
+
 @media only screen and (max-width: 480px) {
     //Main banner---------------------------------------------------
     .banner {

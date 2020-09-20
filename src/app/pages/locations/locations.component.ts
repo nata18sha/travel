@@ -168,7 +168,11 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
           this.locationChecked = true;
           if (this.allLocations.length < 13 ) {
             this.showLoadButton = false;
+            if (this.allLocations.length < 1 ) {
+              this.showLoadButton = false;
+            }
           }
+        
           console.log(this.allLocations)
         })
       })

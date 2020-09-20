@@ -31,17 +31,16 @@
     fill: $mainColor;
     cursor: pointer;
 }
+
 .active_link {
     color: $mainColor !important;
     fill: $mainColor !important;
 }
+
 .custom_tab a {
     text-decoration: none;
     color: #3b3b3b;
 }
-
-
-
 
 .admin_body {
     // border: 1px solid #000;
@@ -56,4 +55,57 @@
     margin-top: -10px;
     margin-right: 20px;
     stroke-width: 3px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container_admin { 
+        width: 735px;
+    }
+    //Navigation block
+    .admin_nav {
+        width: 120px;
+    }
+    
+    .admin_body {
+        width: 600px;
+
+    }
+    
+}
+
+
+@media only screen and (max-width: 480px) {
+    .container_admin { 
+        margin: 150px auto;
+        width: 320px;
+        display: block;
+    }
+
+    //Navigation block----------------------------
+    .admin_nav {
+        min-height: 50px;
+        width: 320px;
+        @include flexbox(row, nowrap, space-between, flex-start);
+    }
+
+    .route_text {
+        margin-top: 10px;
+    }
+
+    .custom_tab {
+        margin: 10px 0;
+        font-size: 13px;
+        a {
+            @include flexbox(column, nowrap, space-between, flex-start);
+        }
+        .icon_big {
+            margin: 0 auto;
+        }
+    }
+    
+    .admin_body {
+        width: inherit;
+        min-height: 300px;
+    }
+    
 }

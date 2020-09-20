@@ -499,6 +499,64 @@ button[disabled] {
         cursor: pointer;
 }
 
+
+
+
+@media only screen and (max-width: 1200px) {
+    //Main banner styles---------------------------------
+
+    .banner__main_heading {
+        width: 735px;
+    }
+
+    .container_main {
+        width: 735px;
+        display: block;
+    }
+
+    .check {
+        width: 735px;
+        @include flexbox(row, nowrap, center, center);
+    }
+    
+    .check_item {
+        width: 160px;
+        padding-left: 0px;
+        padding-right: 25px;
+    }
+    .check_first {
+        padding-left: 0px;
+    }
+    .check_second {
+        padding-left: 10px;
+        padding-right: 35px;
+    }
+
+    .space-link {
+        margin-left: 0px;
+    }
+
+    .find {
+        width: 200px;
+    }
+
+    .reservation_block {
+        // width: 320px;
+        margin-bottom: 50px;
+    }
+
+    .details_pannel {
+        margin-bottom: 50px;
+    }
+    .next_button {
+        margin-bottom: 20px;
+    }
+
+
+    
+}
+
+
 @media only screen and (max-width: 480px) {
     //Main banner styles---------------------------------
 

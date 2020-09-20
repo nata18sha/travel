@@ -22,7 +22,7 @@
             </th>
 
             <th [class.active]="order === 'category'" (click)="setOrder('category')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Category</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
@@ -34,35 +34,35 @@
             </th>
 
             <th [class.active]="order === 'description'" (click)="setOrder('description')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Description</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
 
             <th [class.active]="order === 'thingsToDo'" (click)="setOrder('thingsToDo')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Things To Do</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
 
             <th [class.active]="order === 'location'" (click)="setOrder('location')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Location</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
 
-            <th [class.active]="order === 'rate'" (click)="setOrder('rate')" class="mdl-data-table__cell--non-numeric">
+            <th [class.active]="order === 'rate'" (click)="setOrder('rate')" class="mdl-data-table__cell--non-numeric hidden">
                 <p>Rate</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
 
             <th [class.active]="order === 'hours'" (click)="setOrder('hours')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Hours</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
             <th [class.active]="order === 'price'" (click)="setOrder('price')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Price</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
@@ -78,14 +78,14 @@
         <tr
             *ngFor="let location of adminLocations | searchLocation: searchName | orderBy: order:reverse:'case-insensitive'; let i = index">
             <td>{{i + 1}}</td>
-            <td>{{location.category}}</td>
+            <td class="hidden">{{location.category}}</td>
             <td>{{location.title}}</td>
-            <td>{{location.description | slice: 0:50}}...</td>
-            <td>{{location.thingsToDo | slice: 0:50}}...</td>
-            <td>{{location.location}}</td>
-            <td>{{location.rate}}</td>
-            <td>{{location.hours}}</td>
-            <td>{{location.price}} $</td>
+            <td class="hidden">{{location.description | slice: 0:50}}...</td>
+            <td class="hidden">{{location.thingsToDo | slice: 0:50}}...</td>
+            <td class="hidden">{{location.location}}</td>
+            <td class="hidden">{{location.rate}}</td>
+            <td class="hidden">{{location.hours}}</td>
+            <td class="hidden">{{location.price}} $</td>
             <td> <button type="button" class="edit_button" (click)="editLocation(location, template)">edit</button>
             </td>
             <td><button type="button" class="delete_button" (click)="deleteLocation(location)">delete</button></td>

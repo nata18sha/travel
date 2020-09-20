@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { NgImageSliderComponent } from 'ng-image-slider';
 
 @Component({
@@ -21,9 +21,20 @@ export class AboutComponent implements OnInit {
 
   bannerImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F98447a2944a2784fca36d17674c1eca512df0477.png?alt=media&token=8ba4f531-39c2-4d4d-b4a8-efc600548ab2';
 
+  innerWidth: any;
+
+  sliderConfig = {width: '733px', height: '475px', space: 10 };
+
   constructor() { }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '200px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
   }
   @ViewChild('nav') slider: NgImageSliderComponent;
   prevImageClick() {
@@ -32,6 +43,18 @@ export class AboutComponent implements OnInit {
 
   nextImageClick() {
     this.slider.next();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 480) {
+      this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+    }
+    else {
+      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+    }
+    console.log(this.innerWidth)
   }
 
 }

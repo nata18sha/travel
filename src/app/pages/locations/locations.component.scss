@@ -137,11 +137,12 @@
 }
 .scroll {
     height: inherit;
-    width: 100%;
+    width: 90%;
     @include flexbox(column, nowrap, center, center);
+    // display: none;
 }
 .scroll_text {
-    width: 36px;
+    width: 30px;
     height: 13px;
     transform: rotate(-90deg);
     font-family: 'Sofia Pro';
@@ -391,7 +392,7 @@
     position: absolute;
     left: 0;
     bottom: 4px;
-    z-index: 3;
+    // z-index: 3;
     width: 123px;
     height: 60px;
     background-color: #ffffff;
@@ -532,6 +533,76 @@
 .feedback_two {
     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F666e2e39921cc92a85ce3ad7b0580b9abdc6cf9b.png?alt=media&token=f5b7dead-ecae-48d4-9e12-08f64468cd86);
 }
+
+
+@media only screen and (max-width: 1200px)  {
+    //Main banner styles---------------------------------
+
+    .banner__main_heading {
+        width: 735px;
+    }
+
+    .container_main {
+        width: 735px;
+    }
+    .check {
+        width: 735px;
+    }
+    .check_item {
+        width: 180px;
+    }
+    // Discover section / One article section-----------------------------------------------------
+
+    .discover_container{
+        width: 100%;
+        min-height: 900px;
+        background-color: #f8f8f8;  
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-bottom: 100px;
+    }
+
+    .article {
+        width: 735px;
+    }
+    //Testimonials section-------------------------------
+
+    .testimonials {
+        padding: 50px 0;
+    }
+
+    .test_content {
+        @include flexbox(column, nowrap, center, center);
+
+    }
+
+    .test_block {
+        width: 320px;
+        height: 320px;
+        margin-bottom: 10px;
+    }
+
+    .feedback_header {
+        font-size: 15px;
+    }
+
+    .feedback_text {
+        font-size: 13px;
+    }
+
+    .popular__content_filter {
+        // min-height: 515px;
+        width: 360px;
+    }
+    .popular__content_locations {
+        width: 360px;
+        // min-height: 355px;
+    }
+
+
+}
+
+
 
 
 @media only screen and (max-width: 480px) {
@@ -764,4 +835,5 @@
 
 
 }
+
 

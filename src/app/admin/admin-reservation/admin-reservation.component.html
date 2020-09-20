@@ -23,26 +23,26 @@
             </th>
             <th [class.active]="order === 'dateTo'" (click)="setOrder('dateTo')"
                 class="mdl-data-table__cell--non-numeric">
-                <p>Start Date</p>
+                <p>End Date</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
             <th [class.active]="order === 'location.title'" (click)="setOrder('location.title')"
                 class="mdl-data-table__cell--non-numeric">
-                <p>Start Date</p>
+                <p>Location</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
 
             <th [class.active]="order === 'totalPrice'" (click)="setOrder('totalPrice')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>Total price</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
             <th [class.active]="order === 'contacts.fName'" (click)="setOrder('contacts.fName')"
-                class="mdl-data-table__cell--non-numeric">
+                class="mdl-data-table__cell--non-numeric hidden">
                 <p>User</p>
                 <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
-            <th scope="col">
+            <th scope="col" class="hidden">
                 <p>Status</p> <span [hidden]="reverse">▼</span><span [hidden]="!reverse">▲</span>
             </th>
             <th scope="col">
@@ -57,9 +57,9 @@
             <td>{{res.dateFrom.toDate() | date:'dd MMM yyyy' }}</td>
             <td>{{res.dateTo.toDate() | date:'dd MMM yyyy'}}</td>
             <td>{{res.location.title}}</td>
-            <td class="text-center">{{res.totalPrice}} $</td>
-            <td>{{res.contacts.fName}} {{res.contacts.lName}}</td>
-            <td>{{res.status}}</td>
+            <td class="text-center hidden">{{res.totalPrice}} $</td>
+            <td class="hidden">{{res.contacts.fName}} {{res.contacts.lName}}</td>
+            <td class="hidden">{{res.status}}</td>
             <td> <button type="button" class="edit_button" (click)="openResDetails(template, res)">details</button>
             </td>
         </tr>
