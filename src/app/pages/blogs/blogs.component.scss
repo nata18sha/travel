@@ -288,6 +288,108 @@
    
 }
 
+@media only screen and (max-width: 768px) {
+    //Main banner---------------------------------------------------
+    // .banner {
+    //     margin-top: 80px;
+    // }
+    // .banner_maintitle {
+    //     min-height: 320px;
+    // }
+
+    .main_title {
+        width: 450px;
+        height: auto;
+        font-family: 'Didot';
+        // font-size: 50px;
+        margin-bottom: 30px;
+    }
+    // .main_line {
+    //     width: 74px;
+    //     height: 5px;
+    //     background-color: $mainColor;
+    // }
+    .banner__main {
+        height: 500px;
+    }
+
+    .banner__main_heading {
+        width: 450px;
+        margin: 65px auto;
+        min-height: 200px;
+    }
+
+    .heading_small {
+        font-family: 'Sofia Pro';
+        // font-size: 13px;
+        font-weight: 500;
+        color: #fafafa;
+        margin-bottom: 30px;
+    }
+
+    .heading_big {
+        height: auto;
+        width: 450px;
+        font-size: 50px;
+    }
+
+    .banner__main_pannel {
+        height: 100px;
+    }
+
+    .container {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    //Blogs-------------------------------------------------------------------
+
+    //Articles all------------------------------
+    .container_blogs {
+        @include flexbox(column, nowrap, center, center);
+        width: 450px;
+        margin: 50px auto;
+    }
+
+    .articles_all {
+        width: 450px;
+    }
+
+    .article_preview {
+        margin-bottom: 50px;
+    }
+
+    .article_image {
+        height: 300px;
+    }
+
+
+    //Recent articles--------------------------------------------
+
+
+    .recent_block{
+        margin-bottom: 20px;
+    }
+
+    .recent_image {
+        margin-right: 20px;
+    }
+
+    .recent_details {
+        padding: 20px 0;
+        height: 100px;
+        width: 235px;
+    }
+
+    //Load more button----------------------------
+    .button_block {
+        margin-bottom: 50px;
+    }
+   
+
+    
+}
+
 
 @media only screen and (max-width: 480px) {
     //Main banner---------------------------------------------------

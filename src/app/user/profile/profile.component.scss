@@ -235,6 +235,29 @@ button[disabled] {
     margin-top: 5px;
 }
 
+@media only screen and (max-width: 768px) {
+ 
+    .info_heading {
+        margin-bottom: 0px;
+    }
+    //Form--------------------------------
+
+
+    .user_box {
+        display: block;
+    }
+    .name {
+        width: 100%;
+    }
+  
+ #image {
+     width: 100% !important;
+ }
+    
+
+
+}
+
 
 @media only screen and (max-width: 480px) {
     .head_name {
@@ -277,6 +300,7 @@ button[disabled] {
     .next_button {
         font-size: 13px;
     }
+    
 
 
 }

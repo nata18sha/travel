@@ -74,6 +74,41 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .container_admin { 
+        margin: 150px auto;
+        width: 450px;
+        display: block;
+    }
+
+    //Navigation block----------------------------
+    .user_nav {
+        min-height: 50px;
+        width: 450px;
+        @include flexbox(row, nowrap, space-between, flex-start);
+    }
+
+    .route_text {
+        margin-top: 10px;
+    }
+
+    .custom_tab {
+        margin: 10px 0;
+        // font-size: 13px;
+        a {
+            @include flexbox(column, nowrap, space-between, flex-start);
+        }
+        .icon_big {
+            margin: 0 auto;
+        }
+    }
+    
+    .user_body {
+        width: inherit;
+        min-height: 300px;
+    }
+}
+
 
 @media only screen and (max-width: 480px) {
     .container_admin { 

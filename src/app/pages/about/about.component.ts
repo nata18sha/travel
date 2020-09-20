@@ -32,6 +32,9 @@ export class AboutComponent implements OnInit {
     if (this.innerWidth <= 480) {
       this.sliderConfig = {width: '320px', height: '200px', space: 5 };
     }
+    else if (this.innerWidth <= 768) {
+      this.sliderConfig = {width: '450px', height: '290px', space: 5 };
+    }
     else {
       this.sliderConfig = {width: '733px', height: '475px', space: 10 };
     }
@@ -50,6 +53,9 @@ export class AboutComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 480) {
       this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+    }
+    else if (this.innerWidth <= 768) {
+      this.sliderConfig = {width: '450px', height: '290px', space: 5 };
     }
     else {
       this.sliderConfig = {width: '733px', height: '475px', space: 10 };

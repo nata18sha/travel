@@ -551,6 +551,9 @@
     .check_item {
         width: 180px;
     }
+    .filter_content {
+        margin-bottom: 50px;
+    }
     // Discover section / One article section-----------------------------------------------------
 
     .discover_container{
@@ -589,12 +592,17 @@
     .feedback_text {
         font-size: 13px;
     }
+    .popular__content {
+        @include flexbox(column, nowrap, center, center);
+        // display: block;
+    }
 
     .popular__content_filter {
         // min-height: 515px;
         width: 360px;
     }
     .popular__content_locations {
+        @include flexbox(column, nowrap, center, center);
         width: 360px;
         // min-height: 355px;
     }
@@ -603,7 +611,240 @@
 }
 
 
-
+@media only screen and (max-width: 768px) {
+    //Main banner-------------------------------
+        // .banner__main {
+        //     height: 615px;
+        // }
+        .banner__main_heading {
+            width: 450px;
+            margin: 150px auto;
+            min-height: 150px;
+        }
+        .heading_small {
+            margin-bottom: 20px;
+        }
+        .heading_big {
+            // font-size: 50px;
+            width: 450px;
+            margin-bottom: 0;
+        
+        }
+        .banner__main_pannel {
+            height: 100px;
+        }
+    
+        .add_space {
+            margin-right: 0px;
+        }
+     
+        .container_main {
+            width: 450px;
+            margin: 0 auto;
+            // display: block;
+            @include flexbox(column, nowrap, center, center);
+        }
+        .blanc {
+            display: none;
+        }
+    
+        .check {
+            height: inherit;
+            width: inherit;
+        }
+    
+        .check_item {
+            width: 80px;
+        }
+    
+        .check-out {
+            // font-size: 13px;
+            margin-bottom: 0px;
+        }
+    
+        .find {
+            @include flexbox(row, nowrap, space-between, center);
+            width: 80px;
+        }
+    
+        .scroll {
+            display: none;
+        }
+    
+        //Pupular section------------------------------------------------
+        .popular {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .popular__content {
+            display: block;
+            width: 320px;
+        }
+    
+        .popular__content_filter {
+            width: 320px;
+        }
+    
+        .popular__content_locations {
+            width: 320px;
+        }
+    
+        // .filter_headertext {
+        //     font-size: 20px;
+        // }
+    
+        .filter_line {
+            width: 74px;
+            height: 3px;
+            background-color: #30797c;
+            margin-bottom: 20px;
+        }
+    
+        .locations_header_big {
+            width: 320px;
+            height: auto;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+    
+        //Location items---------------------------------------------------------
+    
+        .location_item {
+            width: 320px;
+        }
+        .locations_items {
+            @include flexbox(column, nowrap, center, center);
+            width: 320px;
+        }
+    
+        //One article section----------------------------------------------------
+        .discover_container{
+            min-height: 300px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-bottom: 50px;
+        }
+    
+    
+        .article {
+            width: 450px;
+            min-height: 400px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    
+        .article_text {
+            display: block;
+    
+            margin-bottom: 20px;
+            width: 450px;
+        }
+    
+        .heading_text, .main_text_width {
+            width: 450px;
+            height: auto;
+        }
+    
+        .heading_text {
+            font-size: 40px;
+            width: 450px;
+            margin-bottom: 20px;
+        }
+    
+        .main_text {
+            // font-size: 13px;
+            width: 450px;
+        }
+    
+        // .slider_buttons {
+        //     width: 80px;
+        //     height: 40px;
+        // }
+    
+        // .button_line {
+        //     height: 35px;
+        // }
+    
+        // .button:hover {
+        //     fill: $mainColor;
+        // }
+    
+        //One large image-------------------------------------------
+        .large_image {
+            height: 380px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    
+        .visit_block {
+            width: 250px;
+            height: 100px;
+            padding: 10px 15px;
+        }
+        .farm_visit {
+            margin-bottom: 5px;
+        }
+    
+        .visit_heading {
+            width: auto;
+            height: auto;
+            font-family: 'Didot';
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    
+        .arrow_visit {
+            fill: $mainColor;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+    
+    //Load more button--------------------------
+        .button_block {
+            width: 100%;
+            @include flexbox(row, nowrap, center, center);
+        }
+        .load_more {
+            margin: 50px 0;
+        }
+    
+        .oneitem_price {
+    
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+    
+     //Testimonials section-------------------------------
+    
+        .testimonials {
+            padding: 50px 0;
+        }
+    
+        .test_content {
+            @include flexbox(column, nowrap, center, center);
+    
+        }
+    
+        .test_block {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 10px;
+        }
+    
+        .feedback_header {
+            font-size: 15px;
+        }
+    
+        .feedback_text {
+            font-size: 13px;
+        }
+      
+    
+        
+    
+    
+    
+    }
 
 @media only screen and (max-width: 480px) {
 //Main banner-------------------------------

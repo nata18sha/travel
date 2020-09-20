@@ -557,6 +557,178 @@ button[disabled] {
 }
 
 
+@media only screen and (max-width: 768px) {
+    //Main banner styles---------------------------------
+
+    .banner__main_heading {
+        width: 450px;
+        margin: 150px auto;
+        min-height: 150px;
+    }
+
+    .heading_small {
+        margin-bottom: 20px;
+    }
+
+    .heading_big {
+        font-size: 60px;
+        width: 450px;
+    }
+
+    .banner__main_pannel {
+        height: 100px;
+        width: 100%;
+        @include flexbox(row, nowrap, flex-start, flex-end);
+    }
+
+    .container_main {
+        width: 450px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .blanc {
+        display: none;
+    }
+
+    .check {
+        @include flexbox(row, nowrap, center, center);
+        height: inherit;
+        width: 450px;
+        width: 100%;
+    }
+
+    .check_item {
+        @include flexbox(row, nowrap, space-between, center);
+        width: 25%;
+        height: inherit;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+            div {
+                text-align: center;
+            }
+        padding: 5px;
+        padding-top: 10px;
+    }
+
+    .check-out {
+        // font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 0px;
+    }
+
+    .text-link {
+        // font-size: 13px;    
+        padding: 0;
+    }
+
+    .line {
+      display: none;
+    }
+
+    .space-link {
+        margin-left: 0px;
+    }
+
+    .find {
+        width: 25%;
+        // font-size: 13px;
+        padding: 10px;
+        border-radius: 0;
+    }
+    .find_big_text {
+        // font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .find_text {
+        // font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .scroll {
+        display: none;
+    }
+    .scroll_text {
+        display: none;
+    }
+    
+    .scroll_line {
+        display: none;
+    }
+    //Main block styles-------------------------------
+
+    .location_main {
+        width: 450px;
+        
+    }
+
+    .nav_tab {
+        height: 50px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .nav_line {
+        min-height: 40px;
+    }
+
+    // .main_heading {
+    //     // font-size: 20px;
+    // }
+
+    // .slider_buttons {
+    //     width: 80px;
+    //     height: 40px;
+    // }
+ 
+    .subheading {
+        font-size: 18px;
+    }
+
+    .next_button {
+        width: 168px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    .card_details {
+        @include flexbox(row, nowrap, space-between, flex-start);
+    }
+
+    .pay_later {
+        color: $mainColor;
+        background-color: #fff;
+        margin-left: 20px;
+        border: 1px solid $mainColor;
+    }
+
+    .details_small {
+        width: 30%;
+    }
+
+    //Pannel styles-------------------------------------
+    .location_pannel {
+        width: 356px;
+    }
+
+    .reservation_block {
+        width: 356px;
+        margin-bottom: 50px;
+    }
+
+    .details_pannel {
+        margin-bottom: 50px;
+    }
+
+    .reserv_input {
+        font-size: 12px;
+    }
+    
+
+
+}
+
 @media only screen and (max-width: 480px) {
     //Main banner styles---------------------------------
 

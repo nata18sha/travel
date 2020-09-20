@@ -367,6 +367,57 @@ thead th {
     }
   }
 
+  @media only screen and (max-width: 768px) {
+    //Header-----------------------------------------------------
+
+    .hidden {
+        display: none;
+    }
+
+
+    .add_location_btn {
+        margin-bottom: 13px;
+    }
+
+
+    //Order pipe---------------------------
+    thead th {
+        // cursor: pointer;
+        margin-right: 5px;
+        margin-left: 5px;
+    
+        span {
+        visibility: hidden;
+        }
+    
+        &.active {
+        color: #fff;
+    
+        span {
+            visibility: visible;
+        }
+        }
+    }
+    table {
+       width: 450px;
+       word-wrap: normal;
+    }
+  
+
+    //Modal Reservation Details------------------------------------
+
+    .reserv_block {
+        // min-height: 100px;
+        width: 40%;
+        // border: 1px solid #000;
+    }
+    .reserv_block_right {
+        width: 200px;
+    }
+  
+
+  }
+
   @media only screen and (max-width: 480px) {
     //Header-----------------------------------------------------
 

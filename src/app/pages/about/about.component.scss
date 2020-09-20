@@ -386,6 +386,207 @@
 
 }
 
+@media only screen and (max-width: 768px) {
+    //Main banner styles---------------------------------
+
+    .banner__main {
+        // height: 615px;
+        width: 100%;
+        @include background;
+        z-index: 1;
+    }
+
+    .banner__main_heading {
+        width: 450px;
+        margin: 150px auto;
+        margin-bottom: 0;
+        min-height: 150px;
+    }
+
+    .heading_small {
+        margin-bottom: 20px;
+    }
+
+    .heading_big {
+        // font-size: 50px;
+        width: 450px;
+    }
+
+    .banner__main_pannel {
+        height: 100px;
+        width: 100%;
+        @include flexbox(row, nowrap, flex-start, flex-end);
+    }
+
+    .container_main {
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .blanc {
+        display: none;
+    }
+
+    .check {
+        display: block;
+        height: 100px;
+        width: 100%;
+    }
+    .check_item {
+        @include flexbox(row, nowrap, center, center);
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+            div {
+                text-align: center;
+            }
+        padding: 5px;
+        padding-top: 10px; 
+    }
+
+    .check-out {
+        // font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text-link {
+        // font-size: 13px;    
+        padding: 0;
+        word-wrap: break-word;
+        text-align: center;
+        width: 100%;
+    }
+
+    .line {
+    display: none;
+    }
+    .empty_item {
+        display: none;
+    }
+
+    .space-link {
+        margin-left: 0px;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .find {
+        display: none;
+    }
+
+    .scroll {
+        display: none;
+    }
+    .scroll_text {
+        display: none;
+    }
+
+    .scroll_line {
+        display: none;
+    }
+//One article section---------------------------
+
+    .article {
+        width: 450px;
+        min-height: 400px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .article_text {
+        display: block;
+        margin-bottom: 20px;
+        width: 450px;
+    }
+
+    .heading_text, .main_text_width {
+        width: 450px;
+        height: auto;
+    }
+
+    .heading_text {
+        font-size: 40px;
+        width: 450px;
+        margin-bottom: 20px;
+    }
+
+    .main_text {
+        // font-size: 13px;
+        width: 450px;
+    }
+
+    // .slider_buttons {
+    //     width: 80px;
+    //     height: 40px;
+    // }
+
+    // .button_line {
+    //     height: 35px;
+    // }
+
+    // .button:hover {
+    //     fill: $mainColor;
+    // }
+    //Beliefs section--------------------------------------------
+
+    .beliefs {
+        display: block;
+        margin-bottom: 30px;
+    }
+    .container_small {
+        width: 450px;
+    }
+
+    .beliefs_heading {
+        width: 450px;
+    }
+    
+    .beliefs_text {
+        width: 450px;
+    }
+
+    .section_name {
+        // font-size: 13px;
+        margin-bottom: 20px;
+    }
+    //Team-----------------------------------------------------
+    .team_heading {
+        width: 450px;
+        height: auto;
+        font-family: 'Didot';
+        // font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .team_items {
+        @include flexbox(row, wrap, center, center);
+    }
+    
+    .teammember {
+        width: 320px;
+        min-height: 320px;
+        margin-bottom: 30px;
+    }
+
+    .member_image{
+        width: inherit;
+        height: 320px;
+        margin-bottom: 20px;
+    }
+
+ 
+
+
+
+
+
+}
+
 @media only screen and (max-width: 480px) {
     //Main banner styles---------------------------------
 

@@ -277,6 +277,58 @@ img {
 
 }
 
+@media only screen and (max-width: 768px) {
+    
+    //Banner main--------------------------------------------------------
+    
+    .banner__main_heading {
+        width: 450px;
+    }
+
+    .heading_big {
+        height: auto;
+        width: 450px;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+//Main article styles------------------------------
+
+    .article_container {
+        width: 450px;
+        margin-top: -80px;
+        padding: 50px;
+    }
+
+    .user_image {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    
+    .user_name {
+        padding: 15px 0;
+    }
+    
+    .comment_container {
+        min-height: 300px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .leave_comment_container {
+        width: 450px;
+        padding: 0;
+    }
+
+    .comment_area {
+        height: 150px;
+        // font-size: 13px;
+    }
+
+
+
+}
+
 @media only screen and (max-width: 480px) {
     * {
         font-size: 13px;
