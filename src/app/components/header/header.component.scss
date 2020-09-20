@@ -52,6 +52,9 @@ li {
     position: relative;
     text-align: center;
     padding: 0;
+    a {
+        color: #fff;
+    }
 }
 li:hover::before {
     content: '';

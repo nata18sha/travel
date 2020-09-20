@@ -28,7 +28,14 @@ export class HomeComponent implements OnInit {
 
   innerWidth: any;
 
-  sliderConfig = {width: '733px', height: '475px', space: 10 };
+  sliderConfig = { width: '733px', height: '475px', space: 10 };
+
+
+  image_one = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fa8e579b6e15fd70ded193b497ccc635f7715be60.png?alt=media&token=c98f20f3-677c-4b94-8854-0128a508faf7';
+  image_two = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fd6bd1c5adcbd18149af0d833fb40a7c52bc055e0.png?alt=media&token=1c80e5d6-063e-4ca6-a62f-880f7330aa79';
+  image_three = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F43ff3c7cf3fd30ed9a8a6ef7dee88fff4703f455.png?alt=media&token=2658f374-5273-4210-9938-82496ec5014d';
+  image_four = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F46de4f321d72284f69a9dda54252d98d795f5cf9.png?alt=media&token=382e99f0-9302-4100-9b33-315294781a0a';
+  image_five = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fb1ac065a8379e2a274328fb18f283a398264920e.png?alt=media&token=080432fa-fa78-4871-bfee-0e3690c7e232';
 
 
 
@@ -39,13 +46,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 480) {
-      this.sliderConfig = {width: '320px', height: '200px', space: 5 };
+      this.sliderConfig = { width: '320px', height: '200px', space: 5 };
     }
     else if (this.innerWidth <= 768) {
-      this.sliderConfig = {width: '450px', height: '290px', space: 5 };
+      this.sliderConfig = { width: '450px', height: '290px', space: 5 };
     }
     else {
-      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
     }
   }
 
@@ -65,13 +72,13 @@ export class HomeComponent implements OnInit {
   onResize(event) {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth <= 480) {
-      this.sliderConfig = {width: '320px', height: '208px', space: 5 };
+      this.sliderConfig = { width: '320px', height: '208px', space: 5 };
     }
     else if (this.innerWidth <= 768) {
-      this.sliderConfig = {width: '450px', height: '290px', space: 5 };
+      this.sliderConfig = { width: '450px', height: '290px', space: 5 };
     }
     else {
-      this.sliderConfig = {width: '733px', height: '475px', space: 10 };
+      this.sliderConfig = { width: '733px', height: '475px', space: 10 };
     }
     console.log(this.innerWidth)
   }

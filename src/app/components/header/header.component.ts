@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
         // console.log(event.url);
-        console.log(this.currentRoute);
+        // console.log(this.currentRoute);
         if (this.currentRoute.lastIndexOf('/') > 0) {
           this.currentRoute = this.currentRoute.slice(0, this.currentRoute.lastIndexOf('/'))
           console.log('current route:',this.currentRoute);
@@ -133,7 +133,7 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth)
+    // console.log(this.innerWidth)
   }
 
 
