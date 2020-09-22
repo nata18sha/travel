@@ -233,7 +233,7 @@ export class LocationDetailsComponent implements OnInit {
     else {
       this.sliderConfig = { width: '544px', height: '444px', space: 10 };
     }
-    console.log(this.innerWidth)
+    // console.log(this.innerWidth)
   }
 
 

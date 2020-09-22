@@ -592,10 +592,10 @@
     .feedback_text {
         font-size: 13px;
     }
-    .popular__content {
-        @include flexbox(column, nowrap, center, center);
-        // display: block;
-    }
+    // .popular__content {
+    //     // @include flexbox(column, nowrap, center, center);
+    //     // display: block;
+    // }
 
     .popular__content_filter {
         // min-height: 515px;

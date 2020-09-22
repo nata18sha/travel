@@ -116,7 +116,7 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
             if (this.allLocations.length < 13) {
               this.showLoadButton = false;
             }
-            console.log(this.allLocations)
+            // console.log(this.allLocations)
           })
         })
     }
@@ -138,13 +138,13 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
           snap.forEach(locRef => {
             const data = locRef.data() as ILocation;
             const id = locRef.id;
-            console.log(id, data)
+            // console.log(id, data)
 
             this.allLocations.push({ id, ...data });
             if (this.allLocations.length < 13) {
               this.showLoadButton = false;
             }
-            console.log(this.allLocations)
+            // console.log(this.allLocations)
           })
         })
     }
@@ -176,7 +176,7 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
             }
           }
         
-          console.log(this.allLocations)
+          // console.log(this.allLocations)
         })
       })
   }
@@ -193,7 +193,7 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
     else {
       this.sliderConfig = {width: '733px', height: '475px', space: 10 };
     }
-    console.log(this.innerWidth)
+    // console.log(this.innerWidth)
   }
   
 

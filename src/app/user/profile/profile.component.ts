@@ -64,7 +64,7 @@ export class ProfileComponent implements OnInit {
     upload.then(image => {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
         this.profileImage = url;
-        console.log(this.profileImage)
+        // console.log(this.profileImage)
       });
     });
   }
