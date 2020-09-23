@@ -288,7 +288,7 @@
         </div>
     </div>
 </section>
-<section class="more_button">
+<section class="more_button" *ngIf="allLocations.length > 0">
     <div class="button_block">
         <button type="button" class="load_more" (click)="loadMore()" *ngIf="showLoadButton">Load More</button>
     </div>

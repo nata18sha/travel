@@ -170,11 +170,14 @@
                         <div class="date">
                             <label class="input_label_thin">Phone Number*</label>
                             <br>
-                            <input type="number" #resPhone="ngModel" [(ngModel)]="phone" name="phone"
-                                class="reserv_input " placeholder="Enter your phone number" required>
+                            <input type="text" #resPhone="ngModel" [(ngModel)]="phone" name="phone"
+                                class="reserv_input " placeholder="Enter your phone number" required pattern="\d{10,12}" maxlength="12">
                             <div class="invalidText" *ngIf="resPhone.invalid && (resPhone.dirty || resPhone.touched)">
                                 <div *ngIf="resPhone.errors.required">
                                     Required field
+                                </div>
+                                <div *ngIf="resPhone.errors.pattern">
+                                    Please provide a valid phone number
                                 </div>
                             </div>
                         </div>
@@ -297,7 +300,7 @@
                                     [bsConfig]="{ dateInputFormat: 'DD MMM YYYY', containerClass: 'theme-default' }">
                             </div>
                         </div>
-                        <div class="days_stay main_text" *ngIf="daysStay">{{daysStay}} nights stay</div>
+                        <!-- <div class="days_stay main_text" *ngIf="daysStay">{{daysStay}} nights stay</div> -->
                         <hr>
                         <div class="reserv_persons">
                             <label class="input_label">Persons</label>

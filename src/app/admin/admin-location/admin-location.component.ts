@@ -38,6 +38,8 @@ export class AdminLocationComponent implements OnInit {
   thingsToDo: string;
   price: number;
 
+  deleteById: string;
+
 
   searchName: string;
   order: string = 'info.name';
@@ -168,22 +170,33 @@ export class AdminLocationComponent implements OnInit {
     locationForm.resetForm();
 
   }
-  deleteLocation(location: ILocation): void {
-    console.log(location.id)
-    if (confirm('Are you sure you want to delete this item?')) {
-      this.locationService.deleteFireCloudLocation(location.id)
+  deleteLocation(location: ILocation, template: TemplateRef<any>): void {
+    this.modalRef = this.modalService.show(template, { class: 'modal-md' });
+    this.deleteById = location.id;
+  }
+  
+  confirmDelete(): void {
+    this.locationService.deleteFireCloudLocation(this.deleteById)
         .then(message => console.log(message))
         .catch(err => console.log(err));
-      const index = this.adminLocations.findIndex(elem => elem.id === location.id);
+      const index = this.adminLocations.findIndex(elem => elem.id === this.deleteById);
       this.afStorage.storage.refFromURL(this.adminLocations[index].mainImage).delete();
       for (const image of this.adminLocations[index].images) {
         console.log(image);
         this.afStorage.storage.refFromURL(image).delete();
       }
-    }
 
-
+    this.modalRef.hide();
+    this.deleteById = null;
   }
+  declineDelete(): void {
+    this.modalRef.hide();
+    this.deleteById = null;
+  }
+
+
+
+
 
   editLocation(location: ILocation, template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, { class: 'gray modal-lg' });

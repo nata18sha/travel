@@ -177,6 +177,9 @@ export class LocationDetailsComponent implements OnInit {
   calculateDays(): void {
     const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     this.daysStay = Math.round(Math.abs((this.inDate - this.outDate) / oneDay));
+    if(this.daysStay == 0) {
+      this.daysStay = 1;
+    }
     console.log(this.daysStay)
   }
 

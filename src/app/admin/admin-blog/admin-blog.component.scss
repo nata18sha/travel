@@ -84,7 +84,28 @@ td {
     background-color: #fff;
     color: $mainColor;
 }
-.edit_button:hover, .delete_button:hover  {
+.confirm_button {
+    background-color: #fff;
+    color: $mainColor;
+    border: 1px solid $mainColor;
+    width: 60px;
+    height: 40px;
+    transition: all ease-out 0.3s;
+    border-radius: 3px;
+    outline: none;
+}
+.reject_button {
+    background-color: $mainColor;
+    color: #fff; 
+    width: 60px;
+    height: 40px;
+    transition: all ease-out 0.3s;
+    border-radius: 3px;
+    border: 1px solid $mainColor;
+    outline: none;
+}
+
+.edit_button:hover, .delete_button:hover, .confirm_button:hover  {
     background-color: $mainColor;
     color: #fff;
 }

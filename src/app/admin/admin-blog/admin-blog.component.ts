@@ -21,23 +21,8 @@ export class AdminBlogComponent implements OnInit {
   editorContent: string;
   editorStyle = {
     height: '300px',
-    // backgroundColor: 'blue'
   }
-  // config = {
-  //     imageResize: {
-  //       displaySize: true
-  //     },
-  //    toolbar: [
-  //      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-  //      ['bold', 'italic', 'underline', 'strike'],
-  //      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  //      [{ 'color': [] }, { 'background': [] }], 
-  //      [{ 'align': [] }],
-  //      ['link', 'image'],
-  //      ['clean']  
-  //    ]
-  
-  // }
+
 
   editStatus = false;
   imageStatus = false;
@@ -56,21 +41,24 @@ export class AdminBlogComponent implements OnInit {
 
   searchName: string;
 
+  deleteById: string;
+
 
 
 
   constructor(private modalService: BsModalService,
     private afStorage: AngularFireStorage,
     private blogService: BlogsService,
-    private orderPipe: OrderPipe) { 
-      this.sortedCollection = orderPipe.transform(this.blogs, 'info.name');
+    private orderPipe: OrderPipe) {
+    this.sortedCollection = orderPipe.transform(this.blogs, 'info.name');
     // console.log(this.sortedCollection);
-    }
+  }
 
   ngOnInit(): void {
     this.adminFireCloudLocations();
     this.editorForm = new FormGroup({
-      'editor': new FormControl(null)});
+      'editor': new FormControl(null)
+    });
   }
   setOrder(value: string) {
     if (this.order === value) {
@@ -86,10 +74,11 @@ export class AdminBlogComponent implements OnInit {
     this.editStatus = false;
     this.imageStatus = false;
     this.editorForm = new FormGroup({
-      'editor': new FormControl(null)});
-      this.title = '';
-      this.mainImage = '';
-      this.articleID = '';
+      'editor': new FormControl(null)
+    });
+    this.title = '';
+    this.mainImage = '';
+    this.articleID = '';
   }
   private adminFireCloudLocations(): void {
     this.blogService.getFireCloudBlog().subscribe(
@@ -137,9 +126,9 @@ export class AdminBlogComponent implements OnInit {
     this.blogService.postFireCloudBlog({ ...newBlog })
       .then(message => console.log(message))
       .catch(err => console.log(err));
-      this.modalRef.hide();
+    this.modalRef.hide();
   }
-  editArticle(article: IArticle, template: TemplateRef<any>):void {
+  editArticle(article: IArticle, template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, { class: 'gray modal-lg' });
     this.editStatus = true;
     this.imageStatus = true;
@@ -147,7 +136,8 @@ export class AdminBlogComponent implements OnInit {
     this.title = article.title;
     this.mainImage = article.mainImage;
     this.editorForm = new FormGroup({
-      'editor': new FormControl(article.article)});
+      'editor': new FormControl(article.article)
+    });
     this.comments = article.comments;
 
   }
@@ -168,17 +158,24 @@ export class AdminBlogComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  deleteArticle(article: IArticle): void {
-    console.log(article.id)
-    if (confirm('Are you sure you want to delete this item?')) {
-      this.blogService.deleteFireCloudBlog(article.id)
-        .then(message => console.log(message))
-        .catch(err => console.log(err));
-      const index = this.blogs.findIndex(elem => elem.id === article.id);
-      this.afStorage.storage.refFromURL(this.blogs[index].mainImage).delete();
-    }
+  deleteArticle(article: IArticle, template: TemplateRef<any>): void {
+    this.modalRef = this.modalService.show(template, { class: 'modal-md' });
+    this.deleteById = article.id;
 
+  }
 
+  confirmDelete(): void {
+    this.blogService.deleteFireCloudBlog(this.deleteById)
+      .then(message => console.log(message))
+      .catch(err => console.log(err));
+    const index = this.blogs.findIndex(elem => elem.id === this.deleteById);
+    this.afStorage.storage.refFromURL(this.blogs[index].mainImage).delete();
+    this.modalRef.hide();
+    this.deleteById = null;
+  }
+  declineDelete(): void {
+    this.modalRef.hide();
+    this.deleteById = null;
   }
 
 
