@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { IUser } from 'src/app/shared/interfaces/user.interface';
 import { User } from 'src/app/shared/models/user.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -35,7 +36,8 @@ export class ProfileComponent implements OnInit {
   constructor(private afStorage: AngularFireStorage,
     private authService: AuthService,
     private afAuth: AngularFireAuth,
-    private firecloud: AngularFirestore) { }
+    private firecloud: AngularFirestore,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getUserData();
@@ -84,7 +86,8 @@ export class ProfileComponent implements OnInit {
     );
 
     this.authService.updateFireStoreUser(user, this.userDOC)
-    .then(message => console.log(message))
+    .then(() =>
+    this.toastr.success('Your profile information\'s been updated!', 'Yes!'))
     .catch(err => console.log(err));
 
   

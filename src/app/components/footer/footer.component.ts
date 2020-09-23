@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-footer',
@@ -8,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   subsEmail: string;
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
   subscribe(): void {
     this.subsEmail = '';
-    alert('Subscribed!');
+    this.toastr.success('You are subscribed!', 'Congrads!');
+    // alert('Subscribed!');
   }
 
 }

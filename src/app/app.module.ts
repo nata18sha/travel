@@ -5,13 +5,12 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { QuillModule } from 'ngx-quill';
 import { OrderModule } from 'ngx-order-pipe';
-// import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -84,12 +83,13 @@ import { SearchBlogPipe } from './shared/pipes/search-blog.pipe';
     NgImageSliderModule,  
     ModalModule.forRoot(),
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     BsDatepickerModule.forRoot(),
     QuillModule.forRoot(),
     ReactiveFormsModule,
     OrderModule,
     LazyLoadImageModule
-    // LazyLoadImagesModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

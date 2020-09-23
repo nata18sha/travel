@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
               private afFirestore: AngularFirestore,
-              private router: Router) { }
+              private router: Router,
+              private toastr: ToastrService) { }
 
 
   login(email: string, password: string): void {
@@ -40,13 +42,15 @@ export class AuthService {
                 this.router.navigateByUrl('/user');
                 this.userStatusChanges.next('user');
               }
+              this.toastr.success('Welcome!');
             });
           }
         );
       })
       .catch(err => 
         // console.log(err)
-        alert('Oops! Incorrect email or password, please try again!')
+        // alert('Oops! Incorrect email or password, please try again!')
+        this.toastr.error('Incorrect email or password, please try again!', 'Oops!')
         );
   }
 
@@ -69,12 +73,13 @@ export class AuthService {
           userFirstName: firstName,
           userLastName: lastName,
           role: 'user',
-          image: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fusgs-AQ9-jKmebjM-unsplash.jpg?alt=media&token=4f099184-9327-4c0d-917a-ebdc98ae7931',
+          image: 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fno-profile-image.png?alt=media&token=ad7f7478-aead-425c-b9e4-fe0a4609b8a9',
           phone: '380'
         };
         this.afFirestore.collection('users').add(user)
           .then(() => {
-            alert('Registered! Please sign in to proceed');
+            // alert('Registered! Please sign in to proceed');
+            this.toastr.success('Please sign in to proceed!', 'Registered!');
           })
           .catch(err => console.log(err));
       })
