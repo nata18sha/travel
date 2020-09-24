@@ -30,7 +30,6 @@ export class AdminReservationComponent implements OnInit {
               private modalService: BsModalService,
               private orderPipe: OrderPipe) {
                 this.sortedCollection = orderPipe.transform(this.reservations, 'info.name');
-                console.log(this.sortedCollection);
                }
 
   ngOnInit(): void {
@@ -54,7 +53,6 @@ export class AdminReservationComponent implements OnInit {
         this.reservations = collection.map(document => {
           const data = document.payload.doc.data() as IReservation;
           const id = document.payload.doc.id;
-          console.log({ id, ...data });
           return { id, ...data };
         });
   

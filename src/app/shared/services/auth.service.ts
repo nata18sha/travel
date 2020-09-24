@@ -21,15 +21,11 @@ export class AuthService {
   login(email: string, password: string): void {
     this.afAuth.signInWithEmailAndPassword(email, password)
       .then(user => {
-        console.log(user)
         this.afFirestore.collection('users').ref.where('id', '==', user.user.uid).onSnapshot(
           snap => {
             snap.forEach(userRef => {
               this.currentUser = userRef.data();
               const userID = userRef.id;
-
-              console.log(userRef.id)
-
 
               if (this.currentUser.role === 'admin' && this.currentUser.access) {
                 localStorage.setItem('admin', JSON.stringify(this.currentUser));
@@ -48,8 +44,6 @@ export class AuthService {
         );
       })
       .catch(err => 
-        // console.log(err)
-        // alert('Oops! Incorrect email or password, please try again!')
         this.toastr.error('Incorrect email or password, please try again!', 'Oops!')
         );
   }
@@ -78,7 +72,6 @@ export class AuthService {
         };
         this.afFirestore.collection('users').add(user)
           .then(() => {
-            // alert('Registered! Please sign in to proceed');
             this.toastr.success('Please sign in to proceed!', 'Registered!');
           })
           .catch(err => console.log(err));

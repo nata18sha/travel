@@ -49,8 +49,7 @@
                     <form>
                         <div class="filter_budget">
                             <p class="filter_heading">Budget Per Night</p>
-                            <input type="range" id="range" min="0" max="50" onchange="rangevalue.value=value"
-                                (change)="changeRange($event)">
+                            <input type="range" id="range" min="0" max="50" (change)="changeRange($event)">
                             <span class="filter_heading">{{filteredPrice}}$</span>
                         </div>
                         <hr class="dashed">
@@ -140,7 +139,9 @@
                 </div>
             </div>
             <div class="popular__content_locations">
-                <div class="locations_header_big" [innerHTML]="allLocations.length > 0? 'Popular Locations' :'Sorry, nothing found :(' ">Popular Locations</div>
+                <div class="locations_header_big"
+                    [innerHTML]="allLocations.length > 0? 'Popular Locations' :'Sorry, nothing found :(' ">Popular
+                    Locations</div>
 
                 <div class="locations_items">
                     <div class="location_item" *ngFor="let location of allLocations | slice:0:4; let i = index ">
@@ -181,11 +182,9 @@
                 <div class="article_text">
                     <div class="heading_text">Amun Temple Enclosure</div>
                     <div class="main_text main_text_width">Amun-Ra was the local god of Karnak (Luxor) and during the
-                        New
-                        Kingdom, when the
-                        princes of Thebes ruled Egypt, he became the preeminent state god, with a temple that reflected
-                        his
-                        status. At the height of its power, the temple owned 421,000 head of cattles. </div>
+                        New Kingdom, when the princes of Thebes ruled Egypt, he became the preeminent state god, with a
+                        temple that reflected his status. At the height of its power, the temple owned 421,000 head of
+                        cattles. </div>
                 </div>
                 <div id="slider">
                     <ng-image-slider class="article_picture" [images]="imageObject" #nav [imageSize]="sliderConfig"
@@ -307,9 +306,8 @@
                     <div class="feedback_header">Best User Experience</div>
                     <div class="feedback_text">Because the rock was laid down in layers, there is a variation in the
                         hardness of the rock formed. When water runoff trickles across the rock, some areas erode
-                        rapidly
-                        whereas others hold firm. This variation in erosion speed causes the formation of pinnacles, or
-                        “hoodoos” of stable rock.</div>
+                        rapidly whereas others hold firm. This variation in erosion speed causes the formation of
+                        pinnacles, or “hoodoos” of stable rock.</div>
                 </div>
                 <div class="feedback_user">
                     <div class="feedback_image feedback_one"></div>
@@ -320,8 +318,7 @@
                 <div>
                     <div class="feedback_header">Friendly staff</div>
                     <div class="feedback_text">Whether its a driving tour, a cruise or a bus, leaf viewing is a great
-                        way to
-                        spend a fall vacation. It’s also big tour business and the are many options. </div>
+                        way to spend a fall vacation. It’s also big tour business and the are many options. </div>
                 </div>
                 <div class="feedback_user">
                     <div class="feedback_image feedback_two"></div>

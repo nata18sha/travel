@@ -22,7 +22,7 @@ export class BlogsService {
   updateFireCloudBlog(article: IArticle): Promise<void> {
     return this.firecloud.collection('blogs').doc(article.id).update(article);
   }
-  getOneFireCloudLocation(id: string): any {
+  getOneFireCloudBlog(id: string): any {
     return this.firecloud.collection('blogs').doc(id).get();
   }
 }

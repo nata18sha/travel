@@ -54,11 +54,10 @@ export class AdminLocationComponent implements OnInit {
   uploadProgressMore: Observable<number>;
 
   constructor(private modalService: BsModalService,
-    private locationService: LocationService,
-    private afStorage: AngularFireStorage,
-    private orderPipe: OrderPipe) {
+              private locationService: LocationService,
+              private afStorage: AngularFireStorage,
+              private orderPipe: OrderPipe) {
     this.sortedCollection = orderPipe.transform(this.adminLocations, 'info.name');
-    console.log(this.sortedCollection);
   }
 
   ngOnInit(): void {
@@ -103,15 +102,12 @@ export class AdminLocationComponent implements OnInit {
     upload.then(image => {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
         this.mainImage = url;
-        // console.log(this.mainImage)
-        // this.imageStatus = true;
         this.imageStatus = true;
       });
     });
   }
 
   uploadImages(event): void {
-    console.log('images:')
     const file = event.target.files[0];
     const type = file.type.slice(file.type.indexOf('/') + 1);
     const name = file.name.slice(0, file.name.lastIndexOf('.')).toLowerCase();
@@ -122,10 +118,7 @@ export class AdminLocationComponent implements OnInit {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
         const image = url;
         this.images.push(image);
-        console.log('images:', this.images)
         this.moreImageStatus = true;
-
-        // this.imageStatus = true;
       });
     });
   }
@@ -135,8 +128,6 @@ export class AdminLocationComponent implements OnInit {
     this.imageStatus = false;
   }
   deleteImage(index): void {
-    // console.log(index);
-    // console.log(this.images);
     this.afStorage.storage.refFromURL(this.images[index]).delete();
     this.images.splice(index, 1);
     if (this.images.length < 0) {
@@ -146,7 +137,6 @@ export class AdminLocationComponent implements OnInit {
   }
 
   addLocation(locationForm: NgForm): void {
-
     const newLocation = new Location(
       this.locationID,
       this.category,
@@ -182,7 +172,6 @@ export class AdminLocationComponent implements OnInit {
       const index = this.adminLocations.findIndex(elem => elem.id === this.deleteById);
       this.afStorage.storage.refFromURL(this.adminLocations[index].mainImage).delete();
       for (const image of this.adminLocations[index].images) {
-        console.log(image);
         this.afStorage.storage.refFromURL(image).delete();
       }
 
@@ -193,9 +182,6 @@ export class AdminLocationComponent implements OnInit {
     this.modalRef.hide();
     this.deleteById = null;
   }
-
-
-
 
 
   editLocation(location: ILocation, template: TemplateRef<any>): void {

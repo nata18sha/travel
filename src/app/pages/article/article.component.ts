@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { IArticle } from '../../shared/interfaces/article.interface';
 import { Article } from '../../shared/models/article.model';
 import { BlogsService } from 'src/app/shared/services/blogs.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-article',
@@ -23,8 +24,9 @@ export class ArticleComponent implements OnInit {
   newComment: object;
 
   constructor(private actRoute: ActivatedRoute,
-    private firecloud: AngularFirestore,
-    private blogService: BlogsService) { }
+              private firecloud: AngularFirestore,
+              private blogService: BlogsService,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getViewArticle();
@@ -33,16 +35,15 @@ export class ArticleComponent implements OnInit {
 
   private getViewArticle(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
-    this.firecloud.collection('blogs').doc(id).get().subscribe(
-      document => {
-        const data = document.data();
-        const dataID = document.id;
-        this.articleID = dataID;
-        this.comments = data.comments;
-        this.article = { dataID, ...data };
-        // console.log(data.comments)
-      }
-    );
+    this.blogService.getOneFireCloudBlog(id).subscribe(
+        document => {
+          const data = document.data();
+          const dataID = document.id;
+          this.articleID = dataID;
+          this.comments = data.comments;
+          this.article = { dataID, ...data };
+        }
+      );
   }
 
   private getUserData(): void {
@@ -50,11 +51,9 @@ export class ArticleComponent implements OnInit {
       const localUser = JSON.parse(localStorage.getItem('user'));
       this.user = localUser;
       this.loggedUser = true;
-      console.log('user true')
     }
     else {
       this.loggedUser = false;
-      console.log('user false')
     }
   }
 
@@ -73,12 +72,12 @@ export class ArticleComponent implements OnInit {
       this.article.article,
       this.article.date,
       this.comments
-    )
-    // console.log(updateWithComment)
-    // console.log(updateWithComment.id)
+    );
+
     this.blogService.updateFireCloudBlog({ ...updateWithComment })
-      .then(message => console.log(message))
+      .then(message => this.toastr.success('Comment added!'))
       .catch(err => console.log(err));
+
 
     this.getViewArticle();
     this.singleComment = '';

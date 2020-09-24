@@ -54,8 +54,8 @@ export class ProfileComponent implements OnInit {
     this.email = user.userEmail;
     this.phone = user.phone;
     this.profileImage = user.image;
-    // console.log(user)
   }
+
   uploadFile(event): void {
     const file = event.target.files[0];
     const type = file.type.slice(file.type.indexOf('/') + 1);
@@ -66,13 +66,11 @@ export class ProfileComponent implements OnInit {
     upload.then(image => {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
         this.profileImage = url;
-        // console.log(this.profileImage)
       });
     });
   }
 
   updateUser(): void {
- 
     const user = new User(
       this.loggedUser.id,
       this.email,
@@ -81,8 +79,6 @@ export class ProfileComponent implements OnInit {
       this.role,
       this.profileImage,
       this.phone,
-
-
     );
 
     this.authService.updateFireStoreUser(user, this.userDOC)
@@ -93,7 +89,6 @@ export class ProfileComponent implements OnInit {
   
     localStorage.setItem('user', JSON.stringify(user));
     this.getUserData();
-
 
   }
 

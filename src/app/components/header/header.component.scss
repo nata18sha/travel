@@ -19,7 +19,7 @@ header {
     
 }
 .expand_header {
-    height: 135px;
+    height: 145px;
 }
 
 .header_light {
@@ -35,17 +35,15 @@ header {
     color: $mainColor;
 }
 // Navigation block
-// nav {
-//     @include flexbox(row, nowrap, center, center);
-// }
+
 ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid #000;
     margin: 0;
 }
+
 li {
     margin: 20px;
     font-family: 'Sofia Pro';
@@ -55,7 +53,10 @@ li {
     a {
         color: #fff;
     }
+    cursor: pointer;
+    outline: none;
 }
+
 li:hover::before {
     content: '';
     height: 5px;
@@ -68,15 +69,17 @@ li:hover::before {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 li a:hover {
     color: $mainColor;
 }
+
 li:hover {
     color: $mainColor;
 }
+
 .active-link {
     color: $mainColor !important;  
-
 }
 
 .active-link::before {
@@ -95,6 +98,7 @@ li:hover {
 .second_active {
     color: $mainColor !important;  
 }
+
 .second_active::before {
     content: '';
     height: 5px;
@@ -109,16 +113,15 @@ li:hover {
 }
 
 .logo {
-    // font-family: SamsungSharpSans;
     font-size: 18px;
     font-family: 'Samsung Sharp Sans Bold';
     font-weight: bold;
-    // color: #4a4a4a;
     padding: 40px 0 40px 40px;
     cursor: pointer;
     border: none;
     outline: none;
 }
+
 li, .login, .reservations {
     font-size: 13px;
 }
@@ -128,12 +131,13 @@ li, .login, .reservations {
     margin-left: 20px;
     font-family: 'Sofia Pro';
     cursor: pointer;
-    // border: 1px solid #000;
     outline: none;
 }
+
 .login:hover {
     color: $mainColor;
 }
+
 .login-block {
     display: flex;
 }
@@ -145,33 +149,21 @@ li, .login, .reservations {
     background-color: $mainColor;  
     color: #fff;
     font-family: 'Sofia Pro Medium';
-    // font-weight: 500;
     fill: #fff ;
     line-height: 40px;
-
 }
+
 .reservations, .login {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 a {
-    // color: #4a4a4a;
     text-decoration: none;
 }
+
 a:visited {
-    // color: #4a4a4a;
     color: #fff;
-    
-}
-
-
-.svg-image {
-    background-image: url(../../../assets/icons/bookmark.svg);
-    // color: black;
-    height: 30px;
-    width: 30px;
-    
 }
 
 .user_icon {
@@ -183,41 +175,51 @@ a:visited {
 }
 
 .custom_button {
-// background-color: $mainColor;
 width: 40px;
 height: 20px;
 font-family: 'Sofia Pro';
 font-style: 13px !important;
 }
 
-
-@media only screen and (max-width: 991px) {
-    .login{
-        margin-right: 100px;
-        margin-left: 20px;
-    }
+button {
+    outline: none;
 }
 
-@media only screen and (max-width: 991px) {
+
+@media only screen and (max-width: 768px) {
+    ul {
+        @include flexbox(column, nowrap, flex-start, flex-end);
+    }
+
     li {
         margin: 5px;
     }
+
     li:hover::before {
-        bottom: -5px;
+        top: 50%;
+        left: -10px;
+        transform: translate(0, -70%);
     }
     
     .active-link::before {
-        bottom: -5px;
+        top: 50%;
+        left: -10px;
+        transform: translate(0, -70%);
     }
     
     .second_active::before {
-        bottom: -5px;
+        top: 50%;
+        left: -10px;
+        transform: translate(0, -70%);
     }
     .login{
         margin-right: 100px;
         margin-left: 20px;
     }
 }
+
+
+
 @media only screen and (max-width: 480px) {
     header {
         height: 80px; 

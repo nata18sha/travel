@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd, Event } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
 
   navbarOpen = false;
+  desktopNavbar = true;
 
   innerWidth: any;
 
@@ -32,13 +34,9 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
-        // console.log(event.url);
-        // console.log(this.currentRoute);
+        
         if (this.currentRoute.lastIndexOf('/') > 0) {
           this.currentRoute = this.currentRoute.slice(0, this.currentRoute.lastIndexOf('/'))
-          console.log('current route:',this.currentRoute);
-
-
         }
 
         if (this.currentRoute === '/user' || this.currentRoute === '/admin' || this.currentRoute === '/blogs' || this.currentRoute === '/login') {
@@ -68,12 +66,17 @@ export class HeaderComponent implements OnInit {
     this.checkLogin();
     this.updateCheckLogin();
     this.innerWidth = window.innerWidth;
+    if (this.innerWidth <= 768){
+      this.desktopNavbar = false;
+    }
+    else this.desktopNavbar = true;
   }
 
 
   //Check scroll position
   @HostListener("document:scroll")
   scrollfunction() {
+    this.navbarOpen = false;
     if (this.currentRoute === '/user' ||
       this.currentRoute === '/admin' ||
       this.currentRoute === '/blogs' ||
@@ -96,11 +99,13 @@ export class HeaderComponent implements OnInit {
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (admin != null && admin.role === 'admin' && admin.access) {
       this.adminStatus = true;
+      this.userStatus = false;
       this.loginStatus = true;
 
     }
     else if (user != null && user.role === 'user') {
       this.userStatus = true;
+      this.adminStatus = false;
       this.loginStatus = true;
     }
     else {
@@ -119,7 +124,7 @@ export class HeaderComponent implements OnInit {
 
 
   toggleNavbar():void {
-    if (this.innerWidth <= 991) {
+    if (this.innerWidth <= 768) {
        this.navbarOpen = !this.navbarOpen;
     }
    
@@ -133,7 +138,11 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
-    // console.log(this.innerWidth)
+    this.navbarOpen = false;
+    if (this.innerWidth <= 768){
+      this.desktopNavbar = false;
+    }
+    else this.desktopNavbar = true;
   }
 
 

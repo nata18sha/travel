@@ -18,7 +18,6 @@
 .main_icon {
     width: 36px;
     height: 36px;
-    // opacity: 0.4;
     background-color: #fcb493;;
     border-radius: 50%;
     @include flexbox(row, nowrap, center, center);
@@ -39,7 +38,6 @@
     color: $mainColor;
     height: 100%;
     @include flexbox(row, nowrap, flex-start, center);
-    // border: 1px solid #000;
 }
 .user_block{
     padding: 20px 30px;
@@ -95,10 +93,9 @@
     font-size: 14px;
     line-height: 1.43;
     color: #3b3b3b;
-    // margin-bottom: 30px;
     outline-color: rgba(255, 82, 0, 0.5);
-    
 }
+
 .checkbox {
     position: relative;
     margin-bottom: 30px;
@@ -110,8 +107,8 @@
     margin-left: 5px;
     position: absolute;
     top: 2px;
-
 }
+
 .submit_button {
     width: 100%;
     height: 50px;
@@ -124,6 +121,7 @@
     margin-bottom: 30px;
     cursor: pointer;
 }
+
 .change {
     text-align: center;
     font-family: 'Sofia Pro Medium';
@@ -144,16 +142,15 @@
 }
 .name {
     width: 48%;
-    // border: 1px solid #000;
 }
+
 .custom_file {
     position: relative;
     display: inline-block;
     width: 100%;
-    // height: calc(1.5em + .75rem + 2px);
     margin-bottom: 46px;
-   
 }
+
 input .choose_image {
     position: relative;
     z-index: 2;
@@ -161,10 +158,9 @@ input .choose_image {
     height: 46px;
     margin: 0;
     opacity: 0;
-    // overflow: visible;
     margin-bottom: 30px;
-   
 }
+
 .choose_image:focus {
     outline: none;
     
@@ -187,8 +183,8 @@ input .choose_image {
     line-height: 1.43;
     color: #3b3b3b;
     padding: 13px;
-    
 }
+
 .file_label::after {
     position: absolute;
     top: 0;
@@ -209,8 +205,8 @@ input .choose_image {
     height: 10px;
     width: 100%;
     margin-bottom: 20px;
-    // border: 1px solid #000;
 }
+
 .bg_main {
     background-color: $mainColor;
 }

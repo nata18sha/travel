@@ -5,29 +5,34 @@
 .footer_copyright, .footer_partners, .footer_info {
    border-top: 1px solid #e4e4e4; 
 }
+
 .footer_info {
     min-height: 560px;
 }
+
 .footer_copyright {
     height: 115px;
     font-family: 'Sofia Pro';
     font-size: 12px;
-    
 }
+
 .footer_container {
     height: inherit;
     width: 1110px;
     margin: 0 auto;
     @include flexbox(row, nowrap, space-between, center);
 }
+
 .footer_partners {
     height: 105px;
 }
+
 .logo {
     font-family: 'Samsung Sharp Sans Bold';
     font-size: 24px;
     color: $logoColor;
 }
+
 .partners img {
     margin-left: 30px;
 }
@@ -36,26 +41,27 @@
     width: 50px;
     height: 25px;
 }
+
 .discover {
     width: 76px;
     height: 16px;
 }
+
 .visa {
     width: 42px;
     height: 13px;
 }
+
 .paypal {
     width: 70px;
     height: 20px;
 }
+
 .mastercard {
     width: 34px;
     height: 27px;
 }
 
-// .footer_info {
-//     height: 485px;
-// }
 .footer_info .footer_container {
     @include flexbox(row, nowrap, space-between, flex-start);
     margin-top: 105px;
@@ -68,15 +74,18 @@
     color: #000000;
     margin-bottom: 20px;
 }
+
 .text_class {
     font-family: 'Sofia Pro';
     font-size: 13px;
     color: $textColor;
     margin-bottom: 15px;
 }
+
 .text_class span {
     color: $linkColor;
 }
+
 .contact {
     margin-top: 50px;
 }
@@ -88,6 +97,7 @@
     background-color: #ffffff;
     padding: 15px;
 }
+
 .mailing button {
     width: 94px;
     height: 40px;
@@ -96,6 +106,7 @@
     font-size: 13px;
     color: #fff;
 }
+
 .icons-links {
     @include flexbox(row, nowrap, flex-start, center);
 }
@@ -110,17 +121,18 @@
     fill: $textColor;
     transition: all ease-out 0.3s;
     cursor: pointer;
-    // background-color: rgb(65, 165, 98);
-
 }
+
 .icons:hover {
     fill: #fff;
     background-color: #4a4a4a;
     border: solid 1px #4a4a4a;
 }
+
 .icon {
     margin-top: -3px;
 }
+
 .email_text {
     font-family: 'Sofia Pro';
     font-size: 13px;
@@ -136,11 +148,9 @@
     .mailing {
         display: none;
     }
-
-
-
-
 }
+
+
 
 @media only screen and (max-width: 768px) {
     .footer_copyright {

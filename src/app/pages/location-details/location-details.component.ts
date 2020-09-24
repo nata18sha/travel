@@ -8,6 +8,7 @@ import { IReservation } from '../../shared/interfaces/reservation.interface';
 import { Reservation } from '../../shared/models/reservation.model';
 import { ReservationService } from '../../shared/services/reservation.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-location-details',
@@ -69,9 +70,10 @@ export class LocationDetailsComponent implements OnInit {
 
 
   constructor(private actRoute: ActivatedRoute,
-    private firecloud: AngularFirestore,
-    private reservationService: ReservationService,
-    private modalService: BsModalService) {
+              private firecloud: AngularFirestore,
+              private reservationService: ReservationService,
+              private modalService: BsModalService,
+              private toastr: ToastrService) {
 
   }
 
@@ -102,9 +104,7 @@ export class LocationDetailsComponent implements OnInit {
         const data = document.data();
         const dataID = document.id;
         this.location = { dataID, ...data };
-        // console.log(this.location)
-        // this.imageObject = this.location.images;
-        // console.log(this.imageObject)
+
         for (const image of this.location.images) {
           let img = {
             image: `${image}`,
@@ -136,9 +136,6 @@ export class LocationDetailsComponent implements OnInit {
       this.isPannelDetails = true;
       this.locationDone = true;
 
-      // console.log(this.inDate)
-      // console.log(this.outDate)
-      console.log(this.persons)
       this.calculateDays();
     }
     else {
@@ -167,11 +164,6 @@ export class LocationDetailsComponent implements OnInit {
   confirmPayment(): void {
     this.paymentDone = true;
     this.addReservation();
-    console.log(this.reservation)
-  }
-
-  logDate(): void {
-    console.log(this.inDate)
   }
 
   calculateDays(): void {
@@ -180,17 +172,10 @@ export class LocationDetailsComponent implements OnInit {
     if(this.daysStay == 0) {
       this.daysStay = 1;
     }
-    console.log(this.daysStay)
   }
 
 
-
-
-
-
   addReservation(): void {
-    // this.setDetails();
-
     const newReserv = new Reservation(
       this.reservID,
       this.location,
@@ -206,7 +191,9 @@ export class LocationDetailsComponent implements OnInit {
     );
     delete newReserv.id;
     this.reservationService.postFireCloudReservation({ ...newReserv })
-      .then(message => console.log(message))
+      .then(() => {
+        this.toastr.success('Revervation paid!');
+      })
       .catch(err => console.log(err));
 
 
@@ -215,7 +202,6 @@ export class LocationDetailsComponent implements OnInit {
   private getUserData(): void {
     const user = JSON.parse(localStorage.getItem('user'));
     this.loggedUser = user;
-    // console.log(user.id)
   }
 
 
@@ -236,7 +222,6 @@ export class LocationDetailsComponent implements OnInit {
     else {
       this.sliderConfig = { width: '544px', height: '444px', space: 10 };
     }
-    // console.log(this.innerWidth)
   }
 
 
@@ -245,7 +230,6 @@ export class LocationDetailsComponent implements OnInit {
   @HostListener('window:scroll')
   checkScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // console.log('[scroll]', scrollPosition);
     if (scrollPosition >= this.topPosToStartShowing) {
       this.isShow = true;
     } else {

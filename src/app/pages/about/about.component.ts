@@ -66,7 +66,6 @@ export class AboutComponent implements OnInit {
     else {
       this.sliderConfig = { width: '733px', height: '475px', space: 10 };
     }
-    console.log(this.innerWidth)
   }
 
 }

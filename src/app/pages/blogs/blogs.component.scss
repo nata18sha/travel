@@ -11,7 +11,6 @@
 .banner__main {
     height: 600px;
     width: 100%;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0c2c426f1191c5525a59ad418f223a476816a036.png?alt=media&token=095d47b2-3839-471f-9eef-186e0688ea61);
     @include background;
     z-index: 1;
     @include flexbox(column, nowrap, space-between, flex-start);
@@ -122,13 +121,11 @@
 .article_preview:hover {
     .article_link {
         fill: $mainColor;
-        // cursor: pointer;
     }
 }
 .article_image {
     height: 400px;
     width: inherit;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F5a98f159c07f7ecad4a7fca41bc1f37e0901688c.png?alt=media&token=abbfbd1b-a5fd-4d62-8b1a-65a28e7c02c5);
     margin-bottom: 20px;
     @include background;
 }
@@ -194,14 +191,11 @@
     width: 100px;
     border-radius: 3px;
     @include background;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F0a35997e99287acd87018fbafc6527c90e932032.png?alt=media&token=7ff267d1-228e-404d-8ab2-67c3f2414771);
-    // margin-right: 20px;
 }
 .recent_details {
     padding: 20px 0;
     height: 100px;
     width: 235px;
-    // border: 1px solid red;
 }
 .recent_title {
 
@@ -232,13 +226,9 @@
 //Load more button
 .button_block {
     width: 100%;
-    // width: 1000px;
-    // min-height: 100px;
     @include flexbox(row, nowrap, center, center);
-    // border: 1px solid #000;
 }
 .load_more {
-    // margin: 100px 0;
     width: 150px;
     height: 40px;
     border-radius: 3px;
@@ -273,7 +263,7 @@
 
     //Articles all------------------------------
     .container_blogs {
-        @include flexbox(column, nowrap, center, center);
+        @include flexbox(column, nowrap, center, flex-start);
         width: 735px;
         margin: 50px auto;
     }
@@ -282,33 +272,19 @@
        .button_block {
         margin-bottom: 50px;
     }
-
-       //Recent articles--------------------------------------------
-
    
 }
 
 @media only screen and (max-width: 768px) {
     //Main banner---------------------------------------------------
-    // .banner {
-    //     margin-top: 80px;
-    // }
-    // .banner_maintitle {
-    //     min-height: 320px;
-    // }
 
     .main_title {
         width: 450px;
         height: auto;
         font-family: 'Didot';
-        // font-size: 50px;
         margin-bottom: 30px;
     }
-    // .main_line {
-    //     width: 74px;
-    //     height: 5px;
-    //     background-color: $mainColor;
-    // }
+
     .banner__main {
         height: 500px;
     }
@@ -321,7 +297,6 @@
 
     .heading_small {
         font-family: 'Sofia Pro';
-        // font-size: 13px;
         font-weight: 500;
         color: #fafafa;
         margin-bottom: 30px;
@@ -346,7 +321,7 @@
 
     //Articles all------------------------------
     .container_blogs {
-        @include flexbox(column, nowrap, center, center);
+        @include flexbox(column, nowrap, center, flex-start);
         width: 450px;
         margin: 50px auto;
     }

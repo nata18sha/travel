@@ -27,25 +27,17 @@ export class LoginComponent implements OnInit {
   loginUser(loginForm:NgForm): void {
     this.authService.login(this.userEmail, this.userPassword);
     loginForm.resetForm();
-    // this.resetFields();
-
   }
+
   registerUser(registerForm:NgForm): void {
     this.authService.register(this.userEmail, this.userPassword, this.firstName, this.lastName);
     this.changeStatus = !this.changeStatus;
     registerForm.resetForm();
-    // this.resetFields();
-
   }
+
   acceptTerms(): void {
     this.agree = !this.agree;
   }
 
-  private resetFields(): void {
-    this.userEmail = '';
-    this.userPassword = '';
-    this.firstName = '';
-    this.lastName = '';
-  }
 
 }

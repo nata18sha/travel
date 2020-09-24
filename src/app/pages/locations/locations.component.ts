@@ -60,7 +60,7 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
       this.sliderConfig = {width: '733px', height: '475px', space: 10 };
     }
   }
-  //Photo slider
+  //Photo slider-----------
   @ViewChild('nav') slider: NgImageSliderComponent;
   prevImageClick() {
     this.slider.prev();
@@ -69,7 +69,7 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
   nextImageClick() {
     this.slider.next();
   }
-  //------------------
+  //------------------------
 
   private adminFireCloudLocations(): void {
     this.locationService.getFireCloudLocation().subscribe(
@@ -80,7 +80,6 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
 
           return { id, ...data };
         });
-
       }
     );
   }
@@ -103,20 +102,16 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
     }
     else {
       this.locationChecked = false;
-      console.log(location)
       this.allLocations = [];
       this.firecloud.collection('locations').ref.where("location", "==", location).onSnapshot(
         snap => {
           snap.forEach(locRef => {
             const data = locRef.data() as ILocation;
             const id = locRef.id;
-            console.log(id, data)
-
             this.allLocations.push({ id, ...data });
             if (this.allLocations.length < 13) {
               this.showLoadButton = false;
             }
-            // console.log(this.allLocations)
           })
         })
     }
@@ -131,33 +126,27 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
     }
     else {
       this.categoryChecked = false;
-      console.log(location)
       this.allLocations = [];
       this.firecloud.collection('locations').ref.where("category", "==", category).onSnapshot(
         snap => {
           snap.forEach(locRef => {
             const data = locRef.data() as ILocation;
             const id = locRef.id;
-            // console.log(id, data)
 
             this.allLocations.push({ id, ...data });
             if (this.allLocations.length < 13) {
               this.showLoadButton = false;
             }
-            // console.log(this.allLocations)
           })
         })
     }
   }
 
   changeRange(event):void {
-    console.log(event.path[0].value)
-    this.filteredPrice = event.path[0].value
-    // console.log(this.firecloud.collection('locations').ref.where("price", "<=", filteredPrice))
+    this.filteredPrice = event.path[0].value;
     this.filterPrice();
-   
-
   }
+  
   filterPrice():void {
     this.allLocations = [];
     this.firecloud.collection('locations').ref.where("price", "<=", +this.filteredPrice).onSnapshot(
@@ -165,7 +154,6 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
         snap.forEach(locRef => {
           const data = locRef.data() as ILocation;
           const id = locRef.id;
-          console.log(id, data)
           this.allLocations.push({ id, ...data });
           this.categoryChecked = true;
           this.locationChecked = true;
@@ -175,8 +163,6 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
               this.showLoadButton = false;
             }
           }
-        
-          // console.log(this.allLocations)
         })
       })
   }
@@ -193,7 +179,6 @@ defaultImage = 'https://firebasestorage.googleapis.com/v0/b/travel-myproject.app
     else {
       this.sliderConfig = {width: '733px', height: '475px', space: 10 };
     }
-    // console.log(this.innerWidth)
   }
   
 

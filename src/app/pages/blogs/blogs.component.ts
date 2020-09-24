@@ -30,7 +30,6 @@ export class BlogsComponent implements OnInit {
         this.allArticles = collection.map(document => {
           const data = document.payload.doc.data() as IArticle;
           const id = document.payload.doc.id;
-          // console.log({ id, ...data })
           return { id, ...data };
         });
 
@@ -43,7 +42,6 @@ export class BlogsComponent implements OnInit {
         this.recentArticles = collection.map(document => {
           const data = document.payload.doc.data() as IArticle;
           const id = document.payload.doc.id;
-          // console.log({ id, ...data })
           return { id, ...data };
         });
 

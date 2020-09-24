@@ -307,24 +307,6 @@
     font-size: 14px;
     color: #4a4a4a;
 }
-// .member_one {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F86813cc485b5fa7c283a46fb3f145de96fb1f42c.png?alt=media&token=95b82294-17ef-449a-9283-6c3ca7311239);
-// }
-// .member_two {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F1c9266d969f04ce7ba5db9b5c9362bf97827eef9.png?alt=media&token=f8f66439-9920-4cc9-bfb3-624120025193);
-// }
-// .member_three {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F79f66fd6d0df59d352bf9615fb30b75ff1f56347.png?alt=media&token=2070d628-516b-401d-8d6d-8a4853cf31de);
-// }
-// .member_four {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2F472c0399e713781959674901c26456d3dea050d7.png?alt=media&token=af534471-2a6c-44c5-b256-ababa70801dc);
-// }
-// .member_five {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Ff0dcd16b3793315fe60f0972bebaf821e215f0cf.png?alt=media&token=3686c531-49ee-4e77-a37d-acafefaceee8);
-// }
-// .member_six {
-//     background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Fchristopher-campbell-rDEOVtE7vOs-unsplash.jpg?alt=media&token=76efbfa1-8807-470d-9851-a9c5917fb713);
-// }
 
 
 @media only screen and (max-width: 1200px) {
@@ -390,7 +372,6 @@
     //Main banner styles---------------------------------
 
     .banner__main {
-        // height: 615px;
         width: 100%;
         @include background;
         z-index: 1;
@@ -408,7 +389,6 @@
     }
 
     .heading_big {
-        // font-size: 50px;
         width: 450px;
     }
 
@@ -447,15 +427,13 @@
     }
 
     .check-out {
-        // font-size: 12px;
         font-weight: 500;
         margin-bottom: 0px;
         text-align: center;
         width: 100%;
     }
 
-    .text-link {
-        // font-size: 13px;    
+    .text-link {   
         padding: 0;
         word-wrap: break-word;
         text-align: center;
@@ -516,7 +494,6 @@
     }
 
     .main_text {
-        // font-size: 13px;
         width: 450px;
     }
 
@@ -539,7 +516,6 @@
     }
 
     .section_name {
-        // font-size: 13px;
         margin-bottom: 20px;
     }
     //Team-----------------------------------------------------
@@ -547,7 +523,6 @@
         width: 450px;
         height: auto;
         font-family: 'Didot';
-        // font-size: 30px;
         margin-bottom: 30px;
     }
 
@@ -567,13 +542,10 @@
         margin-bottom: 20px;
     }
 
- 
-
-
-
-
 
 }
+
+
 
 @media only screen and (max-width: 480px) {
     //Main banner styles---------------------------------

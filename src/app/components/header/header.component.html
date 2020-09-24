@@ -1,6 +1,34 @@
 <header [class.header_light]="header_variable" [class.expand_header]="navbarOpen">
     <div class="logo"><span routerLink="/home" (click)="navbarHide()">Travelsy</span> </div>
-    <nav class="navbar navbar-expand-lg " [ngClass]="!header_variable ? 'navbar-dark' : 'navbar-light'">
+
+    <!-- Desktop navbar -->
+    <nav *ngIf="desktopNavbar">
+        <div>
+            <ul>
+                <li class="nav-item"><a routerLink="/home" routerLinkActive="active-link">Home
+                    </a></li>
+                <li class="nav-item"><a routerLink="/locations" routerLinkActive="active-link"
+                        [class.second_active]="isLocation">Camping
+                        Locations</a></li>
+                <li class="nav-item"><a routerLink="/blogs" routerLinkActive="active-link"
+                        [class.second_active]="isArticle">Blogs</a></li>
+                <li class="nav-item"><a routerLink="/about" routerLinkActive="active-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="login-block" *ngIf="desktopNavbar">
+        <div class="login" routerLink="/login" *ngIf="!loginStatus"><span>Sign In/Sign Up</span>
+        </div>
+        <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus">
+            <span>Admin</span></div>
+        <div class="login" routerLink="/user" *ngIf="userStatus">Profile</div>
+    </div>
+
+
+    <!-- Mobile navbar -->
+
+    <nav class="navbar navbar-expand-lg " [ngClass]="!header_variable ? 'navbar-dark' : 'navbar-light'"
+        *ngIf="!desktopNavbar">
 
         <button class="navbar-toggler " type="button" (click)="toggleNavbar()" *ngIf="!navbarOpen">
             <span class="navbar-toggler-icon"></span>
@@ -18,16 +46,22 @@
                         [class.second_active]="isArticle">Blogs</a></li>
                 <li class="nav-item" (click)="toggleNavbar()"><a routerLink="/about"
                         routerLinkActive="active-link">About</a></li>
+                <li class="nav-item" *ngIf="!loginStatus" (click)="navbarHide()">
+                    <a routerLink="/login" routerLinkActive="active-link">Sign In/Sign Up</a>
+                </li>
+
+                <li class="nav-item" *ngIf="adminStatus" (click)="navbarHide()"><a
+                        [routerLink]="[ '/admin/admin-location' ]" routerLinkActive="active-link">Admin</a>
+                </li>
+
+                <li class="nav-item" *ngIf="userStatus" (click)="navbarHide()">
+                    <a routerLink="/user" routerLinkActive="active-link">Profile</a>
+                </li>
+
             </ul>
         </div>
 
     </nav>
 
-    <div class="login-block">
-        <div class="login" routerLink="/login" *ngIf="!loginStatus" (click)="navbarHide()"><span>Sign In/Sign Up</span>
-        </div>
-        <div class="login" [routerLink]="[ '/admin/admin-location' ]" *ngIf="adminStatus" (click)="navbarHide()">
-            <span>Admin</span></div>
-        <div class="login" routerLink="/user" *ngIf="userStatus" (click)="navbarHide()">Profile</div>
-    </div>
+
 </header>

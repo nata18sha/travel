@@ -8,7 +8,6 @@
 .login_container {
     width: 545px;
     min-height: 300px;
-    // border: 1px solid #000;
     margin: 0 auto;
     margin-bottom: 100px;
 }
@@ -37,13 +36,11 @@
     font-size: 14px;
     line-height: 1.43;
     color: $textColor;
-    // margin-bottom: 30px;
     outline-color: rgba(255, 82, 0, 0.5);
     
 }
 .checkbox {
     position: relative;
-    // margin-bottom: 30px;
     margin-top: 10px;
 }
 .checkbox_text {
@@ -88,7 +85,6 @@
 }
 .name {
     width: 48%;
-    // border: 1px solid #000;
 }
 
 .invalidText {

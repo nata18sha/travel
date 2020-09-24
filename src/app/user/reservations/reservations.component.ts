@@ -20,7 +20,6 @@ export class ReservationsComponent implements OnInit {
   ngOnInit(): void {
     this.adminFireCloudReservation();
     this.getUserData();
-    console.log(this.myReserv);
   }
 
   private adminFireCloudReservation(): void {
@@ -35,14 +34,10 @@ export class ReservationsComponent implements OnInit {
 
         this.reservations.map(res => {
           if (res.user.id === this.loggedUser.id) {
-            console.log(res)
-            this.myReserv.push(res)
+            this.myReserv.push(res);
             return res;
           }
         })
-
-
-
       }
     );
   }

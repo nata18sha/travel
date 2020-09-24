@@ -17,7 +17,6 @@ export class FooterComponent implements OnInit {
   subscribe(): void {
     this.subsEmail = '';
     this.toastr.success('You are subscribed!', 'Congrads!');
-    // alert('Subscribed!');
   }
 
 }

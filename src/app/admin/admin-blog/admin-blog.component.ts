@@ -51,7 +51,6 @@ export class AdminBlogComponent implements OnInit {
     private blogService: BlogsService,
     private orderPipe: OrderPipe) {
     this.sortedCollection = orderPipe.transform(this.blogs, 'info.name');
-    // console.log(this.sortedCollection);
   }
 
   ngOnInit(): void {
@@ -86,7 +85,6 @@ export class AdminBlogComponent implements OnInit {
         this.blogs = collection.map(document => {
           const data = document.payload.doc.data() as IArticle;
           const id = document.payload.doc.id;
-          console.log({ id, ...data })
           return { id, ...data };
         });
 
@@ -103,7 +101,6 @@ export class AdminBlogComponent implements OnInit {
     upload.then(image => {
       this.afStorage.ref(`images/${image.metadata.name}`).getDownloadURL().subscribe(url => {
         this.mainImage = url;
-        console.log(this.mainImage)
         this.imageStatus = true;
       });
     });
@@ -179,11 +176,4 @@ export class AdminBlogComponent implements OnInit {
   }
 
 
-
-
-
-  // onSubmit(): void {
-  //   this.editorContent = this.editorForm.get('editor').value;
-  //   console.log(this.editorForm.get('editor').value);
-  // }
 }

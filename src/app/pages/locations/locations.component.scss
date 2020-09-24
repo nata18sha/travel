@@ -91,7 +91,6 @@
     @include flexbox(row, nowrap, space-between, center);
     width: 283px;
     height: inherit;
-    // border-top: red;
 }
 .check-out {
     font-family: 'Sofia Pro';
@@ -139,7 +138,6 @@
     height: inherit;
     width: 90%;
     @include flexbox(column, nowrap, center, center);
-    // display: none;
 }
 .scroll_text {
     width: 30px;
@@ -209,7 +207,6 @@
 }
 .filter_details {
     @include flexbox(row, wrap, flex-start, flex-start);
-    // align-content: space-between;
 }
 .detail {
     padding: 10px;
@@ -237,7 +234,6 @@
     font-weight: bold;
     line-height: 1.1;
     color: #000;
-    // border: 1px solid red;
     margin-bottom: 50px;
 }
 
@@ -250,7 +246,6 @@
     width: 356px;
     height: 477px;
     border-radius: 3px;
-    // border: 1px solid #000;
     margin-bottom: 30px;
     cursor: pointer;
     transition: all ease-in 0.3s;
@@ -392,7 +387,6 @@
     position: absolute;
     left: 0;
     bottom: 4px;
-    // z-index: 3;
     width: 123px;
     height: 60px;
     background-color: #ffffff;
@@ -420,7 +414,6 @@
     @include background;
     height: 700px;
     width: 100%;
-    // background-image: url(https://firebasestorage.googleapis.com/v0/b/travel-myproject.appspot.com/o/images%2Faed30a8a4a1508b80d2a0be8310719af951cc6c4.png?alt=media&token=c5fe987e-b4d0-4fe3-af8e-6dde0cc63829);
     margin-top: 100px;
     margin-bottom: 100px;
     @include flexbox(row, nowrap, flex-end, flex-end);
@@ -460,8 +453,6 @@
 //Load more button
 .button_block {
     width: 100%;
-    // width: 1000px;
-    // min-height: 100px;
     @include flexbox(row, nowrap, center, center);
 }
 .load_more {
@@ -592,19 +583,13 @@
     .feedback_text {
         font-size: 13px;
     }
-    // .popular__content {
-    //     // @include flexbox(column, nowrap, center, center);
-    //     // display: block;
-    // }
 
     .popular__content_filter {
-        // min-height: 515px;
         width: 360px;
     }
     .popular__content_locations {
         @include flexbox(column, nowrap, center, center);
         width: 360px;
-        // min-height: 355px;
     }
 
 
@@ -613,9 +598,7 @@
 
 @media only screen and (max-width: 768px) {
     //Main banner-------------------------------
-        // .banner__main {
-        //     height: 615px;
-        // }
+
         .banner__main_heading {
             width: 450px;
             margin: 150px auto;
@@ -625,11 +608,10 @@
             margin-bottom: 20px;
         }
         .heading_big {
-            // font-size: 50px;
             width: 450px;
             margin-bottom: 0;
-        
         }
+
         .banner__main_pannel {
             height: 100px;
         }
@@ -641,9 +623,9 @@
         .container_main {
             width: 450px;
             margin: 0 auto;
-            // display: block;
             @include flexbox(column, nowrap, center, center);
         }
+
         .blanc {
             display: none;
         }
@@ -658,7 +640,6 @@
         }
     
         .check-out {
-            // font-size: 13px;
             margin-bottom: 0px;
         }
     
@@ -688,10 +669,6 @@
         .popular__content_locations {
             width: 320px;
         }
-    
-        // .filter_headertext {
-        //     font-size: 20px;
-        // }
     
         .filter_line {
             width: 74px;
@@ -752,22 +729,8 @@
         }
     
         .main_text {
-            // font-size: 13px;
             width: 450px;
         }
-    
-        // .slider_buttons {
-        //     width: 80px;
-        //     height: 40px;
-        // }
-    
-        // .button_line {
-        //     height: 35px;
-        // }
-    
-        // .button:hover {
-        //     fill: $mainColor;
-        // }
     
         //One large image-------------------------------------------
         .large_image {

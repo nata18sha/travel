@@ -13,7 +13,6 @@
                     Required field
                 </div>
             </div>
-            <!-- <br> -->
 
             <label for="password" class="input_name">Password</label>
             <br>
@@ -25,10 +24,6 @@
                     </div>
                 </div>
 
-            <!-- <div class=" checkbox">
-                <input type="checkbox" id="checkbox">
-                <label for="checkbox" class="checkbox_text">Remember me</label>
-            </div> -->
             <button type="submit" class="submit_button" (click)="loginUser(loginForm)">Sign In</button>
         </form>
         <div class="change">Don’t have an Account? <span class="change_link" (click)="changeLogin()">Sign Up</span>
@@ -74,7 +69,7 @@
                         Please provide a valid email
                     </div>
                 </div>
-            <!-- <br> -->
+
             <label for="password" class="input_name">Password</label>
             <br>
             <input type="password" #regPass="ngModel" id="password" class="input_field" [(ngModel)]="userPassword" name="userPassword"
