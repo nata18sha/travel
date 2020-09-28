@@ -22,6 +22,7 @@
     "@angular/router": "~10.0.2",
     "angular-svg-icon": "^10.0.0",
     "bootstrap": "^4.5.2",
+    "convert-firebase-timestamp": "0.0.4",
     "firebase": "^7.19.1",
     "ng-image-slider": "^2.6.4",
     "ng-lazyload-image": "^9.0.1",

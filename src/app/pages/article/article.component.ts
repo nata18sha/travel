@@ -16,7 +16,7 @@ export class ArticleComponent implements OnInit {
   defaultImage = 'https://www.placecage.com/1000/1000';
 
   article: any;
-  articleID:string;
+  articleID: string;
   comments: Array<any> = [];
   loggedUser: boolean;
   user: any;
@@ -24,9 +24,9 @@ export class ArticleComponent implements OnInit {
   newComment: object;
 
   constructor(private actRoute: ActivatedRoute,
-              private firecloud: AngularFirestore,
-              private blogService: BlogsService,
-              private toastr: ToastrService) { }
+    private firecloud: AngularFirestore,
+    private blogService: BlogsService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getViewArticle();
@@ -36,14 +36,20 @@ export class ArticleComponent implements OnInit {
   private getViewArticle(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
     this.blogService.getOneFireCloudBlog(id).subscribe(
-        document => {
-          const data = document.data();
-          const dataID = document.id;
-          this.articleID = dataID;
-          this.comments = data.comments;
-          this.article = { dataID, ...data };
+      document => {
+        const data = document.data();
+
+        const dataID = document.id;
+        this.articleID = dataID;
+
+        this.comments = [];
+        for (const comment of data.comments) {
+          const checkComment = { user: comment.user, date: comment.date.toDate(), text: comment.text }
+          this.comments.push(checkComment);
         }
-      );
+        this.article = { dataID, ...data };
+      }
+    );
   }
 
   private getUserData(): void {
@@ -64,7 +70,7 @@ export class ArticleComponent implements OnInit {
       user: this.user
     }
     this.comments.push(this.newComment);
-   
+
     const updateWithComment = new Article(
       this.articleID,
       this.article.title,

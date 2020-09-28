@@ -25,4 +25,5 @@ export class BlogsService {
   getOneFireCloudBlog(id: string): any {
     return this.firecloud.collection('blogs').doc(id).get();
   }
+  
 }

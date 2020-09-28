@@ -16,12 +16,12 @@
     <hr>
     <p class="article_text_bold"><strong>Comments:</strong></p>
     <p class="article_text" *ngIf="article?.comments?.length == 0">No comments yet, leave one below!</p>
-    <div class="article_comments" *ngFor="let comm of article?.comments">
+    <div class="article_comments" *ngFor="let comm of comments">
         
         <div class="single_comment">
             <div class="comment_data">
                 <div class="user_image" [style.backgroundImage]="'url('+comm?.user.image+')'"></div>
-                <div class="user_name"><span class="article_text_bold">{{comm?.user.userFirstName}} {{comm?.user.userLastName}} | <span class="comment_date">{{comm?.date.toDate() | date:'MMM yyyy'}}</span></span> </div>
+                <div class="user_name"><span class="article_text_bold">{{comm?.user.userFirstName}} {{comm?.user.userLastName}} | <span class="comment_date">{{comm?.date | date:'MMM yyyy'}}</span></span> </div>
             </div>
             <div class="comment_body">
                 <p class="article_text">{{comm?.text}}</p>
