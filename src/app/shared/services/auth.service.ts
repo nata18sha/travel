@@ -74,9 +74,14 @@ export class AuthService {
           .then(() => {
             this.toastr.success('Please sign in to proceed!', 'Registered!');
           })
-          .catch(err => console.log(err));
+          .catch(err => {
+            console.log(err);
+            this.toastr.error('This email is already registered!', 'Oops!')});
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.toastr.error('This email is already registered!', 'Oops!')}
+      );
 
   }
 

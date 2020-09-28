@@ -13,7 +13,7 @@
                     [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon><span class="route_text">Reservations</span>
             </a>
         </div>
-        <div class="custom_tab"><a (click)="logout()">
+        <div class="custom_tab"><a (click)="openModal(logoutModal)">
                 <svg-icon class="icon_big" src="../../../assets/icons/logout.svg"
                     [svgStyle]="{ 'height.px':16, 'width.px':16}"></svg-icon><span class="route_text">Log Out</span>
             </a></div>
@@ -22,3 +22,18 @@
         <router-outlet></router-outlet>
     </div>
 </div>
+
+<ng-template #logoutModal>
+    <div class="modal-body text-center">
+      <p>Are you sure you want to Log Out?</p>
+      <form class="form-inline d-flex justify-content-center">
+        <div class="form-group m-2" style="width: 60px;">
+          <button type="button" class=" confirm_button" style="width: 100%;"
+            (click)="confirmLogout()">Yes</button>
+        </div>
+        <div class="form-group m-2" style="width: 60px;">
+          <button type="button" class=" reject_button" style="width: 100%;" (click)="declineLogout()">No</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
