@@ -5,12 +5,15 @@
             <label for="email" class="input_name">Email</label>
             <br>
             <input type="text" id="email" #loginEmail="ngModel" class="input_field" [(ngModel)]="userEmail"
-                name="userEmail" placeholder="Enter Email" required>
+                name="userEmail" placeholder="Enter Email" required pattern="^[a-z0-9-.]+@[a-z]+\.((com)|(ua)|(net))$">
 
 
             <div class="invalidText" *ngIf="loginEmail.invalid && (loginEmail.dirty || loginEmail.touched)">
                 <div *ngIf="loginEmail.errors.required">
                     Required field
+                </div>
+                <div *ngIf="loginEmail.errors.pattern">
+                    Please provide a valid email
                 </div>
             </div>
 

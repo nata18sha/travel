@@ -334,6 +334,7 @@
 
 .card_details {
     @include flexbox(row, nowrap, space-between, flex-start);
+    width: 100%;
 }
 
 .pay_later {
@@ -341,6 +342,9 @@
     background-color: #fff;
     margin-left: 20px;
     border: 1px solid $mainColor;
+}
+.details_small {
+    width: 30%;
 }
 
 
@@ -679,6 +683,7 @@ button[disabled] {
 
     .card_details {
         @include flexbox(row, nowrap, space-between, flex-start);
+        width: inherit;
     }
 
     .pay_later {
@@ -855,6 +860,7 @@ button[disabled] {
 
     .card_details {
         @include flexbox(row, nowrap, space-between, flex-start);
+        width: inherit;
     }
 
     .pay_later {

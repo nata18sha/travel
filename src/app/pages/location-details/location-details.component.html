@@ -325,9 +325,9 @@
                         </div>
                         <hr>
                         <div class="reserv_persons">
-                            <label class="input_label">Persons</label>
+                            <label class="input_label" >Persons</label>
                             <br>
-                            <input type="number" [(ngModel)]="persons" name="persons" class="reserv_input " required>
+                            <input type="number" [(ngModel)]="persons" name="persons" class="reserv_input " required min="1">
                         </div>
                         <button type="submit" class="submit_button" (click)="makeReservation(loginToProceed)"
                             [disabled]="datesForm.invalid">Make
@@ -355,7 +355,7 @@
                         </div>
                         <div class="space_between">
                             <div class="details_bold_text">Guests:</div>
-                            <div class="text_thin">{{persons}} Persons</div>
+                            <div class="text_thin" >{{persons}} <span [innerHTML]="persons === 1 ? 'Person' : 'Persons'">Persons</span></div>
                         </div>
                         <button type="button" class="details_link" (click)="editReservation()" *ngIf="!paymentDone">Edit
                             Booking</button>

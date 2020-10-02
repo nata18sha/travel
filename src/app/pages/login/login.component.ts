@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   changeLogin():void {
     this.changeStatus  = !this.changeStatus;
+    this.resetFields();
   }
   loginUser(loginForm:NgForm): void {
     this.authService.login(this.userEmail, this.userPassword);
@@ -37,6 +38,12 @@ export class LoginComponent implements OnInit {
 
   acceptTerms(): void {
     this.agree = !this.agree;
+  }
+  private resetFields():void {
+    this.userEmail = '';
+    this.userPassword = '';
+    this.firstName = '';
+    this.lastName = '';
   }
 
 

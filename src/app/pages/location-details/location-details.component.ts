@@ -202,6 +202,10 @@ export class LocationDetailsComponent implements OnInit {
   private getUserData(): void {
     const user = JSON.parse(localStorage.getItem('user'));
     this.loggedUser = user;
+    this.firstName = user.userFirstName;
+    this.lastName = user.userLastName;
+    this.email = user.userEmail;
+    this.phone = user.phone;
   }
 
 
